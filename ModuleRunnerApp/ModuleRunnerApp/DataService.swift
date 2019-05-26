@@ -11,13 +11,13 @@ import Foundation
 struct DataStorePartial {
 	var activePlayerIndex: Int?;
 	var players: [String]?;
-	var moves: [Int]?;
+	var moves: [Move]?;
 }
 
 struct DataStore: Equatable {
 	var activePlayerIndex: Int = 0;
 	var players: [String] = Array();
-	var moves: [Int] = Array();
+	var moves: [Move] = Array();
 }
 
 protocol DataServiceProtocol {

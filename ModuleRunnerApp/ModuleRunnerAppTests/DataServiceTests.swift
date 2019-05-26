@@ -48,8 +48,6 @@ class DataServiceTests: XCTestCase {
 		
 		dataService.setStore(store: newStore);
 		
-//		let storeData = dataService.getStore();
-		
 		XCTAssertEqual(newStore, dataService.dataStore);
 	}
 	
@@ -66,12 +64,4 @@ class DataServiceTests: XCTestCase {
 		XCTAssertEqual(0, dataService.dataStore.players.count)
 		XCTAssertEqual(newPartialStore.moves!.count, dataService.dataStore.moves.count)
 	}
-	
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

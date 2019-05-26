@@ -15,6 +15,8 @@
 		CA352D35229AF29C009F4420 /* DataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D34229AF29C009F4420 /* DataServiceTests.swift */; };
 		CA352D37229AF5BA009F4420 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D36229AF5BA009F4420 /* DataService.swift */; };
 		CA352D38229AF5BA009F4420 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D36229AF5BA009F4420 /* DataService.swift */; };
+		CA352D3A229B0434009F4420 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D39229B0434009F4420 /* Move.swift */; };
+		CA352D3B229B0434009F4420 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D39229B0434009F4420 /* Move.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +41,7 @@
 		CA352D32229AEEAB009F4420 /* GreeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreeterTests.swift; sourceTree = "<group>"; };
 		CA352D34229AF29C009F4420 /* DataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceTests.swift; sourceTree = "<group>"; };
 		CA352D36229AF5BA009F4420 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		CA352D39229B0434009F4420 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 				CA352D1C229AED5B009F4420 /* main.swift */,
 				CA352D2F229AEE4C009F4420 /* Greeter.swift */,
 				CA352D36229AF5BA009F4420 /* DataService.swift */,
+				CA352D39229B0434009F4420 /* Move.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -187,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA352D3A229B0434009F4420 /* Move.swift in Sources */,
 				CA352D37229AF5BA009F4420 /* DataService.swift in Sources */,
 				CA352D30229AEE4C009F4420 /* Greeter.swift in Sources */,
 				CA352D1D229AED5B009F4420 /* main.swift in Sources */,
@@ -201,6 +206,7 @@
 				CA352D31229AEE4C009F4420 /* Greeter.swift in Sources */,
 				CA352D2A229AEE05009F4420 /* ModuleRunnerAppTests.swift in Sources */,
 				CA352D35229AF29C009F4420 /* DataServiceTests.swift in Sources */,
+				CA352D3B229B0434009F4420 /* Move.swift in Sources */,
 				CA352D38229AF5BA009F4420 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
