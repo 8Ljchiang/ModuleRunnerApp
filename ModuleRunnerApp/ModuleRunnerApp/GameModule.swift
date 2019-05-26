@@ -25,4 +25,8 @@ class GameModule: GameModuleProtocol {
 	func start(moduleRunner: ModuleRunnerProtocol) {
 		
 	}
+	
+	func display(_ text: String) {
+		self.runner?.display(text);
+	}
 }
