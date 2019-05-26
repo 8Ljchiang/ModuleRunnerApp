@@ -62,7 +62,7 @@ class ModuleRunnerTests: XCTestCase {
 		XCTAssertEqual(expectedText, actualInput);
 	}
 	
-	func testRun() {
+	func testRunGameModule() {
 		let expectedText = "Yes";
 		
 		let mockPresenterService = MockPresenterService();
@@ -77,6 +77,7 @@ class ModuleRunnerTests: XCTestCase {
 		mRunner.run(gameModule: mockGameModule);
 		
 		XCTAssert(mockGameModule.isStartCalled);
+		XCTAssertNotNil(mockGameModule.runner);
 	}
 }
 

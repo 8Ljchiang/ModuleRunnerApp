@@ -9,10 +9,13 @@
 import Foundation
 
 protocol GameModuleProtocol {
+	var runner: ModuleRunnerProtocol? { get set };
 	func start(moduleRunner: ModuleRunnerProtocol);
 }
 
 class GameModule: GameModuleProtocol {
+	var runner: ModuleRunnerProtocol?;
+	
 	init() {}
 	
 	func start(moduleRunner: ModuleRunnerProtocol) {
