@@ -19,6 +19,7 @@
 		CA352D3B229B0434009F4420 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D39229B0434009F4420 /* Move.swift */; };
 		CA352D3D229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D3C229B06AC009F4420 /* MarkerTypeEnum.swift */; };
 		CA352D3E229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D3C229B06AC009F4420 /* MarkerTypeEnum.swift */; };
+		CA352D44229B0A45009F4420 /* ModuleRunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D43229B0A45009F4420 /* ModuleRunnerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		CA352D36229AF5BA009F4420 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		CA352D39229B0434009F4420 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		CA352D3C229B06AC009F4420 /* MarkerTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerTypeEnum.swift; sourceTree = "<group>"; };
+		CA352D43229B0A45009F4420 /* ModuleRunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleRunnerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				CA352D2B229AEE05009F4420 /* Info.plist */,
 				CA352D32229AEEAB009F4420 /* GreeterTests.swift */,
 				CA352D34229AF29C009F4420 /* DataServiceTests.swift */,
+				CA352D43229B0A45009F4420 /* ModuleRunnerTests.swift */,
 			);
 			path = ModuleRunnerAppTests;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				CA352D2A229AEE05009F4420 /* ModuleRunnerAppTests.swift in Sources */,
 				CA352D3E229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
 				CA352D35229AF29C009F4420 /* DataServiceTests.swift in Sources */,
+				CA352D44229B0A45009F4420 /* ModuleRunnerTests.swift in Sources */,
 				CA352D3B229B0434009F4420 /* Move.swift in Sources */,
 				CA352D38229AF5BA009F4420 /* DataService.swift in Sources */,
 			);
