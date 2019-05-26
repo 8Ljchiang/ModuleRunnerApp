@@ -47,4 +47,20 @@ class GameModuleTests: XCTestCase {
 		XCTAssert(mockModuleRunner.isPromptForInputCalled);
 		XCTAssertEqual(expectedText, responseInput);
 	}
+	
+	func testStart() {
+		let expectedText = "Default Input Response Here";
+		let mockModuleRunner = MockModuleRunner(defaultInputResponse: expectedText);
+		let mockCommandDispatcher = MockCommandDispatcher();
+		
+		let gameModule = GameModule();
+		
+		mockModuleRunner.run(gameModule: gameModule);
+		
+		let responseInput = gameModule.promptForInput();
+		
+		XCTAssertNotNil(gameModule.runner);
+		XCTAssert(mockCommandDispatcher.isQueueCommandCalled);
+		XCTAssertNotNil(mockCommandDispatcher.queueCommandCalledWith);
+	}
 }
