@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DataStore {
+struct DataStore: Equatable {
 	var activePlayerIndex: Int = 0;
 	var players: [String] = Array();
 	var moves: [Int] = Array();
@@ -16,6 +16,7 @@ struct DataStore {
 
 protocol DataServiceProtocol {
 	func getStore() -> DataStore;
+	func setStore(store: DataStore);
 }
 
 class DataService: DataServiceProtocol {
@@ -27,5 +28,9 @@ class DataService: DataServiceProtocol {
 	
 	func getStore() -> DataStore {
 		return self.dataStore;
+	}
+	
+	func setStore(store: DataStore) {
+		self.dataStore = store;
 	}
 }

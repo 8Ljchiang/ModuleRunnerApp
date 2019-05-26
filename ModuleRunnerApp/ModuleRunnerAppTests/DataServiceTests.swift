@@ -46,7 +46,7 @@ class DataServiceTests: XCTestCase {
 		newStore.players = ["P1", "P2"];
 		newStore.moves = [1, 2, 3];
 		
-		dataService.setStore(newStore);
+		dataService.setStore(store: newStore);
 		
 		let storeData = dataService.getStore();
 		
