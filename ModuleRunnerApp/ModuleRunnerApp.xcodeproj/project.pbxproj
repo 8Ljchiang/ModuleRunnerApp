@@ -28,6 +28,9 @@
 		CA352D4F229B1451009F4420 /* InputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D4E229B1451009F4420 /* InputService.swift */; };
 		CA352D50229B1451009F4420 /* InputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D4E229B1451009F4420 /* InputService.swift */; };
 		CA352D52229B1512009F4420 /* MockInputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D51229B1512009F4420 /* MockInputService.swift */; };
+		CA352D54229B24E7009F4420 /* GameModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D53229B24E7009F4420 /* GameModule.swift */; };
+		CA352D55229B24E7009F4420 /* GameModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D53229B24E7009F4420 /* GameModule.swift */; };
+		CA352D57229B25A0009F4420 /* MockGameModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D56229B25A0009F4420 /* MockGameModule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +63,8 @@
 		CA352D4C229B0EEA009F4420 /* MockPresenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenterService.swift; sourceTree = "<group>"; };
 		CA352D4E229B1451009F4420 /* InputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputService.swift; sourceTree = "<group>"; };
 		CA352D51229B1512009F4420 /* MockInputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInputService.swift; sourceTree = "<group>"; };
+		CA352D53229B24E7009F4420 /* GameModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModule.swift; sourceTree = "<group>"; };
+		CA352D56229B25A0009F4420 /* MockGameModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGameModule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +115,7 @@
 				CA352D45229B0AD4009F4420 /* ModuleRunner.swift */,
 				CA352D48229B0DF4009F4420 /* PresenterService.swift */,
 				CA352D4E229B1451009F4420 /* InputService.swift */,
+				CA352D53229B24E7009F4420 /* GameModule.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -132,6 +138,7 @@
 			children = (
 				CA352D4C229B0EEA009F4420 /* MockPresenterService.swift */,
 				CA352D51229B1512009F4420 /* MockInputService.swift */,
+				CA352D56229B25A0009F4420 /* MockGameModule.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -227,6 +234,7 @@
 				CA352D3A229B0434009F4420 /* Move.swift in Sources */,
 				CA352D37229AF5BA009F4420 /* DataService.swift in Sources */,
 				CA352D30229AEE4C009F4420 /* Greeter.swift in Sources */,
+				CA352D54229B24E7009F4420 /* GameModule.swift in Sources */,
 				CA352D1D229AED5B009F4420 /* main.swift in Sources */,
 				CA352D49229B0DF4009F4420 /* PresenterService.swift in Sources */,
 				CA352D3D229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
@@ -240,12 +248,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA352D33229AEEAB009F4420 /* GreeterTests.swift in Sources */,
+				CA352D57229B25A0009F4420 /* MockGameModule.swift in Sources */,
 				CA352D31229AEE4C009F4420 /* Greeter.swift in Sources */,
 				CA352D50229B1451009F4420 /* InputService.swift in Sources */,
 				CA352D2A229AEE05009F4420 /* ModuleRunnerAppTests.swift in Sources */,
 				CA352D3E229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
 				CA352D35229AF29C009F4420 /* DataServiceTests.swift in Sources */,
 				CA352D4D229B0EEA009F4420 /* MockPresenterService.swift in Sources */,
+				CA352D55229B24E7009F4420 /* GameModule.swift in Sources */,
 				CA352D44229B0A45009F4420 /* ModuleRunnerTests.swift in Sources */,
 				CA352D4A229B0DF4009F4420 /* PresenterService.swift in Sources */,
 				CA352D3B229B0434009F4420 /* Move.swift in Sources */,
