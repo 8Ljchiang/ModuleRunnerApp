@@ -38,4 +38,21 @@ class ModuleRunnerTests: XCTestCase {
 		XCTAssert(mockPresenterService.isDisplayCalled);
 		XCTAssertEqual(mockPresenterService.displayCalledWith, expectedText);
 	}
+	
+	func testPromptForInput() {
+		let expectedText = "Yes";
+		
+		let mockPresenterService = MockPresenterService();
+		let mockInputService = MockInputService(inputResponse: expectedText);
+		
+		let mRunner = ModuleRunner(
+			presenterService: mockPresenterService,
+			inputService: mockInputService
+		);
+		
+		let actualInput = mRunner.promptFormInput();
+		
+		XCTAssert(mockInputService.isGetInputCalled);
+		XCTAssertEqual(expectedText, actualInput);
+	}
 }
