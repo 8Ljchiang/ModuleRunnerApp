@@ -55,9 +55,7 @@ class GameModuleTests: XCTestCase {
 		
 		let gameModule = GameModule();
 		
-		mockModuleRunner.run(gameModule: gameModule);
-		
-		let responseInput = gameModule.promptForInput();
+		gameModule.start(moduleRunner: mockModuleRunner);
 		
 		XCTAssertNotNil(gameModule.runner);
 		XCTAssert(mockCommandDispatcher.isQueueCommandCalled);
