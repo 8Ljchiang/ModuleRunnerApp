@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol ModuleRunnerProtocol {
+	
+}
+
 class ModuleRunner {
 	init() {
 		
