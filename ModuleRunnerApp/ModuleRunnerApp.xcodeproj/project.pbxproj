@@ -24,6 +24,7 @@
 		CA352D47229B0AD4009F4420 /* ModuleRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D45229B0AD4009F4420 /* ModuleRunner.swift */; };
 		CA352D49229B0DF4009F4420 /* PresenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D48229B0DF4009F4420 /* PresenterService.swift */; };
 		CA352D4A229B0DF4009F4420 /* PresenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D48229B0DF4009F4420 /* PresenterService.swift */; };
+		CA352D4D229B0EEA009F4420 /* MockPresenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D4C229B0EEA009F4420 /* MockPresenterService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,7 @@
 		CA352D43229B0A45009F4420 /* ModuleRunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleRunnerTests.swift; sourceTree = "<group>"; };
 		CA352D45229B0AD4009F4420 /* ModuleRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleRunner.swift; sourceTree = "<group>"; };
 		CA352D48229B0DF4009F4420 /* PresenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterService.swift; sourceTree = "<group>"; };
+		CA352D4C229B0EEA009F4420 /* MockPresenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenterService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		CA352D28229AEE05009F4420 /* ModuleRunnerAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				CA352D4B229B0EBC009F4420 /* Mocks */,
 				CA352D29229AEE05009F4420 /* ModuleRunnerAppTests.swift */,
 				CA352D2B229AEE05009F4420 /* Info.plist */,
 				CA352D32229AEEAB009F4420 /* GreeterTests.swift */,
@@ -116,6 +119,14 @@
 				CA352D43229B0A45009F4420 /* ModuleRunnerTests.swift */,
 			);
 			path = ModuleRunnerAppTests;
+			sourceTree = "<group>";
+		};
+		CA352D4B229B0EBC009F4420 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CA352D4C229B0EEA009F4420 /* MockPresenterService.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 				CA352D2A229AEE05009F4420 /* ModuleRunnerAppTests.swift in Sources */,
 				CA352D3E229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
 				CA352D35229AF29C009F4420 /* DataServiceTests.swift in Sources */,
+				CA352D4D229B0EEA009F4420 /* MockPresenterService.swift in Sources */,
 				CA352D44229B0A45009F4420 /* ModuleRunnerTests.swift in Sources */,
 				CA352D4A229B0DF4009F4420 /* PresenterService.swift in Sources */,
 				CA352D3B229B0434009F4420 /* Move.swift in Sources */,

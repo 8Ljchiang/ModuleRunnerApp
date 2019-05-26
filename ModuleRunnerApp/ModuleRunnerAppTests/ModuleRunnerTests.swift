@@ -19,7 +19,9 @@ class ModuleRunnerTests: XCTestCase {
     }
 
     func testInitModuleRunner() {
-		let mRunner = ModuleRunner();
+		let mockPresenterService = MockPresenterService();
+		
+		let mRunner = ModuleRunner(presenterService: mockPresenterService);
 		
 		XCTAssertNotNil(mRunner);
     }
@@ -31,7 +33,7 @@ class ModuleRunnerTests: XCTestCase {
 		
 		let expectedText = "Hello world!";
 		
-		mRunner.display(text: expectedText);
+		mRunner.display(expectedText);
 		
 		XCTAssert(mockPresenterService.isDisplayCalled);
 		XCTAssertEqual(mockPresenterService.displayCalledWith, expectedText);
