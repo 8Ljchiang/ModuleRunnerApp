@@ -9,11 +9,17 @@
 import Foundation
 
 protocol ModuleRunnerProtocol {
-	
+	func display(text: String);
 }
 
 class ModuleRunner {
-	init() {
-		
+	var presenterService: PresenterServiceProtocol;
+	
+	init(presenterService: PresenterServiceProtocol) {
+		self.presenterService = presenterService
+	}
+	
+	func display(_ text: String) {
+		self.presenterService.display(text);
 	}
 }
