@@ -20,6 +20,8 @@
 		CA352D3D229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D3C229B06AC009F4420 /* MarkerTypeEnum.swift */; };
 		CA352D3E229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D3C229B06AC009F4420 /* MarkerTypeEnum.swift */; };
 		CA352D44229B0A45009F4420 /* ModuleRunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D43229B0A45009F4420 /* ModuleRunnerTests.swift */; };
+		CA352D46229B0AD4009F4420 /* ModuleRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D45229B0AD4009F4420 /* ModuleRunner.swift */; };
+		CA352D47229B0AD4009F4420 /* ModuleRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D45229B0AD4009F4420 /* ModuleRunner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +49,7 @@
 		CA352D39229B0434009F4420 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		CA352D3C229B06AC009F4420 /* MarkerTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerTypeEnum.swift; sourceTree = "<group>"; };
 		CA352D43229B0A45009F4420 /* ModuleRunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleRunnerTests.swift; sourceTree = "<group>"; };
+		CA352D45229B0AD4009F4420 /* ModuleRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleRunner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,7 @@
 				CA352D36229AF5BA009F4420 /* DataService.swift */,
 				CA352D39229B0434009F4420 /* Move.swift */,
 				CA352D3C229B06AC009F4420 /* MarkerTypeEnum.swift */,
+				CA352D45229B0AD4009F4420 /* ModuleRunner.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -203,6 +207,7 @@
 				CA352D30229AEE4C009F4420 /* Greeter.swift in Sources */,
 				CA352D1D229AED5B009F4420 /* main.swift in Sources */,
 				CA352D3D229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
+				CA352D46229B0AD4009F4420 /* ModuleRunner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +223,7 @@
 				CA352D44229B0A45009F4420 /* ModuleRunnerTests.swift in Sources */,
 				CA352D3B229B0434009F4420 /* Move.swift in Sources */,
 				CA352D38229AF5BA009F4420 /* DataService.swift in Sources */,
+				CA352D47229B0AD4009F4420 /* ModuleRunner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
