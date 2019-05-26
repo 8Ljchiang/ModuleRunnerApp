@@ -24,6 +24,20 @@ class DataServiceTests: XCTestCase {
 		XCTAssertNotNil(dataService);
 	}
 	
+	func testGetStoreWhenDataServiceIsCreated() {
+		let dataService = DataService();
+
+		let expectedStore = DataStore();
+		
+		let storeData = dataService.getStore();
+
+		XCTAssertEqual(expectedStore.activePlayerIndex, storeData.activePlayerIndex);
+		XCTAssertEqual(expectedStore.players.isEmpty, storeData.players.isEmpty);
+		XCTAssertEqual(expectedStore.players.count, storeData.players.count);
+		XCTAssertEqual(expectedStore.moves.count, storeData.moves.count);
+		XCTAssertEqual(expectedStore.moves.isEmpty, storeData.moves.isEmpty);
+	}
+	
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
