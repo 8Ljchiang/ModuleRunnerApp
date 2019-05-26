@@ -32,6 +32,7 @@
 		CA352D55229B24E7009F4420 /* GameModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D53229B24E7009F4420 /* GameModule.swift */; };
 		CA352D57229B25A0009F4420 /* MockGameModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D56229B25A0009F4420 /* MockGameModule.swift */; };
 		CA352D59229B4532009F4420 /* GameModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D58229B4532009F4420 /* GameModuleTests.swift */; };
+		CA352D5B229B483D009F4420 /* MockModuleRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D5A229B483D009F4420 /* MockModuleRunner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +68,7 @@
 		CA352D53229B24E7009F4420 /* GameModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModule.swift; sourceTree = "<group>"; };
 		CA352D56229B25A0009F4420 /* MockGameModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGameModule.swift; sourceTree = "<group>"; };
 		CA352D58229B4532009F4420 /* GameModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModuleTests.swift; sourceTree = "<group>"; };
+		CA352D5A229B483D009F4420 /* MockModuleRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModuleRunner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				CA352D4C229B0EEA009F4420 /* MockPresenterService.swift */,
 				CA352D51229B1512009F4420 /* MockInputService.swift */,
 				CA352D56229B25A0009F4420 /* MockGameModule.swift */,
+				CA352D5A229B483D009F4420 /* MockModuleRunner.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				CA352D2A229AEE05009F4420 /* ModuleRunnerAppTests.swift in Sources */,
 				CA352D3E229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
 				CA352D35229AF29C009F4420 /* DataServiceTests.swift in Sources */,
+				CA352D5B229B483D009F4420 /* MockModuleRunner.swift in Sources */,
 				CA352D4D229B0EEA009F4420 /* MockPresenterService.swift in Sources */,
 				CA352D55229B24E7009F4420 /* GameModule.swift in Sources */,
 				CA352D44229B0A45009F4420 /* ModuleRunnerTests.swift in Sources */,
