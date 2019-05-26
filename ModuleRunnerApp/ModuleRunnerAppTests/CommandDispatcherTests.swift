@@ -23,4 +23,12 @@ class CommandDispatcherTests: XCTestCase {
 		
 		XCTAssertNotNil(commandDispatcher);
     }
+	
+	func testConnectModule() {
+		let commandDispatcher = CommandDispatcher();
+		
+		commandDispatcher.connectModule(gameModule: GameModuleProtocol);
+		
+		XCTAssertNotNil(commandDispatcher.module);
+	}
 }
