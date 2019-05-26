@@ -27,6 +27,7 @@
 		CA352D4D229B0EEA009F4420 /* MockPresenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D4C229B0EEA009F4420 /* MockPresenterService.swift */; };
 		CA352D4F229B1451009F4420 /* InputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D4E229B1451009F4420 /* InputService.swift */; };
 		CA352D50229B1451009F4420 /* InputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D4E229B1451009F4420 /* InputService.swift */; };
+		CA352D52229B1512009F4420 /* MockInputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D51229B1512009F4420 /* MockInputService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +59,7 @@
 		CA352D48229B0DF4009F4420 /* PresenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterService.swift; sourceTree = "<group>"; };
 		CA352D4C229B0EEA009F4420 /* MockPresenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenterService.swift; sourceTree = "<group>"; };
 		CA352D4E229B1451009F4420 /* InputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputService.swift; sourceTree = "<group>"; };
+		CA352D51229B1512009F4420 /* MockInputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInputService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				CA352D4C229B0EEA009F4420 /* MockPresenterService.swift */,
+				CA352D51229B1512009F4420 /* MockInputService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				CA352D4A229B0DF4009F4420 /* PresenterService.swift in Sources */,
 				CA352D3B229B0434009F4420 /* Move.swift in Sources */,
 				CA352D38229AF5BA009F4420 /* DataService.swift in Sources */,
+				CA352D52229B1512009F4420 /* MockInputService.swift in Sources */,
 				CA352D47229B0AD4009F4420 /* ModuleRunner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
