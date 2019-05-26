@@ -11,6 +11,8 @@ import Foundation
 protocol GameModuleProtocol {
 	var runner: ModuleRunnerProtocol? { get set };
 	func start(moduleRunner: ModuleRunnerProtocol);
+	func display(_ text: String);
+	func promptForInput() -> String;
 }
 
 class GameModule: GameModuleProtocol {
@@ -27,6 +29,10 @@ class GameModule: GameModuleProtocol {
 	}
 	
 	func display(_ text: String) {
-		self.runner?.display(text);
+		self.runner!.display(text);
+	}
+	
+	func promptForInput() -> String {
+		return self.runner!.promptForInput();
 	}
 }
