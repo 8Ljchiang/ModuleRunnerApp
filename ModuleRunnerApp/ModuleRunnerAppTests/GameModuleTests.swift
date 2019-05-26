@@ -78,5 +78,6 @@ class GameModuleTests: XCTestCase {
 		XCTAssertNotNil(gameModule.runner);
 		XCTAssert(mockCommandDispatcher.isQueueCommandCalled);
 		XCTAssertNotNil(mockCommandDispatcher.queueCommandCalledWith);
+		XCTAssert(mockCommandDispatcher.isProcessQueueCalled);
 	}
 }

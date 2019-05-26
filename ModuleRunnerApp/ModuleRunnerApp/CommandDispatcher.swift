@@ -10,4 +10,5 @@ import Foundation
 
 protocol CommandDispatcherProtocol {
 	func queueCommand(_ command: CommandProtocol);
+	func processQueue();
 }
