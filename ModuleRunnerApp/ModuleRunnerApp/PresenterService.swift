@@ -11,3 +11,11 @@ import Foundation
 protocol PresenterServiceProtocol {
 	func display(_ text: String);
 }
+
+class ConsolePresenterService: PresenterServiceProtocol {
+	init() {}
+	
+	func display(_ text: String) {
+		print(text);
+	}
+}
