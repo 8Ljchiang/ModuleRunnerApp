@@ -10,16 +10,26 @@ import Foundation
 
 protocol ModuleRunnerProtocol {
 	func display(text: String);
+	func promptForInput() -> String;
 }
 
 class ModuleRunner {
 	var presenterService: PresenterServiceProtocol;
+	var inputService: InputServiceProtocol;
 	
-	init(presenterService: PresenterServiceProtocol) {
-		self.presenterService = presenterService
+	init(
+		presenterService: PresenterServiceProtocol,
+		inputService: InputServiceProtocol
+	) {
+		self.presenterService = presenterService;
+		self.inputService = inputService;
 	}
 	
 	func display(_ text: String) {
 		self.presenterService.display(text);
+	}
+	
+	func promptForInput() -> String {
+		return self.inputService.getInput();
 	}
 }
