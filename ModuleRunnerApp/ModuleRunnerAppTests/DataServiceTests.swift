@@ -56,15 +56,15 @@ class DataServiceTests: XCTestCase {
 	func testUpdateStore() {
 		let dataService = DataService();
 		
-		var newStore = DataStore();
-		newStore.activePlayerIndex = 1;
-		newStore.moves = [1, 2, 3];
+		var newPartialStore = DataStorePartial();
+		newPartialStore.activePlayerIndex = 1;
+		newPartialStore.moves = [1, 2, 3];
 		
-		dataService.updateStore(store: newStore);
+		dataService.updateStore(partialStore: newPartialStore);
 		
-		XCTAssertEqual(newStore.activePlayerIndex, dataService.dataStore.activePlayerIndex)
+		XCTAssertEqual(newPartialStore.activePlayerIndex, dataService.dataStore.activePlayerIndex)
 		XCTAssertEqual(0, dataService.dataStore.players.count)
-		XCTAssertEqual(newStore.moves.count, dataService.dataStore.moves.count)
+		XCTAssertEqual(newPartialStore.moves!.count, dataService.dataStore.moves.count)
 	}
 	
     func testPerformanceExample() {
