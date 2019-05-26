@@ -12,3 +12,11 @@ protocol CommandDispatcherProtocol {
 	func queueCommand(_ command: CommandProtocol);
 	func processQueue();
 }
+
+class CommandDispatcher: CommandDispatcherProtocol {
+	init() {}
+	
+	func queueCommand(_ command: CommandProtocol) {}
+	
+	func processQueue() {}
+}
