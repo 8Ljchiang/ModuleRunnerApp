@@ -8,10 +8,24 @@
 
 import Foundation
 
+struct DataStore {
+	var activePlayerIndex: Int = 0;
+	var players: [String] = Array();
+	var moves: [Int] = Array();
+}
+
 protocol DataServiceProtocol {
+	func getStore() -> DataStore;
 }
 
 class DataService: DataServiceProtocol {
+	var dataStore: DataStore;
+	
 	init() {
+		self.dataStore = DataStore();
+	}
+	
+	func getStore() -> DataStore {
+		return self.dataStore;
 	}
 }
