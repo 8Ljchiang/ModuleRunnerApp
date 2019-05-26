@@ -19,17 +19,23 @@ class ModuleRunnerTests: XCTestCase {
     }
 
     func testInitModuleRunner() {
-		let mockPresenterService = MockPresenterService();
+		let defaultText = "Yes";
 		
-		let mRunner = ModuleRunner(presenterService: mockPresenterService);
+		let mockPresenterService = MockPresenterService();
+		let mockInputService = MockInputService(defaultText);
+		
+		let mRunner = ModuleRunner(presenterService: mockPresenterService, inputService: mockInputService);
 		
 		XCTAssertNotNil(mRunner);
     }
 	
 	func testDisplay() {
-		let mockPresenterService = MockPresenterService();
+		let defaultText = "Yes";
 		
-		let mRunner = ModuleRunner(presenterService: mockPresenterService);
+		let mockPresenterService = MockPresenterService();
+		let mockInputService = MockInputService(defaultText);
+		
+		let mRunner = createModuleRunner(mockPresenterService, mockInputService);
 		
 		let expectedText = "Hello world!";
 		
@@ -43,16 +49,26 @@ class ModuleRunnerTests: XCTestCase {
 		let expectedText = "Yes";
 		
 		let mockPresenterService = MockPresenterService();
-		let mockInputService = MockInputService(inputResponse: expectedText);
+		let mockInputService = MockInputService(expectedText);
 		
 		let mRunner = ModuleRunner(
 			presenterService: mockPresenterService,
 			inputService: mockInputService
 		);
 		
-		let actualInput = mRunner.promptFormInput();
+		let actualInput = mRunner.promptForInput();
 		
 		XCTAssert(mockInputService.isGetInputCalled);
 		XCTAssertEqual(expectedText, actualInput);
 	}
+}
+
+func createModuleRunner(_ presenterService: PresenterServiceProtocol, _ inputService: InputServiceProtocol) -> ModuleRunner {	
+	
+	let mRunner = ModuleRunner(
+		presenterService: presenterService,
+		inputService: inputService
+	);
+	
+	return mRunner;
 }

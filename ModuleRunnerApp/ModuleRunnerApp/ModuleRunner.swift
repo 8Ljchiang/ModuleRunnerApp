@@ -10,7 +10,7 @@ import Foundation
 
 protocol ModuleRunnerProtocol {
 	func display(text: String);
-	func promptForInput();
+	func promptForInput() -> String;
 }
 
 class ModuleRunner {
@@ -21,14 +21,15 @@ class ModuleRunner {
 		presenterService: PresenterServiceProtocol,
 		inputService: InputServiceProtocol
 	) {
-		self.presenterService = presenterService
+		self.presenterService = presenterService;
+		self.inputService = inputService;
 	}
 	
 	func display(_ text: String) {
 		self.presenterService.display(text);
 	}
 	
-	func promptForInput() {
+	func promptForInput() -> String {
 		return self.inputService.getInput();
 	}
 }

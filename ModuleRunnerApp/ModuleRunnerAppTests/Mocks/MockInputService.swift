@@ -16,7 +16,8 @@ class MockInputService: InputServiceProtocol {
 		self.defaultResponse = defaultResponse;
 	}
 	
-	func getInput() {
+	func getInput() -> String {
+		self.isGetInputCalled = true;
 		return self.defaultResponse;
 	}
 }
