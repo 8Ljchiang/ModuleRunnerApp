@@ -23,4 +23,16 @@ class GameModuleTests: XCTestCase {
 		
 		XCTAssertNotNil(gameModule);
 	}
+	
+	func testDisplay() {
+		let expectedText = "Hello world!";
+		let mockModuleRunner = MockModuleRunner();
+		
+		let gameModule = GameModule(moduleRunner: mockModuleRunner);
+		
+		gameModule.display(expectedText);
+		
+		XCTAssert(mockModuleRunner.isDisplayCalled);
+		XCTAssertEqual(mockModuleRunner.displayCalledWith, expectedText)
+	}
 }
