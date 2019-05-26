@@ -48,9 +48,23 @@ class DataServiceTests: XCTestCase {
 		
 		dataService.setStore(store: newStore);
 		
-		let storeData = dataService.getStore();
+//		let storeData = dataService.getStore();
 		
-		XCTAssertEqual(newStore, storeData);
+		XCTAssertEqual(newStore, dataService.dataStore);
+	}
+	
+	func testUpdateStore() {
+		let dataService = DataService();
+		
+		var newStore = DataStore();
+		newStore.activePlayerIndex = 1;
+		newStore.moves = [1, 2, 3];
+		
+		dataService.updateStore(store: newStore);
+		
+		XCTAssertEqual(newStore.activePlayerIndex, dataService.dataStore.activePlayerIndex)
+		XCTAssertEqual(0, dataService.dataStore.players.count)
+		XCTAssertEqual(newStore.moves.count, dataService.dataStore.moves.count)
 	}
 	
     func testPerformanceExample() {
