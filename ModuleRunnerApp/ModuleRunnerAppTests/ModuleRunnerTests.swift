@@ -61,6 +61,24 @@ class ModuleRunnerTests: XCTestCase {
 		XCTAssert(mockInputService.isGetInputCalled);
 		XCTAssertEqual(expectedText, actualInput);
 	}
+	
+	func testRunGameModule() {
+		let expectedText = "Yes";
+		
+		let mockPresenterService = MockPresenterService();
+		let mockInputService = MockInputService(expectedText);
+		let mockGameModule = MockGameModule();
+		
+		let mRunner = ModuleRunner(
+			presenterService: mockPresenterService,
+			inputService: mockInputService
+		);
+		
+		mRunner.run(gameModule: mockGameModule);
+		
+		XCTAssert(mockGameModule.isStartCalled);
+		XCTAssertNotNil(mockGameModule.runner);
+	}
 }
 
 func createModuleRunner(_ presenterService: PresenterServiceProtocol, _ inputService: InputServiceProtocol) -> ModuleRunner {	
