@@ -1,5 +1,5 @@
 //
-//  MockGameModule.swift
+//  MockModuleRunner.swift
 //  ModuleRunnerAppTests
 //
 //  Created by Jonathan Chiang on 5/26/19.
@@ -8,34 +8,31 @@
 
 import Foundation
 
-class MockGameModule: GameModuleProtocol {
-	var isRunCalled: Bool = false;
-	var isStartCalled = false;
+class MockModuleRunner: ModuleRunnerProtocol {
 	var isDisplayCalled: Bool = false;
 	var isPromptForInputCalled: Bool = false;
+	var isRunCalled: Bool = false;
 	
-	var runner: ModuleRunnerProtocol? = nil;
 	var displayCalledWith: String? = nil;
+	var runCalledWith: GameModuleProtocol? = nil;
 	var defaultInputResponse: String = "";
-	
-	init() {}
 	
 	init(defaultInputResponse: String) {
 		self.defaultInputResponse = defaultInputResponse;
 	}
 	
-	func start(moduleRunner: ModuleRunnerProtocol) {
-		self.isStartCalled = true;
-		self.runner = moduleRunner;
-	}
-	
 	func display(_ text: String) {
-		self.isDisplayCalled = true;
 		self.displayCalledWith = text;
+		self.isDisplayCalled = true;
 	}
 	
 	func promptForInput() -> String {
 		self.isPromptForInputCalled = true;
 		return self.defaultInputResponse;
+	}
+	
+	func run(gameModule: GameModuleProtocol) {
+		self.isRunCalled = true;
+		self.runCalledWith = gameModule;
 	}
 }
