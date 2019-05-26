@@ -44,7 +44,7 @@ class DataServiceTests: XCTestCase {
 		var newStore = DataStore();
 		newStore.activePlayerIndex = 1;
 		newStore.players = ["P1", "P2"];
-		newStore.moves = [1, 2, 3];
+		newStore.moves = [Move(playerId: "P1", position: 1, marker: MarkerType.Marker1.rawValue)];
 		
 		dataService.setStore(store: newStore);
 		
@@ -56,7 +56,7 @@ class DataServiceTests: XCTestCase {
 		
 		var newPartialStore = DataStorePartial();
 		newPartialStore.activePlayerIndex = 1;
-		newPartialStore.moves = [1, 2, 3];
+		newPartialStore.moves = [Move(playerId: "P1", position: 1, marker: MarkerType.Marker1.rawValue)];
 		
 		dataService.updateStore(partialStore: newPartialStore);
 		
