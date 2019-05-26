@@ -31,6 +31,7 @@
 		CA352D54229B24E7009F4420 /* GameModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D53229B24E7009F4420 /* GameModule.swift */; };
 		CA352D55229B24E7009F4420 /* GameModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D53229B24E7009F4420 /* GameModule.swift */; };
 		CA352D57229B25A0009F4420 /* MockGameModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D56229B25A0009F4420 /* MockGameModule.swift */; };
+		CA352D59229B4532009F4420 /* GameModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D58229B4532009F4420 /* GameModuleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +66,7 @@
 		CA352D51229B1512009F4420 /* MockInputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInputService.swift; sourceTree = "<group>"; };
 		CA352D53229B24E7009F4420 /* GameModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModule.swift; sourceTree = "<group>"; };
 		CA352D56229B25A0009F4420 /* MockGameModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGameModule.swift; sourceTree = "<group>"; };
+		CA352D58229B4532009F4420 /* GameModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModuleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				CA352D32229AEEAB009F4420 /* GreeterTests.swift */,
 				CA352D34229AF29C009F4420 /* DataServiceTests.swift */,
 				CA352D43229B0A45009F4420 /* ModuleRunnerTests.swift */,
+				CA352D58229B4532009F4420 /* GameModuleTests.swift */,
 			);
 			path = ModuleRunnerAppTests;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				CA352D33229AEEAB009F4420 /* GreeterTests.swift in Sources */,
 				CA352D57229B25A0009F4420 /* MockGameModule.swift in Sources */,
 				CA352D31229AEE4C009F4420 /* Greeter.swift in Sources */,
+				CA352D59229B4532009F4420 /* GameModuleTests.swift in Sources */,
 				CA352D50229B1451009F4420 /* InputService.swift in Sources */,
 				CA352D2A229AEE05009F4420 /* ModuleRunnerAppTests.swift in Sources */,
 				CA352D3E229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
