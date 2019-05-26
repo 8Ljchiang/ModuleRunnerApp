@@ -11,6 +11,7 @@ import Foundation
 protocol ModuleRunnerProtocol {
 	func display(text: String);
 	func promptForInput() -> String;
+	func run(gameModule: GameModuleProtocol);
 }
 
 class ModuleRunner {
@@ -31,5 +32,9 @@ class ModuleRunner {
 	
 	func promptForInput() -> String {
 		return self.inputService.getInput();
+	}
+	
+	func run(gameModule: GameModuleProtocol) {
+		gameModule.start();
 	}
 }
