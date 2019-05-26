@@ -26,7 +26,7 @@ class GameModuleTests: XCTestCase {
 	
 	func testDisplay() {
 		let expectedText = "Hello world!";
-		let mockModuleRunner = MockModuleRunner();
+		let mockModuleRunner = MockModuleRunner(defaultInputResponse: "Default Input Response Here");
 		
 		let gameModule = GameModule(moduleRunner: mockModuleRunner);
 		
@@ -34,5 +34,17 @@ class GameModuleTests: XCTestCase {
 		
 		XCTAssert(mockModuleRunner.isDisplayCalled);
 		XCTAssertEqual(mockModuleRunner.displayCalledWith, expectedText)
+	}
+	
+	func testPromptForInput() {
+		let expectedText = "Default Input Response Here";
+		let mockModuleRunner = MockModuleRunner(defaultInputResponse: expectedText);
+		
+		let gameModule = GameModule(moduleRunner: mockModuleRunner);
+		
+		let responseInput = gameModule.promptForInput();
+		
+		XCTAssert(mockModuleRunner.isPromptForInputCalled);
+		XCTAssertEqual(expectedText, responseInput);
 	}
 }
