@@ -18,6 +18,10 @@ class GameModule: GameModuleProtocol {
 	
 	init() {}
 	
+	init(moduleRunner: ModuleRunnerProtocol) {
+		self.runner = moduleRunner;
+	}
+	
 	func start(moduleRunner: ModuleRunnerProtocol) {
 		
 	}
