@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+protocol DataServiceProtocol {
+}
+
+class DataService: DataServiceProtocol {
+	init() {
+	}
+}

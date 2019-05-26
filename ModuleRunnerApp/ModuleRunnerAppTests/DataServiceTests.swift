@@ -19,7 +19,7 @@ class DataServiceTests: XCTestCase {
     }
 
 	func testInitDataService() {
-		let dataService = new DataService();
+		let dataService = DataService();
 		
 		XCTAssertNotNil(dataService);
 	}
