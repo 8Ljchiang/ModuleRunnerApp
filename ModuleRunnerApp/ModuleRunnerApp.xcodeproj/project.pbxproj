@@ -41,6 +41,7 @@
 		CA352D64229B4E57009F4420 /* MockCommandDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D62229B4E57009F4420 /* MockCommandDispatcher.swift */; };
 		CA352D66229B535B009F4420 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D65229B535B009F4420 /* CommandType.swift */; };
 		CA352D67229B535B009F4420 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D65229B535B009F4420 /* CommandType.swift */; };
+		CA352D69229B5C0C009F4420 /* CommandDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D68229B5C0C009F4420 /* CommandDispatcherTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +82,7 @@
 		CA352D5F229B4DDD009F4420 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		CA352D62229B4E57009F4420 /* MockCommandDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommandDispatcher.swift; sourceTree = "<group>"; };
 		CA352D65229B535B009F4420 /* CommandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
+		CA352D68229B5C0C009F4420 /* CommandDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandDispatcherTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				CA352D34229AF29C009F4420 /* DataServiceTests.swift */,
 				CA352D43229B0A45009F4420 /* ModuleRunnerTests.swift */,
 				CA352D58229B4532009F4420 /* GameModuleTests.swift */,
+				CA352D68229B5C0C009F4420 /* CommandDispatcherTests.swift */,
 			);
 			path = ModuleRunnerAppTests;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				CA352D57229B25A0009F4420 /* MockGameModule.swift in Sources */,
 				CA352D31229AEE4C009F4420 /* Greeter.swift in Sources */,
 				CA352D59229B4532009F4420 /* GameModuleTests.swift in Sources */,
+				CA352D69229B5C0C009F4420 /* CommandDispatcherTests.swift in Sources */,
 				CA352D50229B1451009F4420 /* InputService.swift in Sources */,
 				CA352D2A229AEE05009F4420 /* ModuleRunnerAppTests.swift in Sources */,
 				CA352D3E229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
