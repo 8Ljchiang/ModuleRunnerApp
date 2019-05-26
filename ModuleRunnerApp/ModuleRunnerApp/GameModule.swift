@@ -17,15 +17,22 @@ protocol GameModuleProtocol {
 
 class GameModule: GameModuleProtocol {
 	var runner: ModuleRunnerProtocol?;
+	var dispatcher: CommandDispatcherProtocol;
 	
-	init() {}
+	init(commandDispatcher: CommandDispatcherProtocol) {
+		self.dispatcher = commandDispatcher;
+	}
 	
-	init(moduleRunner: ModuleRunnerProtocol) {
+	init(moduleRunner: ModuleRunnerProtocol, commandDispatcher: CommandDispatcherProtocol) {
 		self.runner = moduleRunner;
+		self.dispatcher = commandDispatcher;
 	}
 	
 	func start(moduleRunner: ModuleRunnerProtocol) {
+		self.runner = moduleRunner;
 		
+		let initialCommand = Command(type: CommandType.T3Welcome, payload: "Payload");
+		self.dispatcher.queueCommand(initialCommand);
 	}
 	
 	func display(_ text: String) {

@@ -39,6 +39,8 @@
 		CA352D61229B4DDD009F4420 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D5F229B4DDD009F4420 /* Command.swift */; };
 		CA352D63229B4E57009F4420 /* MockCommandDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D62229B4E57009F4420 /* MockCommandDispatcher.swift */; };
 		CA352D64229B4E57009F4420 /* MockCommandDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D62229B4E57009F4420 /* MockCommandDispatcher.swift */; };
+		CA352D66229B535B009F4420 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D65229B535B009F4420 /* CommandType.swift */; };
+		CA352D67229B535B009F4420 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D65229B535B009F4420 /* CommandType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -78,6 +80,7 @@
 		CA352D5C229B4DAB009F4420 /* CommandDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandDispatcher.swift; sourceTree = "<group>"; };
 		CA352D5F229B4DDD009F4420 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		CA352D62229B4E57009F4420 /* MockCommandDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommandDispatcher.swift; sourceTree = "<group>"; };
+		CA352D65229B535B009F4420 /* CommandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,7 @@
 				CA352D53229B24E7009F4420 /* GameModule.swift */,
 				CA352D5C229B4DAB009F4420 /* CommandDispatcher.swift */,
 				CA352D5F229B4DDD009F4420 /* Command.swift */,
+				CA352D65229B535B009F4420 /* CommandType.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -261,6 +265,7 @@
 				CA352D5D229B4DAB009F4420 /* CommandDispatcher.swift in Sources */,
 				CA352D60229B4DDD009F4420 /* Command.swift in Sources */,
 				CA352D46229B0AD4009F4420 /* ModuleRunner.swift in Sources */,
+				CA352D66229B535B009F4420 /* CommandType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA352D67229B535B009F4420 /* CommandType.swift in Sources */,
 				CA352D5E229B4DAB009F4420 /* CommandDispatcher.swift in Sources */,
 				CA352D33229AEEAB009F4420 /* GreeterTests.swift in Sources */,
 				CA352D57229B25A0009F4420 /* MockGameModule.swift in Sources */,
