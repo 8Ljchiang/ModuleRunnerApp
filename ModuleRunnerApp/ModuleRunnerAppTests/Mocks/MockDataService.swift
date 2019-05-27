@@ -13,7 +13,7 @@ class MockDataService: DataServiceProtocol {
 	var isSetStoreCalled = false;
 	var isUpdateStoreCalled = false;
 	
-	var setStoreCalledWith: [String: Any]?;
+	var setStoreCalledWith: DataStore?;
 	var updateStoreCalledWith: [String: Any]?;
 	
 	func getStore() -> DataStore {
@@ -23,9 +23,11 @@ class MockDataService: DataServiceProtocol {
 	
 	func setStore(store: DataStore) {
 		self.isSetStoreCalled = true;
+		self.setStoreCalledWith = store;
 	}
 	
 	func updateStore(_ partialData: [String : Any]) {
 		self.isUpdateStoreCalled = true;
+		self.updateStoreCalledWith = partialData;
 	}
 }
