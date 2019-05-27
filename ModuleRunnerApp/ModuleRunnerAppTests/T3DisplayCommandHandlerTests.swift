@@ -23,4 +23,18 @@ class T3DisplayCommandHandlerTests: XCTestCase {
 		
 		XCTAssertNotNil(displayCH);
     }
+	
+	func testExecute() {
+		let expectedText = "Hello world!";
+		let command = Command(type: CommandType.T3Dislpay, payload: expectedText);
+		let displayCH = T3DisplayCommandHandler();
+		let mockGameModule = MockGameModule(defaultInputResponse: "Default Input Response");
+		
+		let handlerResponse = displayCH.execute(command, module: mockGameModule);
+		
+		XCTAssertNotNil(handlerResponse);
+		XCTAssertEqual(0, handlerResponse.commands.count);
+		XCTAssert(mockGameModule.isDisplayCalled);
+		XCTAssertEqual(mockGameModule.displayCalledWith, expectedText);
+	}
 }
