@@ -63,4 +63,18 @@ class CommandDispatcherTests: XCTestCase {
 		XCTAssertEqual(CommandType.T3Welcome, resultCommandType1);
 		XCTAssertEqual(CommandType.T3Rules, resultCommandType2);
 	}
+	
+	func testProcessQueue() {
+		let commandDispatcher = CommandDispatcher();
+		
+		let testCommand1 = Command(type: CommandType.T3Welcome, payload: "Welcome");
+		let testCommand2 = Command(type: CommandType.T3Rules, payload: "Rules");
+		
+		commandDispatcher.queueCommand(testCommand1);
+		commandDispatcher.queueCommand(testCommand2);
+		
+		commandDispatcher.processQueue();
+		
+		XCTAssertEqual(0, commandDispatcher.queue.count);
+	}
 }
