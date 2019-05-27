@@ -28,9 +28,26 @@ class CommandHandlerResolverTests: XCTestCase {
 		let commandHandlerResolver = CommandHandlerResolver();
 		
 		commandHandlerResolver.addHandler(
-			type: CommandType.T3Display,
+			type: CommandType.T3Dislpay,
 			commandHandler: T3DisplayCommandHandler());
 		
 		XCTAssert(commandHandlerResolver.handlersMap.keys.contains(CommandType.T3Dislpay));
+	}
+	
+	func testGetHandler() {
+		let commandHandlerResolver = CommandHandlerResolver();
+		
+		commandHandlerResolver.addHandler(
+			type: CommandType.T3Dislpay,
+			commandHandler: T3DisplayCommandHandler());
+		
+		let handler = commandHandlerResolver.getHandler(CommandType.T3Dislpay);
+		
+		let expectedStringType = "ModuleRunnerAppTests.T3DisplayCommandHandler";
+		let objectMetaType = type(of: handler);
+		let actualStringType = String(reflecting: objectMetaType);
+		
+		XCTAssertNotNil(handler);
+		XCTAssertEqual(expectedStringType, actualStringType);
 	}
 }
