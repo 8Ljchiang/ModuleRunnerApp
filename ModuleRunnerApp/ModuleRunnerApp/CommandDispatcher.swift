@@ -39,6 +39,6 @@ class CommandDispatcher: CommandDispatcherProtocol {
 	}
 	
 	private func processCommand(_ command: CommandProtocol) {
-	
+		let handler = self.resolver.getHandler(command.type);
 	}
 }
