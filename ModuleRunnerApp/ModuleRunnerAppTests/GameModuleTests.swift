@@ -29,6 +29,7 @@ class GameModuleTests: XCTestCase {
 		);
 		
 		XCTAssertNotNil(gameModule);
+		XCTAssert(mockCommandDispatcher.isConnectModuleCalled);
 	}
 	
 	func testDisplay() {
