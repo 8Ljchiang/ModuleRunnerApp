@@ -17,8 +17,11 @@ protocol CommandDispatcherProtocol {
 class CommandDispatcher: CommandDispatcherProtocol {
 	var module: GameModuleProtocol?;
 	var queue: [CommandProtocol] = Array();
+	var resolver: CommandHandlerResolverProtocol;
 	
-	init() {}
+	init(resolver: CommandHandlerResolverProtocol) {
+		self.resolver = resolver;
+	}
 	
 	func queueCommand(_ command: CommandProtocol) {
 		self.queue.append(command);

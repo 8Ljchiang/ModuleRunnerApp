@@ -19,13 +19,15 @@ class CommandDispatcherTests: XCTestCase {
     }
 
     func testInitCommandDispatcher() {
-		let commandDispatcher = CommandDispatcher();
+		let mockCommandHandlerResolver = MockCommandHandlerResolver();
+		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
 		
 		XCTAssertNotNil(commandDispatcher);
     }
 	
 	func testConnectModule() {
-		let commandDispatcher = CommandDispatcher();
+		let mockCommandHandlerResolver = MockCommandHandlerResolver();
+		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
 		let mockGameModule = MockGameModule();
 		
 		commandDispatcher.connectModule(gameModule: mockGameModule);
@@ -34,7 +36,8 @@ class CommandDispatcherTests: XCTestCase {
 	}
 	
 	func testQueueCommand() {
-		let commandDispatcher = CommandDispatcher();
+		let mockCommandHandlerResolver = MockCommandHandlerResolver();
+		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
 		
 		let testCommand = Command(type: CommandType.T3Welcome, payload: "Welcome");
 		
@@ -47,7 +50,8 @@ class CommandDispatcherTests: XCTestCase {
 	}
 	
 	func testQueueCommandWithMultiple() {
-		let commandDispatcher = CommandDispatcher();
+		let mockCommandHandlerResolver = MockCommandHandlerResolver();
+		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
 		
 		let testCommand1 = Command(type: CommandType.T3Welcome, payload: "Welcome");
 		let testCommand2 = Command(type: CommandType.T3Rules, payload: "Rules");
@@ -65,7 +69,8 @@ class CommandDispatcherTests: XCTestCase {
 	}
 	
 	func testProcessQueue() {
-		let commandDispatcher = CommandDispatcher();
+		let mockCommandHandlerResolver = MockCommandHandlerResolver();
+		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
 		
 		let testCommand1 = Command(type: CommandType.T3Welcome, payload: "Welcome");
 		let testCommand2 = Command(type: CommandType.T3Rules, payload: "Rules");
@@ -93,6 +98,6 @@ class CommandDispatcherTests: XCTestCase {
 		
 		let expectedCallCount = 2;
 		
-		XCTAsserEqual(expectedCallCount, mockCommandDispatcher.getHandlerCallCount);
+		XCTAssertEqual(expectedCallCount, mockCommandHandlerResolver.getHandlerCallCount);
 	}
 }
