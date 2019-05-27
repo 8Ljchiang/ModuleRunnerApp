@@ -42,6 +42,14 @@
 		CA352D66229B535B009F4420 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D65229B535B009F4420 /* CommandType.swift */; };
 		CA352D67229B535B009F4420 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D65229B535B009F4420 /* CommandType.swift */; };
 		CA352D69229B5C0C009F4420 /* CommandDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D68229B5C0C009F4420 /* CommandDispatcherTests.swift */; };
+		CA352D6B229B6B37009F4420 /* CommandHandlerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D6A229B6B37009F4420 /* CommandHandlerResolver.swift */; };
+		CA352D6C229B6B37009F4420 /* CommandHandlerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D6A229B6B37009F4420 /* CommandHandlerResolver.swift */; };
+		CA352D6E229B6B80009F4420 /* CommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D6D229B6B80009F4420 /* CommandHandler.swift */; };
+		CA352D6F229B6B80009F4420 /* CommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D6D229B6B80009F4420 /* CommandHandler.swift */; };
+		CA352D71229B6BA2009F4420 /* MockCommandHandlerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D70229B6BA2009F4420 /* MockCommandHandlerResolver.swift */; };
+		CA352D72229B6BA2009F4420 /* MockCommandHandlerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D70229B6BA2009F4420 /* MockCommandHandlerResolver.swift */; };
+		CA352D74229B6C00009F4420 /* MockCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D73229B6C00009F4420 /* MockCommandHandler.swift */; };
+		CA352D75229B6C00009F4420 /* MockCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D73229B6C00009F4420 /* MockCommandHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,6 +91,10 @@
 		CA352D62229B4E57009F4420 /* MockCommandDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommandDispatcher.swift; sourceTree = "<group>"; };
 		CA352D65229B535B009F4420 /* CommandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
 		CA352D68229B5C0C009F4420 /* CommandDispatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandDispatcherTests.swift; sourceTree = "<group>"; };
+		CA352D6A229B6B37009F4420 /* CommandHandlerResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandHandlerResolver.swift; sourceTree = "<group>"; };
+		CA352D6D229B6B80009F4420 /* CommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandHandler.swift; sourceTree = "<group>"; };
+		CA352D70229B6BA2009F4420 /* MockCommandHandlerResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommandHandlerResolver.swift; sourceTree = "<group>"; };
+		CA352D73229B6C00009F4420 /* MockCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommandHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +149,8 @@
 				CA352D5C229B4DAB009F4420 /* CommandDispatcher.swift */,
 				CA352D5F229B4DDD009F4420 /* Command.swift */,
 				CA352D65229B535B009F4420 /* CommandType.swift */,
+				CA352D6A229B6B37009F4420 /* CommandHandlerResolver.swift */,
+				CA352D6D229B6B80009F4420 /* CommandHandler.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -164,6 +178,8 @@
 				CA352D56229B25A0009F4420 /* MockGameModule.swift */,
 				CA352D5A229B483D009F4420 /* MockModuleRunner.swift */,
 				CA352D62229B4E57009F4420 /* MockCommandDispatcher.swift */,
+				CA352D70229B6BA2009F4420 /* MockCommandHandlerResolver.swift */,
+				CA352D73229B6C00009F4420 /* MockCommandHandler.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -258,16 +274,20 @@
 			files = (
 				CA352D3A229B0434009F4420 /* Move.swift in Sources */,
 				CA352D37229AF5BA009F4420 /* DataService.swift in Sources */,
+				CA352D6B229B6B37009F4420 /* CommandHandlerResolver.swift in Sources */,
 				CA352D30229AEE4C009F4420 /* Greeter.swift in Sources */,
 				CA352D54229B24E7009F4420 /* GameModule.swift in Sources */,
 				CA352D1D229AED5B009F4420 /* main.swift in Sources */,
+				CA352D6E229B6B80009F4420 /* CommandHandler.swift in Sources */,
 				CA352D49229B0DF4009F4420 /* PresenterService.swift in Sources */,
+				CA352D71229B6BA2009F4420 /* MockCommandHandlerResolver.swift in Sources */,
 				CA352D63229B4E57009F4420 /* MockCommandDispatcher.swift in Sources */,
 				CA352D3D229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
 				CA352D4F229B1451009F4420 /* InputService.swift in Sources */,
 				CA352D5D229B4DAB009F4420 /* CommandDispatcher.swift in Sources */,
 				CA352D60229B4DDD009F4420 /* Command.swift in Sources */,
 				CA352D46229B0AD4009F4420 /* ModuleRunner.swift in Sources */,
+				CA352D74229B6C00009F4420 /* MockCommandHandler.swift in Sources */,
 				CA352D66229B535B009F4420 /* CommandType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,19 +305,23 @@
 				CA352D69229B5C0C009F4420 /* CommandDispatcherTests.swift in Sources */,
 				CA352D50229B1451009F4420 /* InputService.swift in Sources */,
 				CA352D2A229AEE05009F4420 /* ModuleRunnerAppTests.swift in Sources */,
+				CA352D6C229B6B37009F4420 /* CommandHandlerResolver.swift in Sources */,
 				CA352D3E229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
 				CA352D35229AF29C009F4420 /* DataServiceTests.swift in Sources */,
+				CA352D6F229B6B80009F4420 /* CommandHandler.swift in Sources */,
 				CA352D5B229B483D009F4420 /* MockModuleRunner.swift in Sources */,
 				CA352D4D229B0EEA009F4420 /* MockPresenterService.swift in Sources */,
 				CA352D55229B24E7009F4420 /* GameModule.swift in Sources */,
 				CA352D44229B0A45009F4420 /* ModuleRunnerTests.swift in Sources */,
 				CA352D4A229B0DF4009F4420 /* PresenterService.swift in Sources */,
+				CA352D75229B6C00009F4420 /* MockCommandHandler.swift in Sources */,
 				CA352D3B229B0434009F4420 /* Move.swift in Sources */,
 				CA352D61229B4DDD009F4420 /* Command.swift in Sources */,
 				CA352D38229AF5BA009F4420 /* DataService.swift in Sources */,
 				CA352D52229B1512009F4420 /* MockInputService.swift in Sources */,
 				CA352D64229B4E57009F4420 /* MockCommandDispatcher.swift in Sources */,
 				CA352D47229B0AD4009F4420 /* ModuleRunner.swift in Sources */,
+				CA352D72229B6BA2009F4420 /* MockCommandHandlerResolver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
