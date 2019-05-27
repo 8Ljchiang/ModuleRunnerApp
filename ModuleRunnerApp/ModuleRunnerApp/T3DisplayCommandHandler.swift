@@ -9,5 +9,7 @@
 import Foundation
 
 class T3DisplayCommandHandler: CommandHandlerProtocol {
-	
+	func execute(_ command: CommandProtocol) -> CommandHandlerResponseProtocol {
+		return CommandHandlerResponse();
+	}
 }

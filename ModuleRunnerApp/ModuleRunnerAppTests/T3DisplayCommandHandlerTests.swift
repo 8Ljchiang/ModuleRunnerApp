@@ -8,7 +8,7 @@
 
 import XCTest
 
-class DisplayCommandHandler: XCTestCase {
+class T3DisplayCommandHandlerTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -19,7 +19,7 @@ class DisplayCommandHandler: XCTestCase {
     }
 
     func testInitDisplayCommandHandler() {
-		let displayCH = DispalyCommandHandler();
+		let displayCH = T3DisplayCommandHandler();
 		
 		XCTAssertNotNil(displayCH);
     }
