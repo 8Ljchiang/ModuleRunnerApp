@@ -14,12 +14,6 @@ struct DataStorePartial {
 	var moves: [Move]?;
 }
 
-//struct DataStore: Equatable {
-//	var activePlayerIndex: Int = 0;
-//	var players: [String] = Array();
-//	var moves: [Move] = Array();
-//}
-
 struct DataStore {
 	var data: [String: Any] = [:];
 }
@@ -61,17 +55,4 @@ class DataService: DataServiceProtocol {
 			}
 		}
 	}
-	
-//	func updateStore(partialStore: DataStorePartial) {
-//		self.dataStore = mergeStore(partialStore: partialStore);
-//	}
-//
-//	private func mergeStore(partialStore: DataStorePartial) -> DataStore {
-//		var newStore = DataStore();
-//		newStore.activePlayerIndex = partialStore.activePlayerIndex ?? self.dataStore.activePlayerIndex;
-//		newStore.moves = partialStore.moves ?? self.dataStore.moves;
-//		newStore.players = partialStore.players ?? self.dataStore.players;
-//
-//		return newStore;
-//	}
 }
