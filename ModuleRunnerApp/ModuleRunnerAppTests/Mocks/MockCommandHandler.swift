@@ -9,7 +9,7 @@
 import Foundation
 
 class MockCommandHandler: CommandHandlerProtocol {
-	func execute(_ command: CommandProtocol) -> CommandHandlerResponseProtocol {
+	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
 		return CommandHandlerResponse();
 	}
 }
