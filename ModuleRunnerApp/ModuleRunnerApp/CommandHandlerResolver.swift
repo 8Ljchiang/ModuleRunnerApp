@@ -10,4 +10,19 @@ import Foundation
 
 protocol CommandHandlerResolverProtocol {
 	func getHandler(_ commandType: CommandType) -> CommandHandlerProtocol;
+	func addHandler(type: CommandType, commandHandler: CommandHandlerProtocol);
+}
+
+class CommandHandlerResolver: CommandHandlerResolverProtocol {
+	var handlersMap: [CommandType: CommandHandlerProtocol] = [:];
+	
+	init() {}
+	
+	func addHandler(type: CommandType, commandHandler: CommandHandlerProtocol) {
+		self.handlersMap.updateValue(commandHandler, forKey: type);
+	}
+	
+	func getHandler(_ commandType: CommandType) -> CommandHandlerProtocol {
+		return T3DisplayCommandHandler();
+	}
 }
