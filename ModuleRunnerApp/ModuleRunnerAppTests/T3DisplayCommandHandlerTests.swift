@@ -26,7 +26,8 @@ class T3DisplayCommandHandlerTests: XCTestCase {
 	
 	func testExecute() {
 		let expectedText = "Hello world!";
-		let command = Command(type: CommandType.T3Dislpay, payload: expectedText);
+		let payload = ["text": expectedText];
+		let command = Command(type: CommandType.T3Dislpay, payload: payload);
 		let displayCH = T3DisplayCommandHandler();
 		let mockGameModule = MockGameModule(defaultInputResponse: "Default Input Response");
 		
