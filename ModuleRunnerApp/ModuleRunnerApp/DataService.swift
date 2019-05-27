@@ -33,9 +33,8 @@ protocol DataServiceProtocol {
 class DataService: DataServiceProtocol {
 	var dataStore: DataStore;
 	
-	init() {
-		let newStore = DataStore();
-		self.dataStore = newStore;
+	init(dataStore: DataStore) {
+		self.dataStore = dataStore;
 	}
 	
 	func getStore() -> DataStore {
