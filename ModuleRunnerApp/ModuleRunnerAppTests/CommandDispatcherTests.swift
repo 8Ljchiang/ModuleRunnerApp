@@ -32,4 +32,15 @@ class CommandDispatcherTests: XCTestCase {
 		
 		XCTAssertNotNil(commandDispatcher.module);
 	}
+	
+	func testQueueCommand() {
+		let commandDispatcher = CommandDispatcher();
+		
+		let testCommand = Command(type: CommandType.T3Welcome, payload: "Welcome");
+		
+		commandDispatcher.queueCommand(testCommand);
+		
+		XCTAssertEqual(0, commandDispatcher.queue.count);
+		XCTAssertEqual(CommandType.T3Welcome, commandDispatcher.queue[0]);
+	}
 }
