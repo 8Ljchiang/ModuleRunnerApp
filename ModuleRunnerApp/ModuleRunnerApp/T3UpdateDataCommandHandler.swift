@@ -9,9 +9,14 @@
 import Foundation
 
 class T3UpdateDataCommandHandler: CommandHandlerProtocol {
-	init() {}
+	var writeDataService: WriteDataServiceProtocol;
+	
+	init(writeDataService: WriteDataServiceProtocol) {
+		self.writeDataService = writeDataService;
+	}
 	
 	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
+		self.writeDataService.updateStore(command.payload);
 		return CommandHandlerResponse();
 	}
 }

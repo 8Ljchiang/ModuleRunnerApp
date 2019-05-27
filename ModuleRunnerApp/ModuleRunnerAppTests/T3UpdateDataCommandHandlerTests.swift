@@ -26,7 +26,8 @@ class T3UpdateDataCommandHandlerTests: XCTestCase {
 	
 	func testExecute() {
 		let mockGameModule = MockGameModule();
-		let mockWriteDataService = MockWriteDataService();
+		let mockDataService = MockDataService();
+		let mockWriteDataService = MockWriteDataService(dataService: mockDataService);
 		let updateDataCH = T3UpdateDataCommandHandler(writeDataService: mockWriteDataService);
 		let payload = ["activePlayerIndex": 1, "moves": [1, 2, 3]] as [String : Any];
 		let command = Command(type: CommandType.T3UpdateData, payload: payload);
