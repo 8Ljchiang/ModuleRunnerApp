@@ -26,8 +26,9 @@ class CommandDispatcherTests: XCTestCase {
 	
 	func testConnectModule() {
 		let commandDispatcher = CommandDispatcher();
+		let mockGameModule = MockGameModule();
 		
-		commandDispatcher.connectModule(gameModule: GameModuleProtocol);
+		commandDispatcher.connectModule(gameModule: mockGameModule);
 		
 		XCTAssertNotNil(commandDispatcher.module);
 	}

@@ -9,14 +9,21 @@
 import Foundation
 
 protocol CommandDispatcherProtocol {
+	func connectModule(gameModule: GameModuleProtocol);
 	func queueCommand(_ command: CommandProtocol);
 	func processQueue();
 }
 
 class CommandDispatcher: CommandDispatcherProtocol {
+	var module: GameModuleProtocol?;
+	
 	init() {}
 	
 	func queueCommand(_ command: CommandProtocol) {}
 	
 	func processQueue() {}
+	
+	func connectModule(gameModule: GameModuleProtocol) {
+		self.module = gameModule;
+	}
 }
