@@ -23,4 +23,23 @@ class T3UpdateDataCommandHandlerTests: XCTestCase {
 		
 		XCTAssertNotNil(updateDataCH);
     }
+	
+	func testExecute() {
+		let mockGameModule = MockGameModule();
+		let mockWriteDataService = MockWriteDataService();
+		let updateDataCH = T3UpdateDataCommandHandler(writeDataService: mockWriteDataService);
+		let payload = ["activePlayerIndex": 1, "moves": [1, 2, 3]] as [String : Any];
+		let command = Command(type: CommandType.T3UpdateData, payload: payload);
+		
+		let handlerResponse = updateDataCH.execute(command, gameModule: mockGameModule);
+		
+		XCTAssertNotNil(handlerResponse);
+		XCTAssertEqual(0, handlerResponse.commands.count);
+		XCTAssertEqual(0, handlerResponse.errors.count);
+		
+		XCTAssert(mockWriteDataService.isUpdateCalled);
+		XCTAssertNotNil(mockWriteDataService.updateCalledWith);
+		XCTAssertEqual(1, mockWriteDataService.updateCalledWith["activePlayerIndex"]);
+		XCTAssertEqual([1, 2, 3], mockWriteDataService.updateCalledWith["moves"]);
+	}
 }
