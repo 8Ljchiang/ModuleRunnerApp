@@ -77,4 +77,22 @@ class CommandDispatcherTests: XCTestCase {
 		
 		XCTAssertEqual(0, commandDispatcher.queue.count);
 	}
+	
+	func testProcessQueueCallsToCommandHandlerResolver() {
+		let mockCommandHandlerResolver = MockCommandHandlerResolver();
+		
+		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
+		
+		let testCommand1 = Command(type: CommandType.T3Welcome, payload: "Welcome");
+		let testCommand2 = Command(type: CommandType.T3Rules, payload: "Rules");
+		
+		commandDispatcher.queueCommand(testCommand1);
+		commandDispatcher.queueCommand(testCommand2);
+		
+		commandDispatcher.processQueue();
+		
+		let expectedCallCount = 2;
+		
+		XCTAsserEqual(expectedCallCount, mockCommandDispatcher.getHandlerCallCount);
+	}
 }
