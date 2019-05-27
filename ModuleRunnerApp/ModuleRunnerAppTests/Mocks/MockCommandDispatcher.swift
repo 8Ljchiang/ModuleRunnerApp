@@ -25,6 +25,7 @@ class MockCommandDispatcher: CommandDispatcherProtocol {
 	}
 	
 	func connectModule(gameModule: GameModuleProtocol) {
+		self.isConnectModuleCalled = true;
 		self.connectModuleCalledWith = gameModule;
 	}
 }
