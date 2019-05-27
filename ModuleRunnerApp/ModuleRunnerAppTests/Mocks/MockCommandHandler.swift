@@ -1,5 +1,5 @@
 //
-//  CommandType.swift
+//  MockCommandHandler.swift
 //  ModuleRunnerApp
 //
 //  Created by Jonathan Chiang on 5/26/19.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-enum CommandType {
-	case T3Welcome;
-	case T3Rules;
+class MockCommandHandler: CommandHandlerProtocol {
+	
 }
