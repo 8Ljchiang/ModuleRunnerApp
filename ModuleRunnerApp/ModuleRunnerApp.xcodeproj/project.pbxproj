@@ -51,6 +51,8 @@
 		CA352D74229B6C00009F4420 /* MockCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D73229B6C00009F4420 /* MockCommandHandler.swift */; };
 		CA352D75229B6C00009F4420 /* MockCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D73229B6C00009F4420 /* MockCommandHandler.swift */; };
 		CA352D7A229B7122009F4420 /* CommandHandlerResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D79229B7122009F4420 /* CommandHandlerResolverTests.swift */; };
+		CA352D7C229B71CC009F4420 /* T3DisplayCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D7B229B71CC009F4420 /* T3DisplayCommandHandler.swift */; };
+		CA352D7D229B71CC009F4420 /* T3DisplayCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D7B229B71CC009F4420 /* T3DisplayCommandHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -97,6 +99,7 @@
 		CA352D70229B6BA2009F4420 /* MockCommandHandlerResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommandHandlerResolver.swift; sourceTree = "<group>"; };
 		CA352D73229B6C00009F4420 /* MockCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommandHandler.swift; sourceTree = "<group>"; };
 		CA352D79229B7122009F4420 /* CommandHandlerResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandHandlerResolverTests.swift; sourceTree = "<group>"; };
+		CA352D7B229B71CC009F4420 /* T3DisplayCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3DisplayCommandHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,7 @@
 				CA352D65229B535B009F4420 /* CommandType.swift */,
 				CA352D6A229B6B37009F4420 /* CommandHandlerResolver.swift */,
 				CA352D6D229B6B80009F4420 /* CommandHandler.swift */,
+				CA352D7B229B71CC009F4420 /* T3DisplayCommandHandler.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -285,6 +289,7 @@
 				CA352D49229B0DF4009F4420 /* PresenterService.swift in Sources */,
 				CA352D71229B6BA2009F4420 /* MockCommandHandlerResolver.swift in Sources */,
 				CA352D63229B4E57009F4420 /* MockCommandDispatcher.swift in Sources */,
+				CA352D7C229B71CC009F4420 /* T3DisplayCommandHandler.swift in Sources */,
 				CA352D3D229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
 				CA352D4F229B1451009F4420 /* InputService.swift in Sources */,
 				CA352D5D229B4DAB009F4420 /* CommandDispatcher.swift in Sources */,
@@ -313,6 +318,7 @@
 				CA352D35229AF29C009F4420 /* DataServiceTests.swift in Sources */,
 				CA352D6F229B6B80009F4420 /* CommandHandler.swift in Sources */,
 				CA352D5B229B483D009F4420 /* MockModuleRunner.swift in Sources */,
+				CA352D7D229B71CC009F4420 /* T3DisplayCommandHandler.swift in Sources */,
 				CA352D4D229B0EEA009F4420 /* MockPresenterService.swift in Sources */,
 				CA352D55229B24E7009F4420 /* GameModule.swift in Sources */,
 				CA352D44229B0A45009F4420 /* ModuleRunnerTests.swift in Sources */,

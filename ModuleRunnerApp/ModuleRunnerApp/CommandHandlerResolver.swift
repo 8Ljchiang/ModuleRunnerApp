@@ -11,3 +11,11 @@ import Foundation
 protocol CommandHandlerResolverProtocol {
 	func getHandler(_ commandType: CommandType) -> CommandHandlerProtocol;
 }
+
+class CommandHandlerResolver: CommandHandlerResolverProtocol {
+	init() {}
+	
+	func getHandler(_ commandType: CommandType) -> CommandHandlerProtocol {
+		return T3DisplayCommandHandler();
+	}
+}
