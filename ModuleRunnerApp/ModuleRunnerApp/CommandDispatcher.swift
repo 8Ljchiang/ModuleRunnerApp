@@ -24,9 +24,18 @@ class CommandDispatcher: CommandDispatcherProtocol {
 		self.queue.append(command);
 	}
 	
-	func processQueue() {}
+	func processQueue() {
+		while self.queue.count > 0 {
+			let command = self.queue.removeFirst();
+			self.processCommand(command);
+		}
+	}
 	
 	func connectModule(gameModule: GameModuleProtocol) {
 		self.module = gameModule;
+	}
+	
+	private func processCommand(_ command: CommandProtocol) {
+	
 	}
 }
