@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CommandHandlerProtocol {
-	
+	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol;
 }

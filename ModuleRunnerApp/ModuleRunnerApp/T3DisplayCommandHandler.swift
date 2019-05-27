@@ -9,5 +9,8 @@
 import Foundation
 
 class T3DisplayCommandHandler: CommandHandlerProtocol {
-	
+	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
+		module.display(command.payload["text"] as! String);
+		return CommandHandlerResponse();
+	}
 }

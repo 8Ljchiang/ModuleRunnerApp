@@ -38,8 +38,8 @@ class CommandDispatcherTests: XCTestCase {
 	func testQueueCommand() {
 		let mockCommandHandlerResolver = MockCommandHandlerResolver();
 		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
-		
-		let testCommand = Command(type: CommandType.T3Welcome, payload: "Welcome");
+		let payload = ["message": "Welcome"];
+		let testCommand = Command(type: CommandType.T3Welcome, payload: payload);
 		
 		commandDispatcher.queueCommand(testCommand);
 		
@@ -52,9 +52,10 @@ class CommandDispatcherTests: XCTestCase {
 	func testQueueCommandWithMultiple() {
 		let mockCommandHandlerResolver = MockCommandHandlerResolver();
 		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
-		
-		let testCommand1 = Command(type: CommandType.T3Welcome, payload: "Welcome");
-		let testCommand2 = Command(type: CommandType.T3Rules, payload: "Rules");
+		let payload1 = ["message": "Welcome"];
+		let payload2 = ["message": "Rules"];
+		let testCommand1 = Command(type: CommandType.T3Welcome, payload: payload1);
+		let testCommand2 = Command(type: CommandType.T3Rules, payload: payload2);
 		
 		commandDispatcher.queueCommand(testCommand1);
 		commandDispatcher.queueCommand(testCommand2);
@@ -71,9 +72,10 @@ class CommandDispatcherTests: XCTestCase {
 	func testProcessQueue() {
 		let mockCommandHandlerResolver = MockCommandHandlerResolver();
 		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
-		
-		let testCommand1 = Command(type: CommandType.T3Welcome, payload: "Welcome");
-		let testCommand2 = Command(type: CommandType.T3Rules, payload: "Rules");
+		let payload1 = ["text": "Welcome"];
+		let payload2 = ["text": "Rules"];
+		let testCommand1 = Command(type: CommandType.T3Welcome, payload: payload1);
+		let testCommand2 = Command(type: CommandType.T3Rules, payload: payload2);
 		
 		commandDispatcher.queueCommand(testCommand1);
 		commandDispatcher.queueCommand(testCommand2);
@@ -88,8 +90,10 @@ class CommandDispatcherTests: XCTestCase {
 		
 		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
 		
-		let testCommand1 = Command(type: CommandType.T3Welcome, payload: "Welcome");
-		let testCommand2 = Command(type: CommandType.T3Rules, payload: "Rules");
+		let payload1 = ["text": "Welcome"];
+		let payload2 = ["text": "Rules"];
+		let testCommand1 = Command(type: CommandType.T3Welcome, payload: payload1);
+		let testCommand2 = Command(type: CommandType.T3Rules, payload: payload2);
 		
 		commandDispatcher.queueCommand(testCommand1);
 		commandDispatcher.queueCommand(testCommand2);
