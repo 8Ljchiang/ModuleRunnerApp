@@ -56,6 +56,7 @@
 		CA352D7F229C14F3009F4420 /* T3DisplayCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D7E229C14F3009F4420 /* T3DisplayCommandHandlerTests.swift */; };
 		CA352D84229C15BB009F4420 /* CommandHandlerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D83229C15BB009F4420 /* CommandHandlerResponse.swift */; };
 		CA352D85229C15BB009F4420 /* CommandHandlerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D83229C15BB009F4420 /* CommandHandlerResponse.swift */; };
+		CA352D87229C2D4F009F4420 /* T3UpdateDataCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D86229C2D4F009F4420 /* T3UpdateDataCommandHandlerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,6 +106,7 @@
 		CA352D7B229B71CC009F4420 /* T3DisplayCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3DisplayCommandHandler.swift; sourceTree = "<group>"; };
 		CA352D7E229C14F3009F4420 /* T3DisplayCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3DisplayCommandHandlerTests.swift; sourceTree = "<group>"; };
 		CA352D83229C15BB009F4420 /* CommandHandlerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandHandlerResponse.swift; sourceTree = "<group>"; };
+		CA352D86229C2D4F009F4420 /* T3UpdateDataCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3UpdateDataCommandHandlerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				CA352D68229B5C0C009F4420 /* CommandDispatcherTests.swift */,
 				CA352D79229B7122009F4420 /* CommandHandlerResolverTests.swift */,
 				CA352D7E229C14F3009F4420 /* T3DisplayCommandHandlerTests.swift */,
+				CA352D86229C2D4F009F4420 /* T3UpdateDataCommandHandlerTests.swift */,
 			);
 			path = ModuleRunnerAppTests;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				CA352D7A229B7122009F4420 /* CommandHandlerResolverTests.swift in Sources */,
 				CA352D4A229B0DF4009F4420 /* PresenterService.swift in Sources */,
 				CA352D75229B6C00009F4420 /* MockCommandHandler.swift in Sources */,
+				CA352D87229C2D4F009F4420 /* T3UpdateDataCommandHandlerTests.swift in Sources */,
 				CA352D3B229B0434009F4420 /* Move.swift in Sources */,
 				CA352D61229B4DDD009F4420 /* Command.swift in Sources */,
 				CA352D38229AF5BA009F4420 /* DataService.swift in Sources */,
