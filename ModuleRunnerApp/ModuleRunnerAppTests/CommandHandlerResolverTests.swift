@@ -23,4 +23,14 @@ class CommandHandlerResolverTests: XCTestCase {
 		
 		XCTAssertNotNil(commandHandlerResolver);
     }
+	
+	func testAddHandler() {
+		let commandHandlerResolver = CommandHandlerResolver();
+		
+		commandHandlerResolver.addHandler(
+			type: CommandType.T3Display,
+			commandHandler: T3DisplayCommandHandler());
+		
+		XCTAssert(commandHandlerResolver.handlersMap.keys.contains(CommandType.T3Dislpay));
+	}
 }
