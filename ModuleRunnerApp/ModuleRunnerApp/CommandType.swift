@@ -10,4 +10,5 @@ import Foundation
 
 enum CommandType {
 	case T3Welcome;
+	case T3Rules;
 }

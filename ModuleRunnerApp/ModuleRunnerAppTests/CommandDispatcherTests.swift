@@ -45,4 +45,22 @@ class CommandDispatcherTests: XCTestCase {
 		XCTAssertEqual(1, commandDispatcher.queue.count);
 		XCTAssertEqual(CommandType.T3Welcome, resultCommandType);
 	}
+	
+	func testQueueCommandWithMultiple() {
+		let commandDispatcher = CommandDispatcher();
+		
+		let testCommand1 = Command(type: CommandType.T3Welcome, payload: "Welcome");
+		let testCommand2 = Command(type: CommandType.T3Rules, payload: "Rules");
+		
+		commandDispatcher.queueCommand(testCommand1);
+		commandDispatcher.queueCommand(testCommand2);
+		
+		XCTAssertEqual(2, commandDispatcher.queue.count);
+		
+		let resultCommandType1 = commandDispatcher.queue[0].type;
+		let resultCommandType2 = commandDispatcher.queue[1].type;
+		
+		XCTAssertEqual(CommandType.T3Welcome, resultCommandType1);
+		XCTAssertEqual(CommandType.T3Rules, resultCommandType2);
+	}
 }
