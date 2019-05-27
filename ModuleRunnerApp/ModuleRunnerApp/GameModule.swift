@@ -21,11 +21,13 @@ class GameModule: GameModuleProtocol {
 	
 	init(commandDispatcher: CommandDispatcherProtocol) {
 		self.dispatcher = commandDispatcher;
+		self.dispatcher.connectModule(gameModule: self);
 	}
 	
 	init(moduleRunner: ModuleRunnerProtocol, commandDispatcher: CommandDispatcherProtocol) {
 		self.runner = moduleRunner;
 		self.dispatcher = commandDispatcher;
+		self.dispatcher.connectModule(gameModule: self);
 	}
 	
 	func start(moduleRunner: ModuleRunnerProtocol) {
