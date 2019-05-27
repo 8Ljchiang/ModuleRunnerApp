@@ -59,6 +59,9 @@
 		CA352D87229C2D4F009F4420 /* T3UpdateDataCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D86229C2D4F009F4420 /* T3UpdateDataCommandHandlerTests.swift */; };
 		CA352D89229C2E7D009F4420 /* T3UpdateDataCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D88229C2E7D009F4420 /* T3UpdateDataCommandHandler.swift */; };
 		CA352D8A229C2E7D009F4420 /* T3UpdateDataCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D88229C2E7D009F4420 /* T3UpdateDataCommandHandler.swift */; };
+		CA352D8D229C896F009F4420 /* MockWriteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D8B229C896F009F4420 /* MockWriteDataService.swift */; };
+		CA352D8F229C898F009F4420 /* WriteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D8E229C898F009F4420 /* WriteDataService.swift */; };
+		CA352D90229C898F009F4420 /* WriteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D8E229C898F009F4420 /* WriteDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -110,6 +113,8 @@
 		CA352D83229C15BB009F4420 /* CommandHandlerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandHandlerResponse.swift; sourceTree = "<group>"; };
 		CA352D86229C2D4F009F4420 /* T3UpdateDataCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3UpdateDataCommandHandlerTests.swift; sourceTree = "<group>"; };
 		CA352D88229C2E7D009F4420 /* T3UpdateDataCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3UpdateDataCommandHandler.swift; sourceTree = "<group>"; };
+		CA352D8B229C896F009F4420 /* MockWriteDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWriteDataService.swift; sourceTree = "<group>"; };
+		CA352D8E229C898F009F4420 /* WriteDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +174,7 @@
 				CA352D7B229B71CC009F4420 /* T3DisplayCommandHandler.swift */,
 				CA352D83229C15BB009F4420 /* CommandHandlerResponse.swift */,
 				CA352D88229C2E7D009F4420 /* T3UpdateDataCommandHandler.swift */,
+				CA352D8E229C898F009F4420 /* WriteDataService.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 				CA352D62229B4E57009F4420 /* MockCommandDispatcher.swift */,
 				CA352D70229B6BA2009F4420 /* MockCommandHandlerResolver.swift */,
 				CA352D73229B6C00009F4420 /* MockCommandHandler.swift */,
+				CA352D8B229C896F009F4420 /* MockWriteDataService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -293,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA352D8F229C898F009F4420 /* WriteDataService.swift in Sources */,
 				CA352D89229C2E7D009F4420 /* T3UpdateDataCommandHandler.swift in Sources */,
 				CA352D3A229B0434009F4420 /* Move.swift in Sources */,
 				CA352D37229AF5BA009F4420 /* DataService.swift in Sources */,
@@ -325,6 +333,7 @@
 				CA352D33229AEEAB009F4420 /* GreeterTests.swift in Sources */,
 				CA352D57229B25A0009F4420 /* MockGameModule.swift in Sources */,
 				CA352D31229AEE4C009F4420 /* Greeter.swift in Sources */,
+				CA352D90229C898F009F4420 /* WriteDataService.swift in Sources */,
 				CA352D59229B4532009F4420 /* GameModuleTests.swift in Sources */,
 				CA352D69229B5C0C009F4420 /* CommandDispatcherTests.swift in Sources */,
 				CA352D50229B1451009F4420 /* InputService.swift in Sources */,
@@ -341,6 +350,7 @@
 				CA352D44229B0A45009F4420 /* ModuleRunnerTests.swift in Sources */,
 				CA352D7A229B7122009F4420 /* CommandHandlerResolverTests.swift in Sources */,
 				CA352D4A229B0DF4009F4420 /* PresenterService.swift in Sources */,
+				CA352D8D229C896F009F4420 /* MockWriteDataService.swift in Sources */,
 				CA352D75229B6C00009F4420 /* MockCommandHandler.swift in Sources */,
 				CA352D87229C2D4F009F4420 /* T3UpdateDataCommandHandlerTests.swift in Sources */,
 				CA352D3B229B0434009F4420 /* Move.swift in Sources */,
