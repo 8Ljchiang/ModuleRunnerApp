@@ -16,10 +16,13 @@ protocol CommandDispatcherProtocol {
 
 class CommandDispatcher: CommandDispatcherProtocol {
 	var module: GameModuleProtocol?;
+	var queue: [CommandProtocol] = Array();
 	
 	init() {}
 	
-	func queueCommand(_ command: CommandProtocol) {}
+	func queueCommand(_ command: CommandProtocol) {
+		self.queue.append(command);
+	}
 	
 	func processQueue() {}
 	

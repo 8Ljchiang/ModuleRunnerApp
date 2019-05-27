@@ -40,7 +40,9 @@ class CommandDispatcherTests: XCTestCase {
 		
 		commandDispatcher.queueCommand(testCommand);
 		
-		XCTAssertEqual(0, commandDispatcher.queue.count);
-		XCTAssertEqual(CommandType.T3Welcome, commandDispatcher.queue[0]);
+		let resultCommandType = commandDispatcher.queue[0].type;
+		
+		XCTAssertEqual(1, commandDispatcher.queue.count);
+		XCTAssertEqual(CommandType.T3Welcome, resultCommandType);
 	}
 }
