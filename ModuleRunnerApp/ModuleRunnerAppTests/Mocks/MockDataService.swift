@@ -25,7 +25,7 @@ class MockDataService: DataServiceProtocol {
 		self.isSetStoreCalled = true;
 	}
 	
-	func updateStore(partialStore: DataStorePartial) {
+	func updateStore(_ partialData: [String : Any]) {
 		self.isUpdateStoreCalled = true;
 	}
 }
