@@ -11,7 +11,9 @@ import Foundation
 class MockCommandDispatcher: CommandDispatcherProtocol {
 	var isQueueCommandCalled: Bool = false;
 	var isProcessQueueCalled: Bool = false;
+	var isConnectModuleCalled: Bool = false;
 	var queueCommandCalledWith: CommandProtocol? = nil;
+	var connectModuleCalledWith: GameModuleProtocol? = nil;
 	
 	func queueCommand(_ command: CommandProtocol) {
 		self.isQueueCommandCalled = true;
@@ -20,5 +22,9 @@ class MockCommandDispatcher: CommandDispatcherProtocol {
 	
 	func processQueue() {
 		self.isProcessQueueCalled = true;
+	}
+	
+	func connectModule(gameModule: GameModuleProtocol) {
+		self.connectModuleCalledWith = gameModule;
 	}
 }
