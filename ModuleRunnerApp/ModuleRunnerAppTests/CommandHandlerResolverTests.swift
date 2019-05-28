@@ -50,4 +50,17 @@ class CommandHandlerResolverTests: XCTestCase {
 		XCTAssertNotNil(handler);
 		XCTAssertEqual(expectedStringType, actualStringType);
 	}
+	
+	func testGetHandlerWhenNoMatchingHandler() {
+		let commandHandlerResolver = CommandHandlerResolver();
+		
+		let handler = commandHandlerResolver.getHandler(CommandType.T3Display);
+		
+		let expectedStringType = "ModuleRunnerAppTests.DefaultCommandHandler";
+		let objectMetaType = type(of: handler);
+		let actualStringType = String(reflecting: objectMetaType);
+		
+		XCTAssertNotNil(handler);
+		XCTAssertEqual(expectedStringType, actualStringType);
+	}
 }
