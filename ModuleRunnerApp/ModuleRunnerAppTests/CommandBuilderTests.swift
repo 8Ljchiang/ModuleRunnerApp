@@ -23,4 +23,10 @@ class CommandBuilderTests: XCTestCase {
 		
 		XCTAssertEqual(CommandType.T3Welcome, command.type);
     }
+	
+	func testDisplayCommand() {
+		let command = CommandBuilder.displayCommand();
+		
+		XCTAssertEqual(CommandType.T3Display, command.type);
+	}
 }
