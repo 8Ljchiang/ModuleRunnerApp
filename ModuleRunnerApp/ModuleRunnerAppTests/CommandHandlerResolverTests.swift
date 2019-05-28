@@ -28,20 +28,20 @@ class CommandHandlerResolverTests: XCTestCase {
 		let commandHandlerResolver = CommandHandlerResolver();
 		
 		commandHandlerResolver.addHandler(
-			type: CommandType.T3Dislpay,
+			type: CommandType.T3Display,
 			commandHandler: T3DisplayCommandHandler());
 		
-		XCTAssert(commandHandlerResolver.handlersMap.keys.contains(CommandType.T3Dislpay));
+		XCTAssert(commandHandlerResolver.handlersMap.keys.contains(CommandType.T3Display));
 	}
 	
 	func testGetHandler() {
 		let commandHandlerResolver = CommandHandlerResolver();
 		
 		commandHandlerResolver.addHandler(
-			type: CommandType.T3Dislpay,
+			type: CommandType.T3Display,
 			commandHandler: T3DisplayCommandHandler());
 		
-		let handler = commandHandlerResolver.getHandler(CommandType.T3Dislpay);
+		let handler = commandHandlerResolver.getHandler(CommandType.T3Display);
 		
 		let expectedStringType = "ModuleRunnerAppTests.T3DisplayCommandHandler";
 		let objectMetaType = type(of: handler);
