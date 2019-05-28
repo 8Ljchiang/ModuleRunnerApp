@@ -13,6 +13,7 @@ class MockGameModule: GameModuleProtocol {
 	var isStartCalled = false;
 	var isDisplayCalled: Bool = false;
 	var isPromptForInputCalled: Bool = false;
+	var isClearDisplayCalled: Bool = false;
 	
 	var runner: ModuleRunnerProtocol? = nil;
 	var displayCalledWith: String? = nil;
@@ -37,5 +38,9 @@ class MockGameModule: GameModuleProtocol {
 	func promptForInput() -> String {
 		self.isPromptForInputCalled = true;
 		return self.defaultInputResponse;
+	}
+	
+	func clearDisplay() {
+		self.isClearDisplayCalled = true;
 	}
 }

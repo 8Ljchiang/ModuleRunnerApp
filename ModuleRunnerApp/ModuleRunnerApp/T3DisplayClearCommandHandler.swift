@@ -12,6 +12,7 @@ class T3DisplayClearCommandHandler: CommandHandlerProtocol {
 	init() {}
 	
 	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
+		module.clearDisplay();
 		return CommandHandlerResponse();
 	}
 }

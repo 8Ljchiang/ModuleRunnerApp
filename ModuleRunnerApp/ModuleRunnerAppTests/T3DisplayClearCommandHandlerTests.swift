@@ -30,7 +30,7 @@ class T3DisplayClearCommandHandlerTests: XCTestCase {
 		let displayClearPayload: [String: Any] = [:];
 		let displayClearCommand = Command(type: CommandType.T3DisplayClear, payload: displayClearPayload);
 		
-		let response = displayClearCH.execute(displayClearCommand, module: MockGameModule);
+		let response = displayClearCH.execute(displayClearCommand, module: mockGameModule);
 		let expectedCommandCount = 0;
 		let expectedErrorCount = 0;
 		
