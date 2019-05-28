@@ -47,4 +47,10 @@ class CommandBuilderTests: XCTestCase {
 		XCTAssertEqual(expectedData["test1"] as? Int, command.payload["test1"] as? Int);
 		XCTAssertEqual(expectedData["test2"] as? Int, command.payload["test2"] as? Int);
 	}
+	
+	func testRulesCommand() {
+		let command = CommandBuilder.rulesCommand();
+		
+		XCTAssertEqual(CommandType.T3Rules, command.type);
+	}
 }
