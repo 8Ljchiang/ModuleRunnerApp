@@ -31,4 +31,10 @@ class CommandBuilder {
 		let command = Command(type: CommandType.T3Welcome, payload: payload);
 		return command;
 	}
+	
+	static func rulesCommand() -> CommandProtocol {
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3Rules, payload: payload);
+		return command;
+	}
 }
