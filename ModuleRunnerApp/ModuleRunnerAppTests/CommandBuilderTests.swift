@@ -53,4 +53,10 @@ class CommandBuilderTests: XCTestCase {
 		
 		XCTAssertEqual(CommandType.T3Rules, command.type);
 	}
+	
+	func testPromptForReadyCommand() {
+		let command = CommandBuilder.promptForReadyCommand();
+		
+		XCTAssertEqual(CommandType.T3PromptForReady, command.type);
+	}
 }
