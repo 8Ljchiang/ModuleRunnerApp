@@ -79,7 +79,7 @@ class CommandBuilderTests: XCTestCase {
 	}
 	
 	func testGameEndInfoCommand() {
-		let command = CommandBuilder.gameEndInfo();
+		let command = CommandBuilder.gameEndInfoCommand();
 		
 		XCTAssertEqual(CommandType.T3GameEndInfo, command.type);
 	}

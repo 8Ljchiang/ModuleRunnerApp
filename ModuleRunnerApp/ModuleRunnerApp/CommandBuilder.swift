@@ -49,4 +49,28 @@ class CommandBuilder {
 		let command = Command(type: CommandType.T3GameInfo, payload: payload);
 		return command;
 	}
+	
+	static func gameAvailablePositionsCommand() -> CommandProtocol {
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3GameAvailablePositions, payload: payload);
+		return command;
+	}
+	
+	static func promptForPositionCommand() -> CommandProtocol {
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3PromptForPosition, payload: payload);
+		return command;
+	}
+	
+	static func gameEndInfoCommand() -> CommandProtocol {
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3GameEndInfo, payload: payload);
+		return command;
+	}
+	
+	static func promptForReplayCommand() -> CommandProtocol {
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3PromptForReplay, payload: payload);
+		return command;
+	}
 }
