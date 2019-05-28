@@ -23,4 +23,21 @@ class T3DisplayClearCommandHandlerTests: XCTestCase {
 		
 		XCTAssertNotNil(displayClearCH);
     }
+	
+	func testExecute() {
+		let mockGameModule = MockGameModule(defaultInputResponse: "Default input response");
+		let displayClearCH = T3DisplayClearCommandHandler();
+		let displayClearPayload: [String: Any] = [:];
+		let displayClearCommand = Command(type: CommandType.T3DisplayClear, payload: displayClearPayload);
+		
+		let response = displayClearCH.execute(displayClearCommand, module: MockGameModule);
+		let expectedCommandCount = 0;
+		let expectedErrorCount = 0;
+		
+		XCTAssertNotNil(response);
+		XCTAssertEqual(expectedCommandCount, response.commands.count);
+		XCTAssertEqual(expectedErrorCount, response.errors.count);
+		
+		XCTAssert(mockGameModule.isClearDisplayCalled);
+	}
 }
