@@ -31,12 +31,14 @@ class T3GameWelcomeCommandHandlerTests: XCTestCase {
 		let welcomeCommand = Command(type: CommandType.T3Welcome, payload: payload);
 		
 		let response = welcomeCH.execute(welcomeCommand, module: mockGameModule);
+		let expectedCommandCount = 2;
+		let expectedErrorsCount = 0;
 		
 		XCTAssertNotNil(response);
-		XCTAssertEqual(2, response.commands.count);
+		XCTAssertEqual(expectedCommandCount, response.commands.count);
 		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
-		XCTAssertEqual(T3Text.Welcome, response.commands[0].payload["text"]);
+		XCTAssertEqual(T3Text.welcome, response.commands[0].payload["text"] as! String);
 		XCTAssertEqual(CommandType.T3Rules, response.commands[1].type);
-		XCTAssertEqual(0, response.errors.count);
+		XCTAssertEqual(expectedErrorsCount, response.errors.count);
 	}
 }
