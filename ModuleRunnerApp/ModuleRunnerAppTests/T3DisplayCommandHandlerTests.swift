@@ -35,6 +35,8 @@ class T3DisplayCommandHandlerTests: XCTestCase {
 		
 		XCTAssertNotNil(handlerResponse);
 		XCTAssertEqual(0, handlerResponse.commands.count);
+		XCTAssertEqual(0, handlerResponse.errors.count);
+		
 		XCTAssert(mockGameModule.isDisplayCalled);
 		XCTAssertEqual(mockGameModule.displayCalledWith, expectedText);
 	}
