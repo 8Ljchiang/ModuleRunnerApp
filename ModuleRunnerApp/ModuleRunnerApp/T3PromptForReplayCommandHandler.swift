@@ -12,6 +12,16 @@ class T3PromptForReplayCommandHandler: CommandHandlerProtocol {
 	init() {}
 	
 	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
+		let response = CommandHandlerResponse();
+		
+		let userInput = module.promptForInput();
+		
+		if userInput == "replay" {
+			let welcomeCommand = CommandBuilder.welcomeCommand();
+			response.addCommand(welcomeCommand);
+			return response;
+		}
+		
 		return CommandHandlerResponse();
 	}
 }

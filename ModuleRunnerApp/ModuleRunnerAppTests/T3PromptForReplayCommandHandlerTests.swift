@@ -25,7 +25,8 @@ class T3PromptForReplayCommandHandlerTests: XCTestCase {
     }
 	
 	func testExecuteWhenInputIsReplay() {
-		let mockGameModule = MockGameModule();
+		let inputText = "replay";
+		let mockGameModule = MockGameModule(defaultInputResponse: inputText);
 		let command = Command(type: CommandType.T3PromptForReplay, payload: [:]);
 		let promptForReplayCH = T3PromptForReplayCommandHandler();
 		
