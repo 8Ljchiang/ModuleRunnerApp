@@ -17,12 +17,6 @@ class CommandBuilderTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testWelcomeCommand() {
-		let command = CommandBuilder.welcomeCommand();
-		
-		XCTAssertEqual(CommandType.T3Welcome, command.type);
-    }
 	
 	func testDisplayCommand() {
 		let expectedText = "test";
@@ -48,6 +42,12 @@ class CommandBuilderTests: XCTestCase {
 		XCTAssertEqual(expectedData["test2"] as? Int, command.payload["test2"] as? Int);
 	}
 	
+	func testWelcomeCommand() {
+		let command = CommandBuilder.welcomeCommand();
+		
+		XCTAssertEqual(CommandType.T3Welcome, command.type);
+	}
+	
 	func testRulesCommand() {
 		let command = CommandBuilder.rulesCommand();
 		
@@ -64,5 +64,29 @@ class CommandBuilderTests: XCTestCase {
 		let command = CommandBuilder.gameInfoCommand();
 		
 		XCTAssertEqual(CommandType.T3GameInfo, command.type);
+	}
+	
+	func testGameAvailablePositionsCommand() {
+		let command = CommandBuilder.gameAvailablePositionsCommand();
+		
+		XCTAssertEqual(CommandType.T3GameAvailablePositions, command.type);
+	}
+	
+	func testPromptForPositionCommand() {
+		let command = CommandBuilder.promptForPositionCommand();
+		
+		XCTAssertEqual(CommandType.T3PromptForPosition, command.type);
+	}
+	
+	func testGameEndInfoCommand() {
+		let command = CommandBuilder.gameEndInfo();
+		
+		XCTAssertEqual(CommandType.T3GameEndInfo, command.type);
+	}
+	
+	func testPromptForReplayCommand() {
+		let command = CommandBuilder.promptForReplayCommand();
+		
+		XCTAssertEqual(CommandType.T3PromptForReplay, command.type);
 	}
 }
