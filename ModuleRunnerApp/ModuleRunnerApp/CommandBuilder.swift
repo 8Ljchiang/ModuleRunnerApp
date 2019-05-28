@@ -43,4 +43,10 @@ class CommandBuilder {
 		let command = Command(type: CommandType.T3PromptForReady, payload: payload);
 		return command;
 	}
+	
+	static func gameInfoCommand() -> CommandProtocol {
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3GameInfo, payload: payload);
+		return command;
+	}
 }
