@@ -63,6 +63,7 @@
 		CA352D8F229C898F009F4420 /* WriteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D8E229C898F009F4420 /* WriteDataService.swift */; };
 		CA352D90229C898F009F4420 /* WriteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D8E229C898F009F4420 /* WriteDataService.swift */; };
 		CA352D92229C8BB8009F4420 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D91229C8BB8009F4420 /* MockDataService.swift */; };
+		CA352D94229D85E8009F4420 /* T3GameWelcomeCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D93229D85E8009F4420 /* T3GameWelcomeCommandHandlerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -117,6 +118,7 @@
 		CA352D8B229C896F009F4420 /* MockWriteDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWriteDataService.swift; sourceTree = "<group>"; };
 		CA352D8E229C898F009F4420 /* WriteDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDataService.swift; sourceTree = "<group>"; };
 		CA352D91229C8BB8009F4420 /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
+		CA352D93229D85E8009F4420 /* T3GameWelcomeCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3GameWelcomeCommandHandlerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				CA352D79229B7122009F4420 /* CommandHandlerResolverTests.swift */,
 				CA352D7E229C14F3009F4420 /* T3DisplayCommandHandlerTests.swift */,
 				CA352D86229C2D4F009F4420 /* T3UpdateDataCommandHandlerTests.swift */,
+				CA352D93229D85E8009F4420 /* T3GameWelcomeCommandHandlerTests.swift */,
 			);
 			path = ModuleRunnerAppTests;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			files = (
 				CA352D67229B535B009F4420 /* CommandType.swift in Sources */,
 				CA352D5E229B4DAB009F4420 /* CommandDispatcher.swift in Sources */,
+				CA352D94229D85E8009F4420 /* T3GameWelcomeCommandHandlerTests.swift in Sources */,
 				CA352D33229AEEAB009F4420 /* GreeterTests.swift in Sources */,
 				CA352D57229B25A0009F4420 /* MockGameModule.swift in Sources */,
 				CA352D31229AEE4C009F4420 /* Greeter.swift in Sources */,
