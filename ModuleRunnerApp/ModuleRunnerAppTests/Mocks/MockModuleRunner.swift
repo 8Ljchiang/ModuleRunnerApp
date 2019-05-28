@@ -10,6 +10,7 @@ import Foundation
 
 class MockModuleRunner: ModuleRunnerProtocol {
 	var isDisplayCalled: Bool = false;
+	var isClearDisplayCalled: Bool = false;
 	var isPromptForInputCalled: Bool = false;
 	var isRunCalled: Bool = false;
 	
@@ -24,6 +25,10 @@ class MockModuleRunner: ModuleRunnerProtocol {
 	func display(_ text: String) {
 		self.displayCalledWith = text;
 		self.isDisplayCalled = true;
+	}
+	
+	func clearDisplay() {
+		self.isClearDisplayCalled = true;
 	}
 	
 	func promptForInput() -> String {

@@ -10,6 +10,7 @@ import Foundation
 
 protocol ModuleRunnerProtocol {
 	func display(_ text: String);
+	func clearDisplay();
 	func promptForInput() -> String;
 	func run(gameModule: GameModuleProtocol);
 }
@@ -28,6 +29,10 @@ class ModuleRunner: ModuleRunnerProtocol {
 	
 	func display(_ text: String) {
 		self.presenterService.display(text);
+	}
+	
+	func clearDisplay() {
+		self.presenterService.clearDisplay();
 	}
 	
 	func promptForInput() -> String {

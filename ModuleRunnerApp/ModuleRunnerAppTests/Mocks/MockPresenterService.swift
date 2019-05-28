@@ -10,6 +10,7 @@ import Foundation
 
 class MockPresenterService: PresenterServiceProtocol {
 	var isDisplayCalled: Bool = false;
+	var isClearDisplayCalled: Bool = false;
 	var displayCalledWith: String = "";
 	
 	init() {}
@@ -17,5 +18,9 @@ class MockPresenterService: PresenterServiceProtocol {
 	func display(_ text: String) {
 		self.isDisplayCalled = true;
 		self.displayCalledWith = text;
+	}
+	
+	func clearDisplay() {
+		self.isClearDisplayCalled = true;
 	}
 }

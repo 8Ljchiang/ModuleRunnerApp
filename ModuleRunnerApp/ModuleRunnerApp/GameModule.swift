@@ -12,6 +12,7 @@ protocol GameModuleProtocol {
 	var runner: ModuleRunnerProtocol? { get set };
 	func start(moduleRunner: ModuleRunnerProtocol);
 	func display(_ text: String);
+	func clearDisplay();
 	func promptForInput() -> String;
 }
 
@@ -41,6 +42,10 @@ class GameModule: GameModuleProtocol {
 	
 	func display(_ text: String) {
 		self.runner!.display(text);
+	}
+	
+	func clearDisplay() {
+		self.runner!.clearDisplay();
 	}
 	
 	func promptForInput() -> String {
