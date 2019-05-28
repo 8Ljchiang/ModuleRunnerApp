@@ -50,8 +50,8 @@ class GameModuleTests: XCTestCase {
 	}
 	
 	func testClearDisplay() {
-		let expectedText = "Hello world!";
-		let mockModuleRunner = MockModuleRunner(defaultInputResponse: "Default Input Response Here");
+		let inputText = "Hello world!";
+		let mockModuleRunner = MockModuleRunner(defaultInputResponse: inputText);
 		let mockCommandDispatcher = MockCommandDispatcher();
 		
 		let gameModule = GameModule(

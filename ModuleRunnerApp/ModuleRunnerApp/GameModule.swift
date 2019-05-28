@@ -45,7 +45,7 @@ class GameModule: GameModuleProtocol {
 	}
 	
 	func clearDisplay() {
-		
+		self.runner!.clearDisplay();
 	}
 	
 	func promptForInput() -> String {
