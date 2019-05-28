@@ -23,4 +23,20 @@ class DefaultCommandHandlerTests: XCTestCase {
 		
 		XCTAssertNotNil(defaultCH);
     }
+	
+	func testExecute() {
+		let mockGameModule = MockGameModule();
+		
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3Display, payload: payload);
+		let defaultCH = DefaultCommandHandler();
+		
+		let response = defaultCH.execute(command, module: mockGameModule);
+		let expectedCommandCount = 0;
+		let expectedErrorsCount = 0;
+		
+		XCTAssertNotNil(response);
+		XCTAssertEqual(expectedCommandCount, response.commands.count);
+		XCTAssertEqual(expectedErrorsCount, response.errors.count);
+	}
 }
