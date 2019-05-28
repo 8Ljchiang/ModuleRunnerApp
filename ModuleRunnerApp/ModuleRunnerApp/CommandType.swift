@@ -9,11 +9,15 @@
 import Foundation
 
 enum CommandType {
-	case T3Welcome;
-	case T3Rules;
 	case T3Display;
 	case T3DisplayClear;
 	case T3UpdateData;
+	case T3Welcome;
+	case T3Rules;
 	case T3PromptForReady;
 	case T3GameInfo;
+	case T3GameAvailablePositions;
+	case T3PromptForPosition;
+	case T3GameEndInfo;
+	case T3PromptForReplay;
 }
