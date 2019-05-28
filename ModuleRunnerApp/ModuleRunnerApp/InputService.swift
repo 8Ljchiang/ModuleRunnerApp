@@ -11,3 +11,12 @@ import Foundation
 protocol InputServiceProtocol {
 	func getInput() -> String;
 }
+
+class ConsoleInputService: InputServiceProtocol {
+	func getInput() -> String {
+		let inputText = readLine();
+		let result = inputText ?? "";
+//		let result = "not ready";
+		return result;
+	}
+}
