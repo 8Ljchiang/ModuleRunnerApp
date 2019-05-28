@@ -9,6 +9,12 @@
 import Foundation
 
 class CommandBuilder {
+	static func displayCommand(_ text: String) -> CommandProtocol {
+		let payload: [String: Any] = ["text": text];
+		let command = Command(type: CommandType.T3Display, payload: payload);
+		return command;
+	}
+	
 	static func welcomeCommand() -> CommandProtocol {
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3Welcome, payload: payload);
