@@ -21,6 +21,8 @@ class ConsolePresenterService: PresenterServiceProtocol {
 	}
 	
 	func clearDisplay() {
-		print("\u{001B}[2J");
+//		let p = Process();
+//		p.launchPath = "/usr/bin/clear"
+//		p.launch();
 	}
 }

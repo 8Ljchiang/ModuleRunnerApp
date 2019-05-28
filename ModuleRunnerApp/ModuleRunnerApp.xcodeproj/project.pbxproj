@@ -77,6 +77,8 @@
 		CA352DA6229D9F47009F4420 /* T3DisplayClearCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352DA5229D9F47009F4420 /* T3DisplayClearCommandHandlerTests.swift */; };
 		CA352DA8229D9FDA009F4420 /* T3DisplayClearCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352DA7229D9FDA009F4420 /* T3DisplayClearCommandHandler.swift */; };
 		CA352DA9229D9FDA009F4420 /* T3DisplayClearCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352DA7229D9FDA009F4420 /* T3DisplayClearCommandHandler.swift */; };
+		CA352DAB229DB0CB009F4420 /* CommandBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352DAA229DB0CB009F4420 /* CommandBuilder.swift */; };
+		CA352DAC229DB0CB009F4420 /* CommandBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352DAA229DB0CB009F4420 /* CommandBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -140,6 +142,7 @@
 		CA352DA2229D951D009F4420 /* T3PromptForReadyCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3PromptForReadyCommandHandler.swift; sourceTree = "<group>"; };
 		CA352DA5229D9F47009F4420 /* T3DisplayClearCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3DisplayClearCommandHandlerTests.swift; sourceTree = "<group>"; };
 		CA352DA7229D9FDA009F4420 /* T3DisplayClearCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3DisplayClearCommandHandler.swift; sourceTree = "<group>"; };
+		CA352DAA229DB0CB009F4420 /* CommandBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,7 @@
 				CA352D9D229D8C9D009F4420 /* T3GameRulesCommandHandler.swift */,
 				CA352DA2229D951D009F4420 /* T3PromptForReadyCommandHandler.swift */,
 				CA352DA7229D9FDA009F4420 /* T3DisplayClearCommandHandler.swift */,
+				CA352DAA229DB0CB009F4420 /* CommandBuilder.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -337,6 +341,7 @@
 			files = (
 				CA352D8F229C898F009F4420 /* WriteDataService.swift in Sources */,
 				CA352D89229C2E7D009F4420 /* T3UpdateDataCommandHandler.swift in Sources */,
+				CA352DAB229DB0CB009F4420 /* CommandBuilder.swift in Sources */,
 				CA352D3A229B0434009F4420 /* Move.swift in Sources */,
 				CA352D37229AF5BA009F4420 /* DataService.swift in Sources */,
 				CA352D6B229B6B37009F4420 /* CommandHandlerResolver.swift in Sources */,
@@ -379,6 +384,7 @@
 				CA352D92229C8BB8009F4420 /* MockDataService.swift in Sources */,
 				CA352D9A229D89BB009F4420 /* T3Text.swift in Sources */,
 				CA352D90229C898F009F4420 /* WriteDataService.swift in Sources */,
+				CA352DAC229DB0CB009F4420 /* CommandBuilder.swift in Sources */,
 				CA352D59229B4532009F4420 /* GameModuleTests.swift in Sources */,
 				CA352D69229B5C0C009F4420 /* CommandDispatcherTests.swift in Sources */,
 				CA352D50229B1451009F4420 /* InputService.swift in Sources */,

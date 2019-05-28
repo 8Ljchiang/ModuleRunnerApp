@@ -23,6 +23,6 @@ class CommandHandlerResolver: CommandHandlerResolverProtocol {
 	}
 	
 	func getHandler(_ commandType: CommandType) -> CommandHandlerProtocol {
-		return T3DisplayCommandHandler();
+		return self.handlersMap[commandType] ?? T3DisplayCommandHandler();
 	}
 }

@@ -25,7 +25,7 @@ class T3PromptForReadyCommandHandler: CommandHandlerProtocol {
 			let welcomeCommand = Command(type: CommandType.T3Welcome, payload: welcomePayload);
 			response.addCommand(welcomeCommand);
 			
-			response.addError("Invalid input: " + userInput);
+			response.addError("Invalid input: \(userInput)");
 		}
 		
 		return response;
