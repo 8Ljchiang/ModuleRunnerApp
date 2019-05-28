@@ -15,6 +15,12 @@ class CommandBuilder {
 		return command;
 	}
 	
+	static func displayClearCommand() -> CommandProtocol {
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3DisplayClear, payload: payload);
+		return command;
+	}
+	
 	static func welcomeCommand() -> CommandProtocol {
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3Welcome, payload: payload);
