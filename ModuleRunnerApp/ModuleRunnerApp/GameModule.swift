@@ -33,9 +33,11 @@ class GameModule: GameModuleProtocol {
 	
 	func start(moduleRunner: ModuleRunnerProtocol) {
 		self.runner = moduleRunner;
+//		print("*** GameModule: assigning module to dispatcher");
+//		self.dispatcher.connectModule(gameModule: self);
 		
-		let payload = ["payload": "value"];
-		let initialCommand = Command(type: CommandType.T3Welcome, payload: payload);
+		let initialCommand = CommandBuilder.welcomeCommand();
+		
 		self.dispatcher.queueCommand(initialCommand);
 		self.dispatcher.processQueue();
 	}
