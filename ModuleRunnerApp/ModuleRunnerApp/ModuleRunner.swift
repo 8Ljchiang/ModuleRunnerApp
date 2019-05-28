@@ -32,7 +32,7 @@ class ModuleRunner: ModuleRunnerProtocol {
 	}
 	
 	func clearDisplay() {
-		
+		self.presenterService.clearDisplay();
 	}
 	
 	func promptForInput() -> String {

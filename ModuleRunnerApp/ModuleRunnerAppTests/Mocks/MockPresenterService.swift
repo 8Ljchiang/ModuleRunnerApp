@@ -21,6 +21,6 @@ class MockPresenterService: PresenterServiceProtocol {
 	}
 	
 	func clearDisplay() {
-		self.isDisplayCalled = true;
+		self.isClearDisplayCalled = true;
 	}
 }
