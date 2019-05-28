@@ -45,6 +45,19 @@ class ModuleRunnerTests: XCTestCase {
 		XCTAssertEqual(mockPresenterService.displayCalledWith, expectedText);
 	}
 	
+	func testClearDisplay() {
+		let defaultText = "Yes";
+		
+		let mockPresenterService = MockPresenterService();
+		let mockInputService = MockInputService(defaultText);
+		
+		let mRunner = createModuleRunner(mockPresenterService, mockInputService);
+		
+		mRunner.clearDisplay();
+		
+		XCTAssert(mockPresenterService.isClearDisplayCalled);
+	}
+	
 	func testPromptForInput() {
 		let expectedText = "Yes";
 		
