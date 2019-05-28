@@ -18,8 +18,12 @@ class BoardRendererTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testRenderBoardWhenZeroMoves() {
+		let expectedString = "         |         |         \n         |         |         \n         |         |         \n-----------------------------\n         |         |         \n         |         |         \n         |         |         \n-----------------------------\n         |         |         \n         |         |         \n         |         |         \n";
+		let moves: [Move] = [];
+		let boardSize = 3;
+		let boardString = BoardRenderer.render(moves, boardSize: boardSize);
+		
+		XCTAssertEqual(expectedString, boardString);
     }
 }
