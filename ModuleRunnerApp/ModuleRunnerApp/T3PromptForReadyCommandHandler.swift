@@ -12,6 +12,20 @@ class T3PromptForReadyCommandHandler: CommandHandlerProtocol {
 	init() {}
 	
 	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
-		return CommandHandlerResponse();
+		let response = CommandHandlerResponse();
+		
+		let displayPayload: [String: Any] = ["text": T3Text.promptForReadyInstructions];
+		let displayCommand = Command(type: CommandType.T3Display, payload: displayPayload);
+		response.addCommand(displayCommand);
+		
+		let userInput = module.promptForInput();
+		
+		if userInput == "ready" {
+			let gameInfoPayload: [String: Any] = [:];
+			let gameInfoCommand = Command(type: CommandType.T3GameInfo, payload: gameInfoPayload);
+			response.addCommand(gameInfoCommand);
+		}
+		
+		return response;
 	}
 }
