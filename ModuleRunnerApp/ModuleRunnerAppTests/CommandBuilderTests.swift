@@ -31,4 +31,10 @@ class CommandBuilderTests: XCTestCase {
 		XCTAssertEqual(CommandType.T3Display, command.type);
 		XCTAssertEqual(expectedText, command.payload["text"] as? String);
 	}
+	
+	func testDisplayClearCommand() {
+		let command = CommandBuilder.displayClearCommand();
+		
+		XCTAssertEqual(CommandType.T3DisplayClear, command.type);
+	}
 }
