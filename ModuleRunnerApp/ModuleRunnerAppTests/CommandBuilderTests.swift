@@ -59,4 +59,10 @@ class CommandBuilderTests: XCTestCase {
 		
 		XCTAssertEqual(CommandType.T3PromptForReady, command.type);
 	}
+	
+	func testGameInfoCommand() {
+		let command = CommandBuilder.gameInfoCommand();
+		
+		XCTAssertEqual(CommandType.T3GameInfo, command.type);
+	}
 }
