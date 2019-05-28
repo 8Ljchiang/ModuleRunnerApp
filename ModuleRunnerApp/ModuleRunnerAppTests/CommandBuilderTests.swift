@@ -44,7 +44,7 @@ class CommandBuilderTests: XCTestCase {
 		
 		XCTAssertEqual(CommandType.T3UpdateData, command.type);
 		XCTAssertEqual(expectedData.keys.count, command.payload.keys.count);
-		XCTAssertEqual(expectedData["test1"], command.payload["test1"]);
-		XCTAssertEqual(expectedData["test2"], command.payload["test2"]);
+		XCTAssertEqual(expectedData["test1"] as? Int, command.payload["test1"] as? Int);
+		XCTAssertEqual(expectedData["test2"] as? Int, command.payload["test2"] as? Int);
 	}
 }

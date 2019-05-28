@@ -21,6 +21,11 @@ class CommandBuilder {
 		return command;
 	}
 	
+	static func updateDataCommand(_ data: [String: Any]) -> CommandProtocol {
+		let command = Command(type: CommandType.T3UpdateData, payload: data);
+		return command;
+	}
+	
 	static func welcomeCommand() -> CommandProtocol {
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3Welcome, payload: payload);
