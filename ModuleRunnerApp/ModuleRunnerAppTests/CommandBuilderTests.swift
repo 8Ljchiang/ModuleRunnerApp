@@ -37,4 +37,14 @@ class CommandBuilderTests: XCTestCase {
 		
 		XCTAssertEqual(CommandType.T3DisplayClear, command.type);
 	}
+	
+	func testUpdateDataCommand() {
+		let expectedData: [String: Any] = ["test1": 1, "test2": 2];
+		let command = CommandBuilder.updateDataCommand(expectedData);
+		
+		XCTAssertEqual(CommandType.T3UpdateData, command.type);
+		XCTAssertEqual(expectedData.keys.count, command.payload.keys.count);
+		XCTAssertEqual(expectedData["test1"], command.payload["test1"]);
+		XCTAssertEqual(expectedData["test2"], command.payload["test2"]);
+	}
 }
