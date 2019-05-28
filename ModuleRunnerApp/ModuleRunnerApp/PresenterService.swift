@@ -10,6 +10,7 @@ import Foundation
 
 protocol PresenterServiceProtocol {
 	func display(_ text: String);
+	func clearDisplay();
 }
 
 class ConsolePresenterService: PresenterServiceProtocol {
@@ -17,5 +18,9 @@ class ConsolePresenterService: PresenterServiceProtocol {
 	
 	func display(_ text: String) {
 		print(text);
+	}
+	
+	func clearDisplay() {
+		print("\u{001B}[2J");
 	}
 }

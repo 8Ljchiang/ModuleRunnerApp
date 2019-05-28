@@ -12,6 +12,7 @@ enum CommandType {
 	case T3Welcome;
 	case T3Rules;
 	case T3Display;
+	case T3DisplayClear;
 	case T3UpdateData;
 	case T3PromptForReady;
 	case T3GameInfo;
