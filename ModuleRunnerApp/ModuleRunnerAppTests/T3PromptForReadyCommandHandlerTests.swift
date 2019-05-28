@@ -45,7 +45,7 @@ class T3PromptForReadyCommandHandlerTests: XCTestCase {
 	func testExecuteWHenInputIsNotReady() {
 		let inputText = "invalidTextAsdf";
 		
-		let mockGameModule = MockGameModule(defaultInputResponse: "ready");
+		let mockGameModule = MockGameModule(defaultInputResponse: inputText);
 		let promptForReadyPayload: [String: Any] = [:];
 		let promptForReadyCommand = Command(type: CommandType.T3Rules, payload: promptForReadyPayload);
 		let promptForReadyCH = T3PromptForReadyCommandHandler();
