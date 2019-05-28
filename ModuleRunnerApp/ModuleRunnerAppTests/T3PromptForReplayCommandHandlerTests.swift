@@ -39,4 +39,19 @@ class T3PromptForReplayCommandHandlerTests: XCTestCase {
 		XCTAssertEqual(CommandType.T3Welcome, response.commands[0].type);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 	}
+	
+	func testExecuteWhenInputIsNotReplay() {
+		let inputText = "invalidInputAsdf";
+		let mockGameModule = MockGameModule(defaultInputResponse: inputText);
+		let command = Command(type: CommandType.T3PromptForReplay, payload: [:]);
+		let promptForReplayCH = T3PromptForReplayCommandHandler();
+		
+		let response = promptForReplayCH.execute(command, module: mockGameModule);
+		let expectedCommandCount = 0;
+		let expectedErrorCount = 0;
+		
+		XCTAssertNotNil(promptForReplayCH);
+		XCTAssertEqual(expectedCommandCount, response.commands.count);
+		XCTAssertEqual(expectedErrorCount, response.errors.count);
+	}
 }
