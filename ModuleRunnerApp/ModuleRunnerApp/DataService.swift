@@ -14,24 +14,21 @@ struct DataStorePartial {
 	var moves: [Move]?;
 }
 
-struct DataStore: Equatable {
-	var activePlayerIndex: Int = 0;
-	var players: [String] = Array();
-	var moves: [Move] = Array();
+struct DataStore {
+	var data: [String: Any] = [:];
 }
 
 protocol DataServiceProtocol {
 	func getStore() -> DataStore;
 	func setStore(store: DataStore);
-	func updateStore(partialStore: DataStorePartial);
+	func updateStore(_ partialData: [String: Any]);
 }
 
 class DataService: DataServiceProtocol {
 	var dataStore: DataStore;
 	
-	init() {
-		let newStore = DataStore();
-		self.dataStore = newStore;
+	init(dataStore: DataStore) {
+		self.dataStore = dataStore;
 	}
 	
 	func getStore() -> DataStore {
@@ -42,16 +39,20 @@ class DataService: DataServiceProtocol {
 		self.dataStore = store;
 	}
 	
-	func updateStore(partialStore: DataStorePartial) {
-		self.dataStore = mergeStore(partialStore: partialStore);
+	func updateStore(_ partialData: [String: Any]) {
+		mergeData(partialData);
 	}
 	
-	private func mergeStore(partialStore: DataStorePartial) -> DataStore {
-		var newStore = DataStore();
-		newStore.activePlayerIndex = partialStore.activePlayerIndex ?? self.dataStore.activePlayerIndex;
-		newStore.moves = partialStore.moves ?? self.dataStore.moves;
-		newStore.players = partialStore.players ?? self.dataStore.players;
+	func mergeData(_ partialData: [String: Any]) {
+		let currentStoreKeys: Set<String> = Set(self.dataStore.data.keys);
+		let partialDataKeys: Set<String> = Set(partialData.keys);
+		let uniqueKeys: Set<String> = currentStoreKeys.union(partialDataKeys);
 		
-		return newStore;
+		for key in uniqueKeys {
+			let value = partialData[key];
+			if (value != nil) {
+				self.dataStore.data[key] = value;
+			}
+		}
 	}
 }

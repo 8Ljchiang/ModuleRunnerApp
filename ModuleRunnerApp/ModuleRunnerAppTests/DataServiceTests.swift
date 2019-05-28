@@ -19,49 +19,63 @@ class DataServiceTests: XCTestCase {
     }
 
 	func testInitDataService() {
-		let dataService = DataService();
+		let dataStore = DataStore();
+		let dataService = DataService(dataStore: dataStore);
 		
 		XCTAssertNotNil(dataService);
 	}
 	
 	func testGetStoreWhenDataServiceIsCreated() {
-		let dataService = DataService();
-
-		let expectedStore = DataStore();
+		var dataStore = DataStore();
+		dataStore.data.updateValue(0, forKey: "activePlayerIndex");
+		dataStore.data.updateValue([1, 2, 3], forKey: "moves");
+		dataStore.data.updateValue(["P1", "P2"], forKey: "players");
+		let dataService = DataService(dataStore: dataStore);
 		
-		let storeData = dataService.getStore();
+		let resultStore = dataService.getStore();
 
-		XCTAssertEqual(expectedStore.activePlayerIndex, storeData.activePlayerIndex);
-		XCTAssertEqual(expectedStore.players.isEmpty, storeData.players.isEmpty);
-		XCTAssertEqual(expectedStore.players.count, storeData.players.count);
-		XCTAssertEqual(expectedStore.moves.count, storeData.moves.count);
-		XCTAssertEqual(expectedStore.moves.isEmpty, storeData.moves.isEmpty);
+		XCTAssertNotNil(resultStore);
+		XCTAssertEqual(dataStore.data.keys, resultStore.data.keys);
+		XCTAssertEqual(dataStore.data.count, resultStore.data.count);
+		XCTAssertEqual(dataStore.data["activePlayerIndex"] as! Int, resultStore.data["activePlayerIndex"] as! Int);
+		XCTAssertEqual(dataStore.data["moves"] as! [Int], resultStore.data["moves"] as! [Int]);
+		XCTAssertEqual(dataStore.data["players"] as! [String], resultStore.data["players"] as! [String]);
 	}
 	
 	func testSetStore() {
-		let dataService = DataService();
+		let expectedIndex = 0;
+		let expectedMoves = [Move(playerId: "P1", position: 1, marker: MarkerType.Marker1.rawValue)];
+		let expectedPlayers = ["P1", "P2"];
 		
-		var newStore = DataStore();
-		newStore.activePlayerIndex = 1;
-		newStore.players = ["P1", "P2"];
-		newStore.moves = [Move(playerId: "P1", position: 1, marker: MarkerType.Marker1.rawValue)];
+		var dataStore = DataStore();
+		dataStore.data.updateValue(expectedIndex, forKey: "activePlayerIndex");
+		dataStore.data.updateValue(expectedMoves, forKey: "moves");
+		dataStore.data.updateValue(expectedPlayers, forKey: "players");
 		
-		dataService.setStore(store: newStore);
+		let emptyStore = DataStore();
+		let dataService = DataService(dataStore: emptyStore);
 		
-		XCTAssertEqual(newStore, dataService.dataStore);
+		dataService.setStore(store: dataStore);
+		
+		XCTAssertEqual(3, dataService.dataStore.data.count);
+		XCTAssertEqual(expectedIndex, dataService.dataStore.data["activePlayerIndex"] as! Int);
+		XCTAssertEqual(expectedMoves, dataService.dataStore.data["moves"] as! [Move]);
+		XCTAssertEqual(expectedPlayers, dataService.dataStore.data["players"] as! [String]);
 	}
 	
 	func testUpdateStore() {
-		let dataService = DataService();
+		let initialStore = DataStore();
 		
-		var newPartialStore = DataStorePartial();
-		newPartialStore.activePlayerIndex = 1;
-		newPartialStore.moves = [Move(playerId: "P1", position: 1, marker: MarkerType.Marker1.rawValue)];
+		let dataService = DataService(dataStore: initialStore);
 		
-		dataService.updateStore(partialStore: newPartialStore);
+		var partialData: [String: Any] = [
+			"activePlayerIndex": 0,
+			"moves": [1, 2, 3],
+		];
 		
-		XCTAssertEqual(newPartialStore.activePlayerIndex, dataService.dataStore.activePlayerIndex)
-		XCTAssertEqual(0, dataService.dataStore.players.count)
-		XCTAssertEqual(newPartialStore.moves!.count, dataService.dataStore.moves.count)
+		dataService.updateStore(partialData);
+		
+		XCTAssertEqual(partialData["activePlayerIndex"] as! Int, dataService.dataStore.data["activePlayerIndex"] as! Int);
+		XCTAssertEqual(partialData["moves"] as! [Int], dataService.dataStore.data["moves"] as! [Int]);
 	}
 }

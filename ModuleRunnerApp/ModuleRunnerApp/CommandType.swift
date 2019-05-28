@@ -12,4 +12,5 @@ enum CommandType {
 	case T3Welcome;
 	case T3Rules;
 	case T3Dislpay;
+	case T3UpdateData;
 }
