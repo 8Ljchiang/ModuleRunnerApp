@@ -24,7 +24,7 @@ class T3GameRulesCommandHandlerTests: XCTestCase {
 		XCTAssertNotNil(rulesCH);
     }
 	
-	func testExecuteWhenModuleInputIsReady() {
+	func testExecute() {
 		let mockGameModule = MockGameModule(defaultInputResponse: "ready");
 		let rulesPayload: [String: Any] = [:];
 		let rulesCommand = Command(type: CommandType.T3Rules, payload: rulesPayload);
@@ -38,6 +38,7 @@ class T3GameRulesCommandHandlerTests: XCTestCase {
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
 		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
 		XCTAssertEqual(T3Text.rules, response.commands[0].payload["text"] as! String);
-		XCTAssertEqual(CommandType.T3GameInfo, response.commands[1].type);
+		XCTAssertEqual(CommandType.T3PromptForReady, response.commands[1].type);
+		XCTAssertEqual(expectedErrorsCount, response.errors.count);
 	}
 }
