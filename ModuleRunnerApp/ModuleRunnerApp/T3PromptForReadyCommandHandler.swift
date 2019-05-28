@@ -14,7 +14,6 @@ class T3PromptForReadyCommandHandler: CommandHandlerProtocol {
 	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
 		let response = CommandHandlerResponse();
 		
-		
 		let userInput = module.promptForInput();
 		
 		if userInput == "ready" {
