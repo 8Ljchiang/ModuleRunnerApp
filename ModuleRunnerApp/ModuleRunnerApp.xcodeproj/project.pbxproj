@@ -68,6 +68,7 @@
 		CA352D97229D8676009F4420 /* T3GameWelcomeCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D95229D8676009F4420 /* T3GameWelcomeCommandHandler.swift */; };
 		CA352D99229D89BB009F4420 /* T3Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D98229D89BB009F4420 /* T3Text.swift */; };
 		CA352D9A229D89BB009F4420 /* T3Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D98229D89BB009F4420 /* T3Text.swift */; };
+		CA352D9C229D8C34009F4420 /* T3GameRulesCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA352D9B229D8C34009F4420 /* T3GameRulesCommandHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -125,6 +126,7 @@
 		CA352D93229D85E8009F4420 /* T3GameWelcomeCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3GameWelcomeCommandHandlerTests.swift; sourceTree = "<group>"; };
 		CA352D95229D8676009F4420 /* T3GameWelcomeCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3GameWelcomeCommandHandler.swift; sourceTree = "<group>"; };
 		CA352D98229D89BB009F4420 /* T3Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3Text.swift; sourceTree = "<group>"; };
+		CA352D9B229D8C34009F4420 /* T3GameRulesCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3GameRulesCommandHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				CA352D7E229C14F3009F4420 /* T3DisplayCommandHandlerTests.swift */,
 				CA352D86229C2D4F009F4420 /* T3UpdateDataCommandHandlerTests.swift */,
 				CA352D93229D85E8009F4420 /* T3GameWelcomeCommandHandlerTests.swift */,
+				CA352D9B229D8C34009F4420 /* T3GameRulesCommandHandler.swift */,
 			);
 			path = ModuleRunnerAppTests;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				CA352D50229B1451009F4420 /* InputService.swift in Sources */,
 				CA352D2A229AEE05009F4420 /* ModuleRunnerAppTests.swift in Sources */,
 				CA352D97229D8676009F4420 /* T3GameWelcomeCommandHandler.swift in Sources */,
+				CA352D9C229D8C34009F4420 /* T3GameRulesCommandHandler.swift in Sources */,
 				CA352D6C229B6B37009F4420 /* CommandHandlerResolver.swift in Sources */,
 				CA352D3E229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
 				CA352D35229AF29C009F4420 /* DataServiceTests.swift in Sources */,
