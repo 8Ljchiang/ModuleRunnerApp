@@ -14,4 +14,5 @@ enum CommandType {
 	case T3Display;
 	case T3UpdateData;
 	case T3PromptForReady;
+	case T3GameInfo;
 }
