@@ -23,4 +23,22 @@ class T3PromptForReadyCommandHandlerTests: XCTestCase {
 		
 		XCTAssertNotNil(promptForReadyCH);
     }
+	
+	func testExecuteWhenInputIsReady() {
+		let mockGameModule = MockGameModule(defaultInputResponse: "ready");
+		let promptForReadyPayload: [String: Any] = [:];
+		let promptForReadyCommand = Command(type: CommandType.T3Rules, payload: promptForReadyPayload);
+		let promptForReadyCH = T3GameRulesCommandHandler();
+		
+		let response = promptForReadyCH.execute(promptForReadyCommand, module: mockGameModule);
+		let expectedCommandCount = 2;
+		let expectedErrorsCount = 0;
+		
+		XCTAssertNotNil(response);
+		XCTAssertEqual(expectedCommandCount, response.commands.count);
+		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
+		XCTAssertEqual(T3Text.readyOptions, response.commands[0].payload["text"] as! String);
+		XCTAssertEqual(CommandType.T3GameInfo, response.commands[1].type);
+		XCTAssertEqual(expectedErrorsCount, response.errors.count);
+	}
 }
