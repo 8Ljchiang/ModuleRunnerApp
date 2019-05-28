@@ -16,11 +16,7 @@ class T3PromptForReadyCommandHandler: CommandHandlerProtocol {
 		
 		let userInput = module.promptForInput();
 		
-		if userInput == "ready" {
-			let displayPayload: [String: Any] = ["text": T3Text.promptForReadyInstructions];
-			let displayCommand = Command(type: CommandType.T3Display, payload: displayPayload);
-			response.addCommand(displayCommand);
-			
+		if userInput == "ready" {			
 			let gameInfoPayload: [String: Any] = [:];
 			let gameInfoCommand = Command(type: CommandType.T3GameInfo, payload: gameInfoPayload);
 			response.addCommand(gameInfoCommand);
