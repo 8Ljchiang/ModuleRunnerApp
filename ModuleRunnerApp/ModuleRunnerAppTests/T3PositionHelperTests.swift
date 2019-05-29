@@ -92,4 +92,27 @@ class T3PositionHelperTests: XCTestCase {
 		
 		XCTAssertEqual(expectedPositions, T3PositionHelper.getAvailablePositions(moves: moves, boardSize: boardSize));
 	}
+	
+	func testGetPositionsForMarker() {
+		let boardSize = 3;
+		let playerId1 = "P1";
+		let playerId2 = "P2";
+		let moves: [Move] = [
+			Move(playerId: playerId1, position: 1, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 2, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId1, position: 3, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 4, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId1, position: 5, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 6, marker: MarkerType.Marker2.rawValue),
+		];
+		
+		let expectedP1Positions = [1, 3, 5];
+		let expectedP2Positions = [2, 4, 6];
+		
+		let player1Positions = T3PositionHelper.getPositionsForMarker(moves: moves, marker: MarkerType.Marker1.rawValue);
+		let player2Positions = T3PositionHelper.getPositionsForMarker(moves: moves, marker: MarkerType.Marker2.rawValue);
+		
+		XCTAssertEqual(expectedP1Positions, player1Positions);
+		XCTAssertEqual(expectedP2Positions, player2Positions);
+	}
 }
