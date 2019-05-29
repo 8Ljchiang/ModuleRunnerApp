@@ -34,16 +34,14 @@ class T3PositionHelperTests: XCTestCase {
 			Move(playerId: playerId1, position: 9, marker: MarkerType.Marker1.rawValue)
 		];
 		
-		let expectedResult = false;
-		
-		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 1, moves: moves, boardSize: boardSize));
-		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 2, moves: moves, boardSize: boardSize));
-		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 3, moves: moves, boardSize: boardSize));
-		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 4, moves: moves, boardSize: boardSize));
-		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 5, moves: moves, boardSize: boardSize));
-		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 6, moves: moves, boardSize: boardSize));
-		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 7, moves: moves, boardSize: boardSize));
-		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 8, moves: moves, boardSize: boardSize));
-		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 9, moves: moves, boardSize: boardSize));
+		XCTAssertFalse(T3PositionHelper.isPositionAvailable(position: 1, moves: moves, boardSize: boardSize));
+		XCTAssertFalse(T3PositionHelper.isPositionAvailable(position: 2, moves: moves, boardSize: boardSize));
+		XCTAssertFalse(T3PositionHelper.isPositionAvailable(position: 3, moves: moves, boardSize: boardSize));
+		XCTAssertFalse(T3PositionHelper.isPositionAvailable(position: 4, moves: moves, boardSize: boardSize));
+		XCTAssertFalse(T3PositionHelper.isPositionAvailable(position: 5, moves: moves, boardSize: boardSize));
+		XCTAssertFalse(T3PositionHelper.isPositionAvailable(position: 6, moves: moves, boardSize: boardSize));
+		XCTAssertFalse(T3PositionHelper.isPositionAvailable(position: 7, moves: moves, boardSize: boardSize));
+		XCTAssertFalse(T3PositionHelper.isPositionAvailable(position: 8, moves: moves, boardSize: boardSize));
+		XCTAssertFalse(T3PositionHelper.isPositionAvailable(position: 9, moves: moves, boardSize: boardSize));
     }
 }
