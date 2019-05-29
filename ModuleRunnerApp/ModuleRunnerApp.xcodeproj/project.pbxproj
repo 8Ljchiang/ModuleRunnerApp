@@ -93,6 +93,8 @@
 		CA41D8FE229ED275006A2F30 /* T3PositionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8FD229ED275006A2F30 /* T3PositionHelper.swift */; };
 		CA41D8FF229ED275006A2F30 /* T3PositionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8FD229ED275006A2F30 /* T3PositionHelper.swift */; };
 		CA41D901229F2304006A2F30 /* T3MoveHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D900229F2304006A2F30 /* T3MoveHelperTests.swift */; };
+		CA41D903229F24F5006A2F30 /* T3MoveHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D902229F24F5006A2F30 /* T3MoveHelper.swift */; };
+		CA41D904229F24F5006A2F30 /* T3MoveHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D902229F24F5006A2F30 /* T3MoveHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -167,6 +169,7 @@
 		CA41D8FB229ECFC3006A2F30 /* T3PositionHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3PositionHelperTests.swift; sourceTree = "<group>"; };
 		CA41D8FD229ED275006A2F30 /* T3PositionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3PositionHelper.swift; sourceTree = "<group>"; };
 		CA41D900229F2304006A2F30 /* T3MoveHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3MoveHelperTests.swift; sourceTree = "<group>"; };
+		CA41D902229F24F5006A2F30 /* T3MoveHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3MoveHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +240,7 @@
 				CA41D8F3229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift */,
 				CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */,
 				CA41D8FD229ED275006A2F30 /* T3PositionHelper.swift */,
+				CA41D902229F24F5006A2F30 /* T3MoveHelper.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -384,6 +388,7 @@
 				CA352D30229AEE4C009F4420 /* Greeter.swift in Sources */,
 				CA352D54229B24E7009F4420 /* GameModule.swift in Sources */,
 				CA352D1D229AED5B009F4420 /* main.swift in Sources */,
+				CA41D903229F24F5006A2F30 /* T3MoveHelper.swift in Sources */,
 				CA41D8F4229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift in Sources */,
 				CA352D6E229B6B80009F4420 /* CommandHandler.swift in Sources */,
 				CA352D9E229D8C9D009F4420 /* T3GameRulesCommandHandler.swift in Sources */,
@@ -438,6 +443,7 @@
 				CA352DA6229D9F47009F4420 /* T3DisplayClearCommandHandlerTests.swift in Sources */,
 				CA41D901229F2304006A2F30 /* T3MoveHelperTests.swift in Sources */,
 				CA41D8FC229ECFC3006A2F30 /* T3PositionHelperTests.swift in Sources */,
+				CA41D904229F24F5006A2F30 /* T3MoveHelper.swift in Sources */,
 				CA352D35229AF29C009F4420 /* DataServiceTests.swift in Sources */,
 				CA352D6F229B6B80009F4420 /* CommandHandler.swift in Sources */,
 				CA41D8E8229DC928006A2F30 /* CommandBuilderTests.swift in Sources */,

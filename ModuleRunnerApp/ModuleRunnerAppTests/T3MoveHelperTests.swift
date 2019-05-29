@@ -35,8 +35,9 @@ class T3MoveHelperTests: XCTestCase {
 		
 		let resultMove = T3MoveHelper.generateMove(playerId: playerId1, marker: MarkerType.Marker1.rawValue, moves: moves, boardSize: boardSize);
 		
-		XCTAssertEqual(playerId1, resultMove.playerId);
-		XCTAssertEqual(9, resultMove.position);
-		XCTAssertEqual(MarkerType.Marker1.rawValue, resultMove.marker);
+		XCTAssertNotNil(resultMove);
+		XCTAssertEqual(playerId1, resultMove?.playerId);
+		XCTAssertEqual(9, resultMove?.position);
+		XCTAssertEqual(MarkerType.Marker1.rawValue, resultMove?.marker);
     }
 }
