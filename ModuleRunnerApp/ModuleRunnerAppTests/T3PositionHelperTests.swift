@@ -123,4 +123,13 @@ class T3PositionHelperTests: XCTestCase {
 		let result = T3PositionHelper.isValidInputForPosition(userInput, moves: moves, boardSize: boardSize);
 		XCTAssertTrue(result);
 	}
+	
+	func testIsValidInputForPositionWhenInvalidString() {
+		let userInput = "NonIntText";
+		let moves: [Move] = [];
+		let boardSize = 3;
+		
+		let result = T3PositionHelper.isValidInputForPosition(userInput, moves: moves, boardSize: boardSize);
+		XCTAssertFalse(result);
+	}
 }
