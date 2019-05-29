@@ -18,8 +18,32 @@ class T3PositionHelperTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testIsPositionAvailableWhenPositionTaken() {
+		let boardSize = 3;
+		let playerId1 = "P1";
+		let playerId2 = "P2";
+		let moves: [Move] = [
+			Move(playerId: playerId1, position: 1, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 2, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId1, position: 3, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 4, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId1, position: 5, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 6, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId1, position: 7, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 8, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId1, position: 9, marker: MarkerType.Marker1.rawValue)
+		];
+		
+		let expectedResult = false;
+		
+		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 1, moves: moves, boardSize: boardSize));
+		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 2, moves: moves, boardSize: boardSize));
+		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 3, moves: moves, boardSize: boardSize));
+		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 4, moves: moves, boardSize: boardSize));
+		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 5, moves: moves, boardSize: boardSize));
+		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 6, moves: moves, boardSize: boardSize));
+		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 7, moves: moves, boardSize: boardSize));
+		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 8, moves: moves, boardSize: boardSize));
+		XCTAssertEqual(expectedResult, T3PositionHelper.isPositionAvailable(position: 9, moves: moves, boardSize: boardSize));
     }
 }
