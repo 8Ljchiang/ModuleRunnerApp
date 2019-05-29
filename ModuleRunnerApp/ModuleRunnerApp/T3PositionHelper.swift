@@ -46,4 +46,14 @@ class T3PositionHelper {
 		
 		return resultPositions;
 	}
+	
+	static func isValidInputForPosition(_ input: String, moves: [Move], boardSize: Int) -> Bool {		
+		guard let position = Int(input) else { return false };
+		
+		return isPositionAvailable(position: position, moves: moves, boardSize: boardSize);
+	}
+	
+	private static func isParsableAsInt(text: String) -> Bool {
+		return Int(text) != nil;
+	}
 }

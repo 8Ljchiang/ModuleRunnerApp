@@ -94,7 +94,6 @@ class T3PositionHelperTests: XCTestCase {
 	}
 	
 	func testGetPositionsForMarker() {
-		let boardSize = 3;
 		let playerId1 = "P1";
 		let playerId2 = "P2";
 		let moves: [Move] = [
@@ -118,8 +117,10 @@ class T3PositionHelperTests: XCTestCase {
 	
 	func testIsValidInputForPositionWhenValidString() {
 		let userInput = "1";
+		let moves: [Move] = [];
+		let boardSize = 3;
 		
-		let result = T3PositionHelper.isValidInputForPosition(userInput);
-		XCTAssertFalse(result);
+		let result = T3PositionHelper.isValidInputForPosition(userInput, moves: moves, boardSize: boardSize);
+		XCTAssertTrue(result);
 	}
 }
