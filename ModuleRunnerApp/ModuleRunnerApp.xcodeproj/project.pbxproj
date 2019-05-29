@@ -86,7 +86,9 @@
 		CA41D8F2229DD6C9006A2F30 /* T3PromptForReplayCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8F1229DD6C9006A2F30 /* T3PromptForReplayCommandHandlerTests.swift */; };
 		CA41D8F4229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8F3229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift */; };
 		CA41D8F5229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8F3229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift */; };
-		CA41D8F7229DDB02006A2F30 /* BoardRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8F6229DDB02006A2F30 /* BoardRendererTests.swift */; };
+		CA41D8F7229DDB02006A2F30 /* T3BoardRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8F6229DDB02006A2F30 /* T3BoardRendererTests.swift */; };
+		CA41D8F9229DDDA3006A2F30 /* T3BoardRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */; };
+		CA41D8FA229DDDA3006A2F30 /* T3BoardRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -156,7 +158,8 @@
 		CA41D8EF229DD3E3006A2F30 /* DefaultCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCommandHandlerTests.swift; sourceTree = "<group>"; };
 		CA41D8F1229DD6C9006A2F30 /* T3PromptForReplayCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3PromptForReplayCommandHandlerTests.swift; sourceTree = "<group>"; };
 		CA41D8F3229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3PromptForReplayCommandHandler.swift; sourceTree = "<group>"; };
-		CA41D8F6229DDB02006A2F30 /* BoardRendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRendererTests.swift; sourceTree = "<group>"; };
+		CA41D8F6229DDB02006A2F30 /* T3BoardRendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3BoardRendererTests.swift; sourceTree = "<group>"; };
+		CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3BoardRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +228,7 @@
 				CA41D8E9229DC9A3006A2F30 /* CommandBuilder.swift */,
 				CA41D8EC229DD31D006A2F30 /* DefaultCommandHandler.swift */,
 				CA41D8F3229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift */,
+				CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -250,7 +254,7 @@
 				CA41D8E7229DC928006A2F30 /* CommandBuilderTests.swift */,
 				CA41D8EF229DD3E3006A2F30 /* DefaultCommandHandlerTests.swift */,
 				CA41D8F1229DD6C9006A2F30 /* T3PromptForReplayCommandHandlerTests.swift */,
-				CA41D8F6229DDB02006A2F30 /* BoardRendererTests.swift */,
+				CA41D8F6229DDB02006A2F30 /* T3BoardRendererTests.swift */,
 			);
 			path = ModuleRunnerAppTests;
 			sourceTree = "<group>";
@@ -387,6 +391,7 @@
 				CA352D74229B6C00009F4420 /* MockCommandHandler.swift in Sources */,
 				CA352D66229B535B009F4420 /* CommandType.swift in Sources */,
 				CA352D99229D89BB009F4420 /* T3Text.swift in Sources */,
+				CA41D8F9229DDDA3006A2F30 /* T3BoardRenderer.swift in Sources */,
 				CA352DA3229D951D009F4420 /* T3PromptForReadyCommandHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,7 +436,7 @@
 				CA352D44229B0A45009F4420 /* ModuleRunnerTests.swift in Sources */,
 				CA352D7A229B7122009F4420 /* CommandHandlerResolverTests.swift in Sources */,
 				CA352D4A229B0DF4009F4420 /* PresenterService.swift in Sources */,
-				CA41D8F7229DDB02006A2F30 /* BoardRendererTests.swift in Sources */,
+				CA41D8F7229DDB02006A2F30 /* T3BoardRendererTests.swift in Sources */,
 				CA352D8D229C896F009F4420 /* MockWriteDataService.swift in Sources */,
 				CA352D75229B6C00009F4420 /* MockCommandHandler.swift in Sources */,
 				CA352D87229C2D4F009F4420 /* T3UpdateDataCommandHandlerTests.swift in Sources */,
@@ -445,6 +450,7 @@
 				CA352D85229C15BB009F4420 /* CommandHandlerResponse.swift in Sources */,
 				CA352D64229B4E57009F4420 /* MockCommandDispatcher.swift in Sources */,
 				CA352D47229B0AD4009F4420 /* ModuleRunner.swift in Sources */,
+				CA41D8FA229DDDA3006A2F30 /* T3BoardRenderer.swift in Sources */,
 				CA352D72229B6BA2009F4420 /* MockCommandHandlerResolver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

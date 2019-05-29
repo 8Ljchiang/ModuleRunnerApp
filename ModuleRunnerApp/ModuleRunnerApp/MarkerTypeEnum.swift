@@ -9,6 +9,6 @@
 import Foundation
 
 enum MarkerType: String {
-	case Marker1 = "X"
-	case Marker2 = "O"
+	case Marker1 = "X";
+	case Marker2 = "O";
 }

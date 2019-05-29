@@ -8,7 +8,7 @@
 
 import XCTest
 
-class BoardRendererTests: XCTestCase {
+class T3BoardRendererTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,7 +22,7 @@ class BoardRendererTests: XCTestCase {
 		let expectedString = "         |         |         \n         |         |         \n         |         |         \n-----------------------------\n         |         |         \n         |         |         \n         |         |         \n-----------------------------\n         |         |         \n         |         |         \n         |         |         \n";
 		let moves: [Move] = [];
 		let boardSize = 3;
-		let boardString = BoardRenderer.render(moves, boardSize: boardSize);
+		let boardString = T3BoardRenderer.render(moves, boardSize: boardSize);
 		
 		XCTAssertEqual(expectedString, boardString);
     }
