@@ -89,6 +89,9 @@
 		CA41D8F7229DDB02006A2F30 /* T3BoardRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8F6229DDB02006A2F30 /* T3BoardRendererTests.swift */; };
 		CA41D8F9229DDDA3006A2F30 /* T3BoardRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */; };
 		CA41D8FA229DDDA3006A2F30 /* T3BoardRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */; };
+		CA41D8FC229ECFC3006A2F30 /* T3PositionHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8FB229ECFC3006A2F30 /* T3PositionHelperTests.swift */; };
+		CA41D8FE229ED275006A2F30 /* T3PositionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8FD229ED275006A2F30 /* T3PositionHelper.swift */; };
+		CA41D8FF229ED275006A2F30 /* T3PositionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8FD229ED275006A2F30 /* T3PositionHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -160,6 +163,8 @@
 		CA41D8F3229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3PromptForReplayCommandHandler.swift; sourceTree = "<group>"; };
 		CA41D8F6229DDB02006A2F30 /* T3BoardRendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3BoardRendererTests.swift; sourceTree = "<group>"; };
 		CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3BoardRenderer.swift; sourceTree = "<group>"; };
+		CA41D8FB229ECFC3006A2F30 /* T3PositionHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3PositionHelperTests.swift; sourceTree = "<group>"; };
+		CA41D8FD229ED275006A2F30 /* T3PositionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3PositionHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +234,7 @@
 				CA41D8EC229DD31D006A2F30 /* DefaultCommandHandler.swift */,
 				CA41D8F3229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift */,
 				CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */,
+				CA41D8FD229ED275006A2F30 /* T3PositionHelper.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 				CA41D8EF229DD3E3006A2F30 /* DefaultCommandHandlerTests.swift */,
 				CA41D8F1229DD6C9006A2F30 /* T3PromptForReplayCommandHandlerTests.swift */,
 				CA41D8F6229DDB02006A2F30 /* T3BoardRendererTests.swift */,
+				CA41D8FB229ECFC3006A2F30 /* T3PositionHelperTests.swift */,
 			);
 			path = ModuleRunnerAppTests;
 			sourceTree = "<group>";
@@ -378,6 +385,7 @@
 				CA352D6E229B6B80009F4420 /* CommandHandler.swift in Sources */,
 				CA352D9E229D8C9D009F4420 /* T3GameRulesCommandHandler.swift in Sources */,
 				CA352D49229B0DF4009F4420 /* PresenterService.swift in Sources */,
+				CA41D8FE229ED275006A2F30 /* T3PositionHelper.swift in Sources */,
 				CA352D71229B6BA2009F4420 /* MockCommandHandlerResolver.swift in Sources */,
 				CA352D63229B4E57009F4420 /* MockCommandDispatcher.swift in Sources */,
 				CA41D8ED229DD31D006A2F30 /* DefaultCommandHandler.swift in Sources */,
@@ -425,6 +433,7 @@
 				CA352DA1229D94B8009F4420 /* T3PromptForReadyCommandHandlerTests.swift in Sources */,
 				CA352D3E229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
 				CA352DA6229D9F47009F4420 /* T3DisplayClearCommandHandlerTests.swift in Sources */,
+				CA41D8FC229ECFC3006A2F30 /* T3PositionHelperTests.swift in Sources */,
 				CA352D35229AF29C009F4420 /* DataServiceTests.swift in Sources */,
 				CA352D6F229B6B80009F4420 /* CommandHandler.swift in Sources */,
 				CA41D8E8229DC928006A2F30 /* CommandBuilderTests.swift in Sources */,
@@ -446,6 +455,7 @@
 				CA352D61229B4DDD009F4420 /* Command.swift in Sources */,
 				CA352D38229AF5BA009F4420 /* DataService.swift in Sources */,
 				CA352D52229B1512009F4420 /* MockInputService.swift in Sources */,
+				CA41D8FF229ED275006A2F30 /* T3PositionHelper.swift in Sources */,
 				CA352DA4229D951D009F4420 /* T3PromptForReadyCommandHandler.swift in Sources */,
 				CA352D85229C15BB009F4420 /* CommandHandlerResponse.swift in Sources */,
 				CA352D64229B4E57009F4420 /* MockCommandDispatcher.swift in Sources */,
