@@ -90,6 +90,6 @@ class T3PositionHelperTests: XCTestCase {
 		
 		let expectedPositions = [7, 8, 9];
 		
-		XCTAssertEqual(T3PositionHelper.getAvailablePositions(moves: moves, boardSize: boardSize));
+		XCTAssertEqual(expectedPositions, T3PositionHelper.getAvailablePositions(moves: moves, boardSize: boardSize));
 	}
 }

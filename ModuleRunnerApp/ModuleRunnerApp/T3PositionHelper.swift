@@ -24,4 +24,18 @@ class T3PositionHelper {
 			return true;
 		}
 	}
+	
+	static func getAvailablePositions(moves: [Move], boardSize: Int) -> [Int] {
+		var resultPositions: [Int] = Array();
+		let maxPosition = boardSize * boardSize;
+		
+		for position in 1...maxPosition {
+			let filteredMoves = moves.filter({(value: Move) -> Bool in return value.position == position});
+			if filteredMoves.count == 0 {
+				resultPositions.append(position);
+			}
+		}
+		
+		return resultPositions;
+	}
 }
