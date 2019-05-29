@@ -38,4 +38,12 @@ class T3PositionHelper {
 		
 		return resultPositions;
 	}
+	
+	static func getPositionsForMarker(moves: [Move], marker: String) -> [Int] {
+		let resultPositions = moves
+			.filter({(value: Move) -> Bool in return value.marker == marker})
+			.map({(value: Move) -> Int in return value.position});
+		
+		return resultPositions;
+	}
 }

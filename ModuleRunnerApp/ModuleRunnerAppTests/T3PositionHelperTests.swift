@@ -115,4 +115,11 @@ class T3PositionHelperTests: XCTestCase {
 		XCTAssertEqual(expectedP1Positions, player1Positions);
 		XCTAssertEqual(expectedP2Positions, player2Positions);
 	}
+	
+	func testIsValidInputForPositionWhenValidString() {
+		let userInput = "1";
+		
+		let result = T3PositionHelper.isValidInputForPosition(userInput);
+		XCTAssertFalse(result);
+	}
 }
