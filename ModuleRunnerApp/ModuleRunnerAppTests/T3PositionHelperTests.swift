@@ -59,4 +59,12 @@ class T3PositionHelperTests: XCTestCase {
 		XCTAssertTrue(T3PositionHelper.isPositionAvailable(position: 8, moves: moves, boardSize: boardSize));
 		XCTAssertTrue(T3PositionHelper.isPositionAvailable(position: 9, moves: moves, boardSize: boardSize));
 	}
+	
+	func testIsPositionAvailableWhenPositionLessThanOne() {
+		let boardSize = 3;
+		let moves: [Move] = [];
+		
+		XCTAssertFalse(T3PositionHelper.isPositionAvailable(position: 0, moves: moves, boardSize: boardSize));
+		XCTAssertFalse(T3PositionHelper.isPositionAvailable(position: -1, moves: moves, boardSize: boardSize));
+	}
 }
