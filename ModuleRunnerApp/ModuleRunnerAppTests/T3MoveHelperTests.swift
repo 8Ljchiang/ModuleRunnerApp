@@ -149,10 +149,10 @@ class T3MoveHelperTests: XCTestCase {
 			Move(playerId: playerId2, position: 6, marker: MarkerType.Marker2.rawValue),
 			Move(playerId: playerId1, position: 7, marker: MarkerType.Marker1.rawValue),
 			Move(playerId: playerId2, position: 8, marker: MarkerType.Marker2.rawValue),
-			Move(playerId: playerId2, position: 9, marker: MarkerType.Marker2.rawValue)
+			Move(playerId: playerId1, position: 9, marker: MarkerType.Marker1.rawValue)
 		];
 		
-		let resultMoves = T3MoveHelper.appendGeneratedMove(moves: initialMoves, boardSize: boardSize);
+		let resultMoves = T3MoveHelper.appendGeneratedMove(playerId: playerId1, marker: MarkerType.Marker1.rawValue, moves: initialMoves, boardSize: boardSize);
 		
 		XCTAssertEqual(expectedMoves.count, resultMoves.count);
 		XCTAssertEqual(expectedMoves, resultMoves);
