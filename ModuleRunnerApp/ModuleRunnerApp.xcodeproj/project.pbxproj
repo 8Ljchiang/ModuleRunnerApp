@@ -89,6 +89,7 @@
 		CA41D8F7229DDB02006A2F30 /* T3BoardRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8F6229DDB02006A2F30 /* T3BoardRendererTests.swift */; };
 		CA41D8F9229DDDA3006A2F30 /* T3BoardRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */; };
 		CA41D8FA229DDDA3006A2F30 /* T3BoardRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */; };
+		CA41D8FC229ECFC3006A2F30 /* T3PositionHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D8FB229ECFC3006A2F30 /* T3PositionHelperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -160,6 +161,7 @@
 		CA41D8F3229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3PromptForReplayCommandHandler.swift; sourceTree = "<group>"; };
 		CA41D8F6229DDB02006A2F30 /* T3BoardRendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3BoardRendererTests.swift; sourceTree = "<group>"; };
 		CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3BoardRenderer.swift; sourceTree = "<group>"; };
+		CA41D8FB229ECFC3006A2F30 /* T3PositionHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3PositionHelperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 				CA41D8EF229DD3E3006A2F30 /* DefaultCommandHandlerTests.swift */,
 				CA41D8F1229DD6C9006A2F30 /* T3PromptForReplayCommandHandlerTests.swift */,
 				CA41D8F6229DDB02006A2F30 /* T3BoardRendererTests.swift */,
+				CA41D8FB229ECFC3006A2F30 /* T3PositionHelperTests.swift */,
 			);
 			path = ModuleRunnerAppTests;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				CA352DA1229D94B8009F4420 /* T3PromptForReadyCommandHandlerTests.swift in Sources */,
 				CA352D3E229B06AC009F4420 /* MarkerTypeEnum.swift in Sources */,
 				CA352DA6229D9F47009F4420 /* T3DisplayClearCommandHandlerTests.swift in Sources */,
+				CA41D8FC229ECFC3006A2F30 /* T3PositionHelperTests.swift in Sources */,
 				CA352D35229AF29C009F4420 /* DataServiceTests.swift in Sources */,
 				CA352D6F229B6B80009F4420 /* CommandHandler.swift in Sources */,
 				CA41D8E8229DC928006A2F30 /* CommandBuilderTests.swift in Sources */,
