@@ -12,6 +12,10 @@ class T3PositionHelper {
 	static func isPositionAvailable(position: Int, moves: [Move], boardSize: Int) -> Bool {
 		let maxPosition = boardSize * boardSize;
 		
+		guard position > 0 && position <= maxPosition else {
+			return false;
+		}
+		
 		let filteredMoves = moves.filter({(value: Move) -> Bool in return value.position == position});
 		
 		if filteredMoves.count > 0 {

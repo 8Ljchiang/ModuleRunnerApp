@@ -44,4 +44,19 @@ class T3PositionHelperTests: XCTestCase {
 		XCTAssertFalse(T3PositionHelper.isPositionAvailable(position: 8, moves: moves, boardSize: boardSize));
 		XCTAssertFalse(T3PositionHelper.isPositionAvailable(position: 9, moves: moves, boardSize: boardSize));
     }
+	
+	func testIsPositionAvailableWhenPositionAvailable() {
+		let boardSize = 3;
+		let moves: [Move] = [];
+		
+		XCTAssertTrue(T3PositionHelper.isPositionAvailable(position: 1, moves: moves, boardSize: boardSize));
+		XCTAssertTrue(T3PositionHelper.isPositionAvailable(position: 2, moves: moves, boardSize: boardSize));
+		XCTAssertTrue(T3PositionHelper.isPositionAvailable(position: 3, moves: moves, boardSize: boardSize));
+		XCTAssertTrue(T3PositionHelper.isPositionAvailable(position: 4, moves: moves, boardSize: boardSize));
+		XCTAssertTrue(T3PositionHelper.isPositionAvailable(position: 5, moves: moves, boardSize: boardSize));
+		XCTAssertTrue(T3PositionHelper.isPositionAvailable(position: 6, moves: moves, boardSize: boardSize));
+		XCTAssertTrue(T3PositionHelper.isPositionAvailable(position: 7, moves: moves, boardSize: boardSize));
+		XCTAssertTrue(T3PositionHelper.isPositionAvailable(position: 8, moves: moves, boardSize: boardSize));
+		XCTAssertTrue(T3PositionHelper.isPositionAvailable(position: 9, moves: moves, boardSize: boardSize));
+	}
 }
