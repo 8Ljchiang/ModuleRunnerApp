@@ -35,7 +35,6 @@ class T3BoardRenderer {
 		
 		let horizontalDivider = makeHorizontalDivider(boardSize: boardSize);
 		let finalResult = boardRowsCache.joined(separator: horizontalDivider);
-		print(finalResult);
 		return finalResult;
 	}
 
@@ -98,7 +97,12 @@ class T3BoardRenderer {
 		let maxPosition = boardSize * boardSize;
 		var positionValues: [String] = Array();
 		for position in 1...maxPosition {
-			positionValues.append(T3Text.openSpace);
+			let filteredMoves = moves.filter({(value: Move) -> Bool in return value.position == position });
+			if filteredMoves.count > 0 {
+				positionValues.append(filteredMoves[0].marker);
+			} else {
+				positionValues.append(T3Text.openSpace);
+			}
 		}
 		return positionValues;
 	}
