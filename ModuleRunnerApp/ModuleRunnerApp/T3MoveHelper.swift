@@ -19,4 +19,14 @@ class T3MoveHelper {
 		
 		return nil;
 	}
+	
+	static func appendMove(_ move: Move, moves: [Move], boardSize: Int) -> [Move] {
+		let maxMoves = boardSize * boardSize;
+		if moves.count < maxMoves {
+			var newMoves = moves.map({(value: Move) -> Move in return Move(playerId: value.playerId, position: value.position, marker: value.marker)});
+			newMoves.append(move);
+			return newMoves;
+		}
+		return moves;
+	}
 }

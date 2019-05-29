@@ -85,7 +85,43 @@ class T3MoveHelperTests: XCTestCase {
 		
 		let resultMoves = T3MoveHelper.appendMove(newMove, moves: initialMoves, boardSize: boardSize);
 		
-		XctAssertEqual(expectedMoves.count, resultMoves.count);
+		XCTAssertEqual(expectedMoves.count, resultMoves.count);
+		XCTAssertEqual(expectedMoves, resultMoves);
+	}
+	
+	func testAppendMoveWhenMaxMovesReached() {
+		let boardSize = 3;
+		let playerId1 = "P1";
+		let playerId2 = "P2";
+		let initialMoves: [Move] = [
+			Move(playerId: playerId1, position: 1, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 2, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId1, position: 3, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 4, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId1, position: 5, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 6, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId1, position: 7, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 8, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId2, position: 9, marker: MarkerType.Marker2.rawValue)
+		];
+		
+		let expectedMoves: [Move] = [
+			Move(playerId: playerId1, position: 1, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 2, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId1, position: 3, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 4, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId1, position: 5, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 6, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId1, position: 7, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 8, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId2, position: 9, marker: MarkerType.Marker2.rawValue)
+		];
+		
+		let newMove = Move(playerId: playerId1, position: 5, marker: MarkerType.Marker1.rawValue);
+		
+		let resultMoves = T3MoveHelper.appendMove(newMove, moves: initialMoves, boardSize: boardSize);
+		
+		XCTAssertEqual(expectedMoves.count, resultMoves.count);
 		XCTAssertEqual(expectedMoves, resultMoves);
 	}
 }
