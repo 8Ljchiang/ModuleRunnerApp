@@ -19,12 +19,22 @@ class T3PlayerHelperTests: XCTestCase {
     }
 
     func testCycleActivePlayerIndex() {
-		let currentActiveIndex = 1;
+		let currentActiveIndex = 0;
 		let playerCount = 2;
-		let expectedIndex = 2;
+		let expectedIndex = 1;
 		
 		let actualIndex = T3PlayerHelper.cycleActivePlayerIndex(currentIndex: currentActiveIndex, playerCount: playerCount);
 		
 		XCTAssertEqual(expectedIndex, actualIndex);
     }
+	
+	func testCycleActivePlayerIndexWhenIndexAtLastPlayer() {
+		let currentActiveIndex = 1;
+		let playerCount = 2;
+		let expectedIndex = 0;
+		
+		let actualIndex = T3PlayerHelper.cycleActivePlayerIndex(currentIndex: currentActiveIndex, playerCount: playerCount);
+		
+		XCTAssertEqual(expectedIndex, actualIndex);
+	}
 }

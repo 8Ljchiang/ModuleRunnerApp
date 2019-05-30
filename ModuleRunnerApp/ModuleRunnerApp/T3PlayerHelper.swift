@@ -10,6 +10,10 @@ import Foundation
 
 class T3PlayerHelper {
 	static func cycleActivePlayerIndex(currentIndex: Int, playerCount: Int) -> Int {
-		return currentIndex + 1;
+		if currentIndex < playerCount - 1 {
+			return currentIndex + 1;
+		} else {
+			return 0;
+		}
 	}
 }
