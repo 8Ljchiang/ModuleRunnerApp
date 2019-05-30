@@ -34,4 +34,24 @@ class T3PatternHelper {
 		}
 		return patterns;
 	}
+	
+	static func getDiagonalPatterns(boardSize: Int) -> [[Int]] {
+		var patterns: [[Int]] = Array();
+		
+		var diagPattern1: [Int] = Array();
+		for index in 1...boardSize {
+			let offset = boardSize * (index - 1);
+			diagPattern1.append(index + offset);
+		}
+		patterns.append(diagPattern1);
+		
+		var diagPattern2: [Int] = Array();
+		for index in 1...boardSize {
+			let offset = (boardSize - 1) * (index);
+			diagPattern2.append(1 + offset);
+		}
+		patterns.append(diagPattern2);
+		
+		return patterns;
+	}
 }
