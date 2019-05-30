@@ -12,6 +12,14 @@ class T3ReplayInstructionsCommandHandler: CommandHandlerProtocol {
 	init() {}
 	
 	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
-		return CommandHandlerResponse();
+		let response = CommandHandlerResponse();
+		
+		let displayCommand = CommandBuilder.displayCommand(T3Text.replayInstructions);
+		response.addCommand(displayCommand);
+		
+		let promptForReplayCommand = CommandBuilder.promptForReplayCommand();
+		response.addCommand(promptForReplayCommand);
+		
+		return response;
 	}
 }
