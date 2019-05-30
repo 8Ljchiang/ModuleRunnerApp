@@ -35,4 +35,13 @@ class T3PatternHelperTests: XCTestCase {
 		
 		XCTAssertEqual(expectedColumnPatterns, columnPatterns);
 	}
+	
+	func testGetHorizontalPatterns() {
+		let boardSize = 3;
+		let expectedHorizontalPatterns: [[Int]] = [[1, 5, 9], [3, 5, 7]];
+		
+		let horizontalPatterns = T3PatternHelper.getHorizontalPatterns(boardSize: boardSize);
+		
+		XCTAssertEqual(expectedHorizontalPatterns, horizontalPatterns);
+	}
 }
