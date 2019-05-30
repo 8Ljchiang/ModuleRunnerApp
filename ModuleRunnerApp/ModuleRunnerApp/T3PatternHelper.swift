@@ -21,4 +21,17 @@ class T3PatternHelper {
 		}
 		return patterns;
 	}
+	
+	static func getColumnPatterns(boardSize: Int) -> [[Int]] {
+		var patterns: [[Int]] = Array();
+		for columnIndex in 1...boardSize {
+			var columnPattern: [Int] = Array();
+			for index in 0..<boardSize {
+				let verticalOffset = index * boardSize;
+				columnPattern.append(columnIndex + verticalOffset);
+			}
+			patterns.append(columnPattern);
+		}
+		return patterns;
+	}
 }

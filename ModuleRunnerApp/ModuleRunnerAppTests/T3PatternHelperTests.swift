@@ -29,10 +29,10 @@ class T3PatternHelperTests: XCTestCase {
 	
 	func testGetColumnPatterns() {
 		let boardSize = 3;
-		let expectedRowPatterns: [[Int]] = [[1, 4, 7], [2, 5, 8], [3, 6, 9]];
+		let expectedColumnPatterns: [[Int]] = [[1, 4, 7], [2, 5, 8], [3, 6, 9]];
 		
-		let rowPatterns = T3PatternHelper.getRowPatterns(boardSize: boardSize);
+		let columnPatterns = T3PatternHelper.getColumnPatterns(boardSize: boardSize);
 		
-		XCTAssertEqual(expectedRowPatterns, rowPatterns);
+		XCTAssertEqual(expectedColumnPatterns, columnPatterns);
 	}
 }
