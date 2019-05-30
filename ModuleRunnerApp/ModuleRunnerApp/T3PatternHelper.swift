@@ -9,6 +9,15 @@
 import Foundation
 
 class T3PatternHelper {
+	static func getWinningPatterns (boardSize: Int) -> [[Int]] {
+		let rowPatterns = getRowPatterns(boardSize: boardSize);
+		let columnPatterns = getColumnPatterns(boardSize: boardSize);
+		let diagPatterns = getDiagonalPatterns(boardSize: boardSize);
+		
+		let combinedPatterns = rowPatterns + columnPatterns + diagPatterns;
+		return combinedPatterns;
+	}
+	
 	static func getRowPatterns(boardSize: Int) -> [[Int]] {
 		var patterns: [[Int]] = Array();
 		for rowIndex in 0..<boardSize {
