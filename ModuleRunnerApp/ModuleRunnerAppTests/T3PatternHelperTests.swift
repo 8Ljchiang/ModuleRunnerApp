@@ -72,4 +72,13 @@ class T3PatternHelperTests: XCTestCase {
 			
 		XCTAssertNil(result);
 	}
+	
+	func testFindWinningPattern() {
+		let boardSize = 3;
+		let positions = [1, 2, 3];
+		
+		let result = T3PatternHelper.findWinningPattern(positions: positions, patterns: expectedPatterns, boardSize: boardSize);
+		
+		XCTAssertEqual(positions, result);
+	}
 }
