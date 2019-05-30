@@ -18,8 +18,12 @@ class T3PatternHelperTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testRowPatterns() {
+		let boardSize = 3;
+		let expectedRowPatterns: [[Int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+		
+		let rowPatterns = T3PatternHelper.getRowPatterns(boardSize: boardSize);
+		
+		XCTAssertEqual(expectedRowPatterns, rowPatterns):
     }
 }
