@@ -63,4 +63,13 @@ class T3PatternHelperTests: XCTestCase {
 			XCTAssertEqual(positions, foundPattern);
 		}
 	}
+	
+	func testFindPatternWhenNoMatchingPattern() {
+		let positions = [1, 3, 9, 4];
+		let expectedPatterns: [[Int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]];
+		
+		let result = T3PatternHelper.findPatterns(positions: positions, patterns: expectedPatterns);
+			
+		XCTAssertNil(result);
+	}
 }
