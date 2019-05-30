@@ -20,8 +20,20 @@ class CommandLoggerTests: XCTestCase {
 
     func testInitCommandLogger() {
 		let mockPresenterService = MockPresenterService();
-		let commandLogger = CommandLogger(presenterService: MockPresenterService, displayLog: false);
+		let commandLogger = CommandLogger(presenterService: mockPresenterService, isDisplayOn: false);
 		
 		XCTAssertNotNil(commandLogger);
     }
+	
+	func testLogCommand() {
+		let mockPresenterService = MockPresenterService();
+		let commandLogger = CommandLogger(presenterService: mockPresenterService, isDisplayOn: false);
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3Welcome, payload: payload);
+		
+		commandLogger.logCommand(command);
+		
+		XCTAssert(mockPresenterService.isDisplayCalled);
+		XCTAssertEqual("T3Welcome", mockPresenterService.displayCalledWith);
+	}
 }
