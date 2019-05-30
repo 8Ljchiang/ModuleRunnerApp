@@ -19,5 +19,6 @@ enum CommandType {
 	case T3GameAvailablePositions;
 	case T3PromptForPosition;
 	case T3GameEndInfo;
+	case T3ReplayInstructions;
 	case T3PromptForReplay;
 }
