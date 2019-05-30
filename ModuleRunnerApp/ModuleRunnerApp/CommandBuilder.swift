@@ -68,6 +68,12 @@ class CommandBuilder {
 		return command;
 	}
 	
+	static func replayInstructionsCommand() -> CommandProtocol {
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3ReplayInstructions, payload: payload);
+		return command;
+	}
+	
 	static func promptForReplayCommand() -> CommandProtocol {
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3PromptForReplay, payload: payload);
