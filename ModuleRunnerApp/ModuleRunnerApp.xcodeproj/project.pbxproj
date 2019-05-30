@@ -104,6 +104,7 @@
 		CA41D91022A031E1006A2F30 /* CommandLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D90F22A031E1006A2F30 /* CommandLoggerTests.swift */; };
 		CA41D91222A03254006A2F30 /* CommandLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D91122A03254006A2F30 /* CommandLogger.swift */; };
 		CA41D91322A03254006A2F30 /* CommandLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D91122A03254006A2F30 /* CommandLogger.swift */; };
+		CA41D91522A036BD006A2F30 /* T3ReplayInstructionsCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D91422A036BD006A2F30 /* T3ReplayInstructionsCommandHandlerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -185,6 +186,7 @@
 		CA41D90C22A02B8C006A2F30 /* T3PlayerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3PlayerHelper.swift; sourceTree = "<group>"; };
 		CA41D90F22A031E1006A2F30 /* CommandLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLoggerTests.swift; sourceTree = "<group>"; };
 		CA41D91122A03254006A2F30 /* CommandLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLogger.swift; sourceTree = "<group>"; };
+		CA41D91422A036BD006A2F30 /* T3ReplayInstructionsCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3ReplayInstructionsCommandHandlerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 				CA41D90522A016DB006A2F30 /* T3PatternHelperTests.swift */,
 				CA41D90A22A02AC8006A2F30 /* T3PlayerHelperTests.swift */,
 				CA41D90F22A031E1006A2F30 /* CommandLoggerTests.swift */,
+				CA41D91422A036BD006A2F30 /* T3ReplayInstructionsCommandHandlerTests.swift */,
 			);
 			path = ModuleRunnerAppTests;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				CA41D8EB229DC9A3006A2F30 /* CommandBuilder.swift in Sources */,
 				CA352D61229B4DDD009F4420 /* Command.swift in Sources */,
 				CA352D38229AF5BA009F4420 /* DataService.swift in Sources */,
+				CA41D91522A036BD006A2F30 /* T3ReplayInstructionsCommandHandlerTests.swift in Sources */,
 				CA352D52229B1512009F4420 /* MockInputService.swift in Sources */,
 				CA41D8FF229ED275006A2F30 /* T3PositionHelper.swift in Sources */,
 				CA352DA4229D951D009F4420 /* T3PromptForReadyCommandHandler.swift in Sources */,
