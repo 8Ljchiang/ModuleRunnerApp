@@ -54,21 +54,21 @@ class T3PatternHelperTests: XCTestCase {
 		XCTAssertEqual(expectedPatterns, actualPatterns);
 	}
 	
-	func testFindPattern() {
+	func testFindMatchingPattern() {
 		let expectedPatterns: [[Int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]];
 		
 		for positions in expectedPatterns {
-			let foundPattern = T3PatternHelper.findPatterns(positions: positions, patterns: expectedPatterns);
+			let foundPattern = T3PatternHelper.findMatchingPattern(positions: positions, patterns: expectedPatterns);
 			
 			XCTAssertEqual(positions, foundPattern);
 		}
 	}
 	
-	func testFindPatternWhenNoMatchingPattern() {
+	func testFindMatchingPatternWhenNoMatchingPattern() {
 		let positions = [1, 3, 9, 4];
 		let expectedPatterns: [[Int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]];
 		
-		let result = T3PatternHelper.findPatterns(positions: positions, patterns: expectedPatterns);
+		let result = T3PatternHelper.findMatchingPattern(positions: positions, patterns: expectedPatterns);
 			
 		XCTAssertNil(result);
 	}
@@ -77,8 +77,17 @@ class T3PatternHelperTests: XCTestCase {
 		let boardSize = 3;
 		let positions = [1, 2, 3];
 		
-		let result = T3PatternHelper.findWinningPattern(positions: positions, patterns: expectedPatterns, boardSize: boardSize);
+		let result = T3PatternHelper.findWinningPattern(positions: positions, boardSize: boardSize);
 		
 		XCTAssertEqual(positions, result);
+	}
+	
+	func testFindWinningPatternWhenNoMatchingPattern() {
+		let boardSize = 3;
+		let positions = [1, 3, 9, 4];
+		
+		let result = T3PatternHelper.findWinningPattern(positions: positions, boardSize: boardSize);
+		
+		XCTAssertNil(result);
 	}
 }

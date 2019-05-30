@@ -9,7 +9,13 @@
 import Foundation
 
 class T3PatternHelper {
-	static func findPatterns(positions: [Int], patterns: [[Int]]) -> [Int]? {
+	static func findWinningPattern(positions: [Int], boardSize: Int) -> [Int]? {
+		let winningPatterns = getWinningPatterns(boardSize: boardSize);
+		let result = findMatchingPattern(positions: positions, patterns: winningPatterns);
+		return result;
+	}
+	
+	static func findMatchingPattern(positions: [Int], patterns: [[Int]]) -> [Int]? {
 		for pattern in patterns {
 			var matches: [Int] = Array();
 			for position in positions {
