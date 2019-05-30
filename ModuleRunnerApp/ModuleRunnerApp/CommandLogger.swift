@@ -22,6 +22,6 @@ class CommandLogger: CommandLoggerProtocol {
 	}
 	
 	func logCommand(_ command: CommandProtocol) {
-		
+		self.presenterService.display("[CommandLogger]: \(command.type)");
 	}
 }

@@ -34,6 +34,6 @@ class CommandLoggerTests: XCTestCase {
 		commandLogger.logCommand(command);
 		
 		XCTAssert(mockPresenterService.isDisplayCalled);
-		XCTAssertEqual("T3Welcome", mockPresenterService.displayCalledWith);
+		XCTAssertEqual("[CommandLogger]: T3Welcome", mockPresenterService.displayCalledWith);
 	}
 }
