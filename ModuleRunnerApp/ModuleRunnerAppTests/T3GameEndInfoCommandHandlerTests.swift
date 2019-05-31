@@ -18,7 +18,10 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-	func testExample() {
+	func testInit() {
+		let mockReadDataService = MockReadDataService();
+		let gameEndInfoCH = T3GameEndInfoCommandHandler(readDataService: mockReadDataService);
 		
+		XCTAssertNotNil(gameEndInfoCH);
 	}
 }
