@@ -25,4 +25,46 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
 		
 		XCTAssertNotNil(gameEndInfoCH);
 	}
+	
+	func testExecuteWhenWinnerExists() {
+		var dataStore: DataStore = DataStore();
+		dataStore.data = [
+			"boardSize": 3,
+			"playerCount": 2,
+			"aiSkill": 100,
+			"players": ["P1", "P2"],
+			"activePlayerIndex": 0,
+			"moves": [
+				Move(playerId: "P1", position: 1, marker: MarkerType.Marker1.rawValue),
+				Move(playerId: "P2", position: 4, marker: MarkerType.Marker2.rawValue),
+				Move(playerId: "P1", position: 2, marker: MarkerType.Marker1.rawValue),
+				Move(playerId: "P2", position: 7, marker: MarkerType.Marker2.rawValue),
+				Move(playerId: "P1", position: 3, marker: MarkerType.Marker1.rawValue),
+			],
+			"winner": "P1",
+			"winningPattern": [1, 2, 3]
+		];
+		let expectedBoardString = "";
+		let expectedEndInfoString = "The game is over.\nP1 (X) is the winner.\nWinning Pattern: 1, 2, 3.\n";
+		let mockGameModule = MockGameModule(defaultInputResponse: "Default input response");
+		let mockReadDataService = MockReadDataService(dataStore: dataStore);
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3GameEndInfo, payload: payload);
+		let gameEndInfoCH = T3GameEndInfoCommandHandler(readDataService: mockReadDataService);
+		let expectedCommandCount = 4;
+		let expectedErrorCount = 0;
+		
+		let response = gameEndInfoCH.execute(command, module: mockGameModule);
+		
+		XCTAssertNotNil(response);
+		XCTAssertEqual(expectedCommandCount, response.commands.count);
+		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
+		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
+		XCTAssertEqual(CommandType.T3Display, response.commands[1].type);
+		XCTAssertEqual(expectedBoardString, response.commands[1].payload["text"] as? String);
+		XCTAssertEqual(CommandType.T3Display, response.commands[2].type);
+		XCTAssertEqual(expectedBoardString, response.commands[2].payload["text"] as? String);
+		XCTAssertEqual(CommandType.T3ReplayInstructions, response.commands[3].type);
+		XCTAssertEqual(expectedErrorCount, response.errors.count);
+	}
 }
