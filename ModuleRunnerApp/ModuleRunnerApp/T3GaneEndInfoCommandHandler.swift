@@ -9,7 +9,7 @@
 import Foundation
 
 class T3GameEndInfoCommandHandler: CommandHandlerProtocol {
-	init(readDataService: ReadDataServiceProtol) {}
+	init(readDataService: ReadDataServiceProtocol) {}
 	
 	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
 		return CommandHandlerResponse();

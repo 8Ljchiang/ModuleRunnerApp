@@ -110,6 +110,8 @@
 		CA41D91A22A07C5D006A2F30 /* T3GameEndInfoCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D91922A07C5D006A2F30 /* T3GameEndInfoCommandHandlerTests.swift */; };
 		CA41D91C22A0AB50006A2F30 /* T3GaneEndInfoCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D91B22A0AB50006A2F30 /* T3GaneEndInfoCommandHandler.swift */; };
 		CA41D91D22A0AB50006A2F30 /* T3GaneEndInfoCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D91B22A0AB50006A2F30 /* T3GaneEndInfoCommandHandler.swift */; };
+		CA41D91F22A0AC27006A2F30 /* ReadDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D91E22A0AC27006A2F30 /* ReadDataServiceProtocol.swift */; };
+		CA41D92022A0AC27006A2F30 /* ReadDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D91E22A0AC27006A2F30 /* ReadDataServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -195,6 +197,7 @@
 		CA41D91622A0386A006A2F30 /* T3ReplayInstructionsCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3ReplayInstructionsCommandHandler.swift; sourceTree = "<group>"; };
 		CA41D91922A07C5D006A2F30 /* T3GameEndInfoCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3GameEndInfoCommandHandlerTests.swift; sourceTree = "<group>"; };
 		CA41D91B22A0AB50006A2F30 /* T3GaneEndInfoCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3GaneEndInfoCommandHandler.swift; sourceTree = "<group>"; };
+		CA41D91E22A0AC27006A2F30 /* ReadDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadDataServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +274,7 @@
 				CA41D91122A03254006A2F30 /* CommandLogger.swift */,
 				CA41D91622A0386A006A2F30 /* T3ReplayInstructionsCommandHandler.swift */,
 				CA41D91B22A0AB50006A2F30 /* T3GaneEndInfoCommandHandler.swift */,
+				CA41D91E22A0AC27006A2F30 /* ReadDataServiceProtocol.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -449,6 +453,7 @@
 				CA41D91722A0386A006A2F30 /* T3ReplayInstructionsCommandHandler.swift in Sources */,
 				CA41D8F9229DDDA3006A2F30 /* T3BoardRenderer.swift in Sources */,
 				CA352DA3229D951D009F4420 /* T3PromptForReadyCommandHandler.swift in Sources */,
+				CA41D91F22A0AC27006A2F30 /* ReadDataServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +498,7 @@
 				CA352D6F229B6B80009F4420 /* CommandHandler.swift in Sources */,
 				CA41D8E8229DC928006A2F30 /* CommandBuilderTests.swift in Sources */,
 				CA352D5B229B483D009F4420 /* MockModuleRunner.swift in Sources */,
+				CA41D92022A0AC27006A2F30 /* ReadDataServiceProtocol.swift in Sources */,
 				CA352D7D229B71CC009F4420 /* T3DisplayCommandHandler.swift in Sources */,
 				CA41D91D22A0AB50006A2F30 /* T3GaneEndInfoCommandHandler.swift in Sources */,
 				CA352D7F229C14F3009F4420 /* T3DisplayCommandHandlerTests.swift in Sources */,
