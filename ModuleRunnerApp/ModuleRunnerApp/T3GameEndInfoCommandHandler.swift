@@ -18,16 +18,21 @@ class T3GameEndInfoCommandHandler: CommandHandlerProtocol {
 	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
 		let response = CommandHandlerResponse();
 		
+		let clearDisplayCommand = CommandBuilder.displayClearCommand();
+		response.addCommand(clearDisplayCommand);
+		
 		let titleDisplayCommand = CommandBuilder.displayCommand(T3Text.title);
 		response.addCommand(titleDisplayCommand);
 		
 		let store = readDataService.getStore();
 		
 		guard let moves = store.data["moves"] as? [Move] else {
+			let response = CommandHandlerResponse();
 			response.addError("No moves data found.");
 			return response;
 		};
 		guard let boardSize = store.data["boardSize"] as? Int else {
+			let response = CommandHandlerResponse();
 			response.addError("No board size data found.");
 			return response;
 		}
@@ -36,10 +41,12 @@ class T3GameEndInfoCommandHandler: CommandHandlerProtocol {
 		response.addCommand(boardDisplayCommand);
 		
 		guard let winner = store.data["winner"] as? String else {
+			let response = CommandHandlerResponse();
 			response.addError("No winner data found.");
 			return response;
 		}
 		guard let winningPattern = store.data["winningPattern"] as? [Int] else {
+			let response = CommandHandlerResponse();
 			response.addError("No winning pattern data found.");
 			return response;
 		}

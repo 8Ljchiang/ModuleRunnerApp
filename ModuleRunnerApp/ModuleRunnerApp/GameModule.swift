@@ -35,10 +35,19 @@ class GameModule: GameModuleProtocol {
 		self.runner = moduleRunner;
 //		print("*** GameModule: assigning module to dispatcher");
 //		self.dispatcher.connectModule(gameModule: self);
+		let initialData: [String: Any] = [
+			"boardSize": 3,
+			"playerCount": 1,
+			"aiSkill": 100,
+			"moves": [],
+			"activePlayerIndex": 0,
+			"players": ["P1-Player", "P2-Bot"],
+		];
+		let updateCommand = CommandBuilder.updateDataCommand(initialData)
+		let welcomeCommand = CommandBuilder.welcomeCommand();
 		
-		let initialCommand = CommandBuilder.welcomeCommand();
-		
-		self.dispatcher.queueCommand(initialCommand);
+		self.dispatcher.queueCommand(updateCommand);
+		self.dispatcher.queueCommand(welcomeCommand);
 		self.dispatcher.processQueue();
 	}
 	
