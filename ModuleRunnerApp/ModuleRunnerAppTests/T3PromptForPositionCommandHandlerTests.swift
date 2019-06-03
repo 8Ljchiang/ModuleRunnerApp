@@ -19,8 +19,33 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
     }
 
     func testInit() {
-		let promptForPositionCH = T3PromptForPositionCommandHandler();
+		let mockDataStore = DataStore();
+		let mockReadDataService = MockReadDataService(dataStore: mockDataStore)
+		let promptForPositionCH = T3PromptForPositionCommandHandler(readDataService: mockReadDataService);
 		
 		XCTAssertNotNil(promptForPositionCH);
     }
+	
+	func testExecute() {
+		let inputPosition = "1";
+		let mockGameModule = MockGameModule(defaultInputResponse: inputPosition);
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3GameInfo, payload: payload);
+		let mockDataStore = DataStore();
+		let mockReadDataService = MockReadDataService(dataStore: mockDataStore)
+		let promptForPositionCH = T3PromptForPositionCommandHandler(readDataService: mockReadDataService);
+		let expectedCommandCount = 3;
+		let expectedErrorCount = 0;
+		
+		let response = promptForPositionCH.execute(command, module: mockGameModule);
+
+		XCTAssertNotNil(response);
+		XCTAssertEqual(expectedCommandCount, response.commands.count);
+		XCTAssertEqual(expectedErrorCount, response.errors.count);
+		XCTAssertEqual(CommandType.T3UpdateData, response.commands[0].type);
+		XCTAssertEqual(2, response.commands[0].payload["moves"].count);
+		XCTAssertTrue(response.commands[0].payload["moves"].contains { $0 == 1 })
+		XCTAssertEqual(CommandType.T3GameInfo, response.commands[1].type);
+		XCTAssertEqual(CommandType.T3GameAvailablePositions, response.commands[2].type);
+	}
 }

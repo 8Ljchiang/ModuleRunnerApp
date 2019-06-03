@@ -9,7 +9,7 @@
 import Foundation
 
 class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
-	init() {}
+	init(rwite) {}
 	
 	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
 		return CommandHandlerResponse();
