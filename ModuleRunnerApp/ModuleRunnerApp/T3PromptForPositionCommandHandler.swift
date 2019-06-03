@@ -43,6 +43,11 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 			let isInputValidPosition = T3PositionHelper.isValidInputForPosition(inputString, moves: movesCache, boardSize: boardSize);
 			
 			guard isInputValidPosition else {
+				response.addError("Invalid position: \(inputString)");
+				let gameInfoCommand = CommandBuilder.gameInfoCommand();
+				let positionsCommand = CommandBuilder.gameAvailablePositionsCommand();
+				response.addCommand(gameInfoCommand);
+				response.addCommand(positionsCommand);
 				return response;
 			}
 			

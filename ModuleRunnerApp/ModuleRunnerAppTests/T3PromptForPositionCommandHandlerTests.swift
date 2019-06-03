@@ -154,6 +154,7 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 		XCTAssertNotNil(response);
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
+		XCTAssertEqual("Invalid position: \(inputPosition)", response.errors[0]);
 		XCTAssertEqual(CommandType.T3GameInfo, response.commands[0].type);
 		XCTAssertEqual(CommandType.T3GameAvailablePositions, response.commands[1].type);
 	}
