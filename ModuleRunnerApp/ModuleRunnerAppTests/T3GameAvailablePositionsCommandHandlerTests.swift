@@ -46,13 +46,13 @@ class T3GameAvailablePositionsCommandHandlerTests: XCTestCase {
 			"activePlayerIndex": 0,
 			"winner": "P1",
 		];
-		let expectedPositionsString = "Available Positions: 1, 2, 3, 4, 5, 6, 7, 8, 9";
+		let expectedPositionsString = "Available Positions: 1, 2, 3, 4, 5, 6, 7, 8, 9.";
 		let mockReadDataService = MockReadDataService(dataStore: dataStore);
 		let mockGameModule = MockGameModule(defaultInputResponse: "Default input response");
 		let availablePositionsCH = T3GameAvailablePositionsCommandHandler(readDataService: mockReadDataService);
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3GameAvailablePositions, payload: payload);
-		let expectedCommandCount = 3;
+		let expectedCommandCount = 1;
 		let expectedErrorCount = 0;
 		
 		let response = availablePositionsCH.execute(command, module: mockGameModule);
