@@ -9,9 +9,91 @@
 import Foundation
 
 class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
-	init(rwite) {}
+	var readDataService: ReadDataServiceProtocol;
+	
+	init(readDataService: ReadDataServiceProtocol) {
+		self.readDataService = readDataService;
+	}
 	
 	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
-		return CommandHandlerResponse();
+		let response = CommandHandlerResponse();
+		
+		let store = readDataService.getStore();
+		guard var movesCache = store.data["moves"] as? [Move] else {
+			return response;
+		}
+		
+		guard let boardSize = store.data["boardSize"] as? Int else {
+			return response;
+		}
+		
+		guard let currentActivePlayerIndex = store.data["activePlayerIndex"] as? Int else {
+			return response;
+		}
+		
+		guard let players = store.data["players"] as? [String] else {
+			return response;
+		};
+		
+		let maxPositions = boardSize * boardSize;
+		
+		if movesCache.count < maxPositions {
+			let inputString = module.promptForInput();
+			let isInputValidPosition = T3PositionHelper.isValidInputForPosition(inputString, moves: movesCache, boardSize: boardSize);
+			
+			guard isInputValidPosition else {
+				return response;
+			}
+			
+			let inputPosition = Int(inputString);
+			guard inputPosition != nil else {
+				return response;
+			}
+			
+			let isPositionAvailable = T3PositionHelper.isPositionAvailable(position: inputPosition!, moves: movesCache, boardSize: boardSize);
+			
+			guard isPositionAvailable else {
+				return response;
+			}
+		
+			let currentPlayerId = players[currentActivePlayerIndex];
+			let marker = MarkerType.Marker1.rawValue;
+			let newMove = Move(playerId: currentPlayerId, position: inputPosition!, marker: marker);
+			let newMoves = T3MoveHelper.appendMove(newMove, moves: movesCache, boardSize: boardSize);
+			let winningPattern = T3PatternHelper.getWinningPatterns(boardSize: boardSize);
+			var updateData: [String: Any] = [:];
+			
+			if winningPattern.count == boardSize {
+				updateData["moves"] = newMoves;
+				updateData["winner"] = currentPlayerId;
+				updateData["winningPattern"] = winningPattern;
+				let updateCommand = CommandBuilder.updateDataCommand(updateData);
+				let gameEndInfoCommand = CommandBuilder.gameEndInfoCommand();
+				response.addCommand(updateCommand);
+				response.addCommand(gameEndInfoCommand);
+			} else {
+				let nextPlayerIndex = T3PlayerHelper.cycleActivePlayerIndex(currentIndex: currentActivePlayerIndex, playerCount: players.count);
+				let movesWithAutoGenMove = T3MoveHelper.appendGeneratedMove(playerId: players[nextPlayerIndex], marker: MarkerType.Marker2.rawValue, moves: newMoves, boardSize: boardSize);
+				updateData["activePlayerIndex"] = T3PlayerHelper.cycleActivePlayerIndex(currentIndex: nextPlayerIndex, playerCount: players.count);
+				updateData["moves"] = movesWithAutoGenMove;
+				let updateCommand = CommandBuilder.updateDataCommand(updateData);
+				let gameInfoCommand = CommandBuilder.gameInfoCommand();
+				let gameAvailablePositionsCommand = CommandBuilder.gameAvailablePositionsCommand();
+				response.addCommand(updateCommand);
+				response.addCommand(gameInfoCommand);
+				response.addCommand(gameAvailablePositionsCommand);
+			}
+			
+			return response;
+		}
+		
+		var updateData: [String: Any] = [:];
+		updateData["winner"] = "No one";
+		let updateCommand = CommandBuilder.updateDataCommand(updateData);
+		let gameEndInfo = CommandBuilder.gameEndInfoCommand();
+		response.addCommand(updateCommand);
+		response.addCommand(gameEndInfo);
+	
+		return response;
 	}
 }
