@@ -19,7 +19,7 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 		let response = CommandHandlerResponse();
 		
 		let store = readDataService.getStore();
-		guard var movesCache = store.data["moves"] as? [Move] else {
+		guard let movesCache = store.data["moves"] as? [Move] else {
 			return response;
 		}
 		
@@ -62,11 +62,9 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 			let newMoves = T3MoveHelper.appendMove(newMove, moves: movesCache, boardSize: boardSize);
 			let movePositions = T3PositionHelper.getPositionsForMarker(moves: newMoves, marker: MarkerType.Marker1.rawValue);
 			
-			// Section to check if user has won.
 			let winningPattern = T3PatternHelper.findWinningPattern(positions: movePositions, boardSize: boardSize);
 			if winningPattern != nil && winningPattern!.count == boardSize {
 				var updateData: [String: Any] = [:];
-				print("*** WinningPattern found");
 				updateData["moves"] = newMoves;
 				updateData["winner"] = currentPlayerId;
 				updateData["winningPattern"] = winningPattern;
@@ -80,12 +78,10 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 			let nextPlayerIndex = T3PlayerHelper.cycleActivePlayerIndex(currentIndex: currentActivePlayerIndex, playerCount: players.count);
 			let movesWithAutoGenMove = T3MoveHelper.appendGeneratedMove(playerId: players[nextPlayerIndex], marker: MarkerType.Marker2.rawValue, moves: newMoves, boardSize: boardSize);
 			
-			// Section to check if bot has won.
 			let botPositions = T3PositionHelper.getPositionsForMarker(moves: movesWithAutoGenMove, marker: MarkerType.Marker2.rawValue);
 			let winningPattern2 = T3PatternHelper.findWinningPattern(positions: botPositions, boardSize: boardSize);
 			if winningPattern2 != nil && winningPattern2!.count == boardSize {
 				var updateData: [String: Any] = [:];
-				print("*** WinningPattern found");
 				updateData["moves"] = movesWithAutoGenMove;
 				updateData["winner"] = currentPlayerId;
 				updateData["winningPattern"] = winningPattern2;
