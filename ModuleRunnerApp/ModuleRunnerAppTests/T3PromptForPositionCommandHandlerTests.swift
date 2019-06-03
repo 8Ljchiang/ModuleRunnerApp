@@ -127,4 +127,29 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 		XCTAssertEqual("No one", response.commands[0].payload["winner"] as? String);
 		XCTAssertEqual(CommandType.T3GameEndInfo, response.commands[1].type);
 	}
+	
+	func testExecuteWhenNoMovesDataExists() {
+		let inputPosition = "3";
+		let mockGameModule = MockGameModule(defaultInputResponse: inputPosition);
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3GameInfo, payload: payload);
+		var mockDataStore = DataStore();
+		mockDataStore.data = [
+			"activePlayerIndex": 0,
+			"boardSize": 3,
+			"players": ["P1", "P2"],
+		];
+		
+		let mockReadDataService = MockReadDataService(dataStore: mockDataStore)
+		let promptForPositionCH = T3PromptForPositionCommandHandler(readDataService: mockReadDataService);
+		let expectedCommandCount = 0;
+		let expectedErrorCount = 1;
+		
+		let response = promptForPositionCH.execute(command, module: mockGameModule);
+		
+		XCTAssertNotNil(response);
+		XCTAssertEqual(expectedCommandCount, response.commands.count);
+		XCTAssertEqual(expectedErrorCount, response.errors.count);
+		XCTAssertEqual("No moves data found.", response.errors[0]);
+	}
 }
