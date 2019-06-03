@@ -44,8 +44,8 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
 			"winner": "P1",
 			"winningPattern": [1, 2, 3]
 		];
-		let expectedBoardString = "";
-		let expectedEndInfoString = "The game is over.\nP1 (X) is the winner.\nWinning Pattern: 1, 2, 3.\n";
+		let expectedBoardString = "         |         |         \n    X    |    X    |    X    \n         |         |         \n-----------------------------\n         |         |         \n    O    |         |         \n         |         |         \n-----------------------------\n         |         |         \n    O    |         |         \n         |         |         \n";
+		let expectedEndInfoString = "The game is over.\nP1 is the winner.\nWinning Pattern: 1, 2, 3.\n";
 		let mockGameModule = MockGameModule(defaultInputResponse: "Default input response");
 		let mockReadDataService = MockReadDataService(dataStore: dataStore);
 		let payload: [String: Any] = [:];
@@ -63,7 +63,7 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
 		XCTAssertEqual(CommandType.T3Display, response.commands[1].type);
 		XCTAssertEqual(expectedBoardString, response.commands[1].payload["text"] as? String);
 		XCTAssertEqual(CommandType.T3Display, response.commands[2].type);
-		XCTAssertEqual(expectedBoardString, response.commands[2].payload["text"] as? String);
+		XCTAssertEqual(expectedEndInfoString, response.commands[2].payload["text"] as? String);
 		XCTAssertEqual(CommandType.T3ReplayInstructions, response.commands[3].type);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 	}
