@@ -119,6 +119,8 @@
 		CA41D92922A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92822A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift */; };
 		CA41D92A22A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92822A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift */; };
 		CA41D92C22A59ECA006A2F30 /* T3PromptForPositionCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92B22A59ECA006A2F30 /* T3PromptForPositionCommandHandlerTests.swift */; };
+		CA41D92E22A59FA2006A2F30 /* T3PromptForPositionCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92D22A59FA2006A2F30 /* T3PromptForPositionCommandHandler.swift */; };
+		CA41D92F22A59FA2006A2F30 /* T3PromptForPositionCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92D22A59FA2006A2F30 /* T3PromptForPositionCommandHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -210,6 +212,7 @@
 		CA41D92622A57A11006A2F30 /* T3GameAvailablePositionsCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3GameAvailablePositionsCommandHandlerTests.swift; sourceTree = "<group>"; };
 		CA41D92822A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3GameAvailablePositionsCommandHandler.swift; sourceTree = "<group>"; };
 		CA41D92B22A59ECA006A2F30 /* T3PromptForPositionCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3PromptForPositionCommandHandlerTests.swift; sourceTree = "<group>"; };
+		CA41D92D22A59FA2006A2F30 /* T3PromptForPositionCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3PromptForPositionCommandHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +292,7 @@
 				CA41D91E22A0AC27006A2F30 /* ReadDataServiceProtocol.swift */,
 				CA41D92322A0B635006A2F30 /* DataStore.swift */,
 				CA41D92822A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift */,
+				CA41D92D22A59FA2006A2F30 /* T3PromptForPositionCommandHandler.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -437,6 +441,7 @@
 				CA352D89229C2E7D009F4420 /* T3UpdateDataCommandHandler.swift in Sources */,
 				CA41D8EA229DC9A3006A2F30 /* CommandBuilder.swift in Sources */,
 				CA352D3A229B0434009F4420 /* Move.swift in Sources */,
+				CA41D92E22A59FA2006A2F30 /* T3PromptForPositionCommandHandler.swift in Sources */,
 				CA352D37229AF5BA009F4420 /* DataService.swift in Sources */,
 				CA352D6B229B6B37009F4420 /* CommandHandlerResolver.swift in Sources */,
 				CA352D84229C15BB009F4420 /* CommandHandlerResponse.swift in Sources */,
@@ -523,6 +528,7 @@
 				CA41D92022A0AC27006A2F30 /* ReadDataServiceProtocol.swift in Sources */,
 				CA352D7D229B71CC009F4420 /* T3DisplayCommandHandler.swift in Sources */,
 				CA41D91D22A0AB50006A2F30 /* T3GaneEndInfoCommandHandler.swift in Sources */,
+				CA41D92F22A59FA2006A2F30 /* T3PromptForPositionCommandHandler.swift in Sources */,
 				CA352D7F229C14F3009F4420 /* T3DisplayCommandHandlerTests.swift in Sources */,
 				CA352D4D229B0EEA009F4420 /* MockPresenterService.swift in Sources */,
 				CA41D92522A0B635006A2F30 /* DataStore.swift in Sources */,
