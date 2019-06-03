@@ -20,6 +20,7 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 		
 		let store = readDataService.getStore();
 		guard let movesCache = store.data["moves"] as? [Move] else {
+			response.addError("No moves data found.");
 			return response;
 		}
 		
