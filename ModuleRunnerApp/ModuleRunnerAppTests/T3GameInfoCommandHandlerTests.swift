@@ -30,8 +30,6 @@ class T3GameInfoCommandHandlerTests: XCTestCase {
 		var dataStore: DataStore = DataStore();
 		dataStore.data = [
 			"boardSize": 3,
-//			"playerCount": 1,
-//			"aiSkill": 100,
 			"players": ["P1", "P2"],
 			"activePlayerIndex": 0,
 			"moves": [
@@ -41,8 +39,6 @@ class T3GameInfoCommandHandlerTests: XCTestCase {
 				Move(playerId: "P2", position: 7, marker: MarkerType.Marker2.rawValue),
 				Move(playerId: "P1", position: 3, marker: MarkerType.Marker1.rawValue),
 			],
-//			"winner": "P1",
-//			"winningPattern": [1, 2, 3]
 		];
 		let expectedBoardString = "         |         |         \n    X    |    X    |    X    \n         |         |         \n-----------------------------\n         |         |         \n    O    |         |         \n         |         |         \n-----------------------------\n         |         |         \n    O    |         |         \n         |         |         \n";
 		let expectedInfoString = "\nP1's turn. Select a position.";
