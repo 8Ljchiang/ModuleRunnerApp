@@ -58,6 +58,44 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 //		XCTAssertEqual(CommandType.T3GameAvailablePositions, response.commands[2].type);
 	}
 	
+	func testExecuteWhenInputIsDrawMove() {
+		let inputPosition = "1";
+		let mockGameModule = MockGameModule(defaultInputResponse: inputPosition);
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3GameInfo, payload: payload);
+		var mockDataStore = DataStore();
+		mockDataStore.data = [
+			"moves": [
+//				Move(playerId: "P1", position: 1, marker: MarkerType.Marker1.rawValue),
+				Move(playerId: "P1", position: 2, marker: MarkerType.Marker1.rawValue),
+				Move(playerId: "P2", position: 3, marker: MarkerType.Marker2.rawValue),
+				Move(playerId: "P2", position: 4, marker: MarkerType.Marker2.rawValue),
+				Move(playerId: "P2", position: 5, marker: MarkerType.Marker2.rawValue),
+				Move(playerId: "P1", position: 6, marker: MarkerType.Marker1.rawValue),
+				Move(playerId: "P1", position: 7, marker: MarkerType.Marker1.rawValue),
+				Move(playerId: "P1", position: 8, marker: MarkerType.Marker1.rawValue),
+				Move(playerId: "P2", position: 9, marker: MarkerType.Marker2.rawValue),
+			],
+			"activePlayerIndex": 0,
+			"boardSize": 3,
+			"players": ["P1", "P2"],
+		];
+		
+		let mockReadDataService = MockReadDataService(dataStore: mockDataStore)
+		let promptForPositionCH = T3PromptForPositionCommandHandler(readDataService: mockReadDataService);
+		let expectedCommandCount = 2;
+		let expectedErrorCount = 0;
+		
+		let response = promptForPositionCH.execute(command, module: mockGameModule);
+		
+		XCTAssertNotNil(response);
+		XCTAssertEqual(expectedCommandCount, response.commands.count);
+		XCTAssertEqual(expectedErrorCount, response.errors.count);
+		XCTAssertEqual(CommandType.T3UpdateData, response.commands[0].type);
+		XCTAssertEqual("No one", response.commands[0].payload["winner"] as? String);
+		XCTAssertEqual(CommandType.T3GameEndInfo, response.commands[1].type);
+	}
+	
 	func testExecuteWhenInputIsWinningMove() {
 		let inputPosition = "3";
 		let mockGameModule = MockGameModule(defaultInputResponse: inputPosition);
