@@ -232,6 +232,7 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 		XCTAssertEqual("No active player index data found.", response.errors[0]);
+	}
 	
 	func testExecuteWhenNoPlayerData() {
 		let inputPosition = "3";

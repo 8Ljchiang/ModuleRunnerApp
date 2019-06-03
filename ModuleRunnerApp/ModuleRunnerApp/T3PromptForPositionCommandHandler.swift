@@ -30,6 +30,7 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 		}
 		
 		guard let currentActivePlayerIndex = store.data["activePlayerIndex"] as? Int else {
+			response.addError("No active player index data found.");
 			return response;
 		}
 		
