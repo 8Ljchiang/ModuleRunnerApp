@@ -146,7 +146,7 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 		
 		let mockReadDataService = MockReadDataService(dataStore: mockDataStore)
 		let promptForPositionCH = T3PromptForPositionCommandHandler(readDataService: mockReadDataService);
-		let expectedCommandCount = 2;
+		let expectedCommandCount = 1;
 		let expectedErrorCount = 1;
 		
 		let response = promptForPositionCH.execute(command, module: mockGameModule);
@@ -156,7 +156,7 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 		XCTAssertEqual("Invalid position: \(inputPosition)", response.errors[0]);
 		XCTAssertEqual(CommandType.T3GameInfo, response.commands[0].type);
-		XCTAssertEqual(CommandType.T3GameAvailablePositions, response.commands[1].type);
+//		XCTAssertEqual(CommandType.T3GameAvailablePositions, response.commands[1].type);
 	}
 	
 	func testExecuteWhenNoMovesDataExists() {

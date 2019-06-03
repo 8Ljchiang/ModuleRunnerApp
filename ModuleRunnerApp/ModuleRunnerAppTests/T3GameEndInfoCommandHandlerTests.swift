@@ -51,20 +51,21 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3GameEndInfo, payload: payload);
 		let gameEndInfoCH = T3GameEndInfoCommandHandler(readDataService: mockReadDataService);
-		let expectedCommandCount = 4;
+		let expectedCommandCount = 5;
 		let expectedErrorCount = 0;
 		
 		let response = gameEndInfoCH.execute(command, module: mockGameModule);
 		
 		XCTAssertNotNil(response);
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
-		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
-		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
+		XCTAssertEqual(CommandType.T3DisplayClear, response.commands[0].type);
 		XCTAssertEqual(CommandType.T3Display, response.commands[1].type);
-		XCTAssertEqual(expectedBoardString, response.commands[1].payload["text"] as? String);
+		XCTAssertEqual(T3Text.title, response.commands[1].payload["text"] as? String);
 		XCTAssertEqual(CommandType.T3Display, response.commands[2].type);
-		XCTAssertEqual(expectedEndInfoString, response.commands[2].payload["text"] as? String);
-		XCTAssertEqual(CommandType.T3ReplayInstructions, response.commands[3].type);
+		XCTAssertEqual(expectedBoardString, response.commands[2].payload["text"] as? String);
+		XCTAssertEqual(CommandType.T3Display, response.commands[3].type);
+		XCTAssertEqual(expectedEndInfoString, response.commands[3].payload["text"] as? String);
+		XCTAssertEqual(CommandType.T3ReplayInstructions, response.commands[4].type);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 	}
 	
@@ -85,15 +86,15 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3GameEndInfo, payload: payload);
 		let gameEndInfoCH = T3GameEndInfoCommandHandler(readDataService: mockReadDataService);
-		let expectedCommandCount = 1;
+		let expectedCommandCount = 0;
 		let expectedErrorCount = 1;
 		
 		let response = gameEndInfoCH.execute(command, module: mockGameModule);
 		
 		XCTAssertNotNil(response);
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
-		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
-		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
+//		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
+//		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 		XCTAssertEqual("No moves data found.", response.errors[0]);
 	}
@@ -115,15 +116,15 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3GameEndInfo, payload: payload);
 		let gameEndInfoCH = T3GameEndInfoCommandHandler(readDataService: mockReadDataService);
-		let expectedCommandCount = 1;
+		let expectedCommandCount = 0;
 		let expectedErrorCount = 1;
 		
 		let response = gameEndInfoCH.execute(command, module: mockGameModule);
 		
 		XCTAssertNotNil(response);
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
-		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
-		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
+//		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
+//		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 		XCTAssertEqual("No board size data found.", response.errors[0]);
 	}
@@ -145,16 +146,16 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3GameEndInfo, payload: payload);
 		let gameEndInfoCH = T3GameEndInfoCommandHandler(readDataService: mockReadDataService);
-		let expectedCommandCount = 2;
+		let expectedCommandCount = 0;
 		let expectedErrorCount = 1;
 		
 		let response = gameEndInfoCH.execute(command, module: mockGameModule);
 		
 		XCTAssertNotNil(response);
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
-		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
-		XCTAssertEqual(CommandType.T3Display, response.commands[1].type);
-		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
+//		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
+//		XCTAssertEqual(CommandType.T3Display, response.commands[1].type);
+//		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 		XCTAssertEqual("No winner data found.", response.errors[0]);
 	}
@@ -176,16 +177,16 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3GameEndInfo, payload: payload);
 		let gameEndInfoCH = T3GameEndInfoCommandHandler(readDataService: mockReadDataService);
-		let expectedCommandCount = 2;
+		let expectedCommandCount = 0;
 		let expectedErrorCount = 1;
 		
 		let response = gameEndInfoCH.execute(command, module: mockGameModule);
 		
 		XCTAssertNotNil(response);
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
-		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
-		XCTAssertEqual(CommandType.T3Display, response.commands[1].type);
-		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
+//		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
+//		XCTAssertEqual(CommandType.T3Display, response.commands[1].type);
+//		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 		XCTAssertEqual("No winning pattern data found.", response.errors[0]);
 	}

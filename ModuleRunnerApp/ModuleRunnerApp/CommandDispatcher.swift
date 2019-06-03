@@ -76,7 +76,7 @@ class CommandDispatcher: CommandDispatcherProtocol {
 	private func handleResponseCommands(_ commands: [CommandProtocol]) {
 		if commands.count > 0 {
 			for command in commands {
-				print("*** queue command: \(command.type)");
+				// LOG: print("*** queue command: \(command.type)");
 				self.queueCommand(command);
 			}
 		}
@@ -85,7 +85,7 @@ class CommandDispatcher: CommandDispatcherProtocol {
 	private func handleResponseErrors(_ errors: [String]) {
 		if errors.count > 0 {
 			for errorMessage in errors {
-				print("*** queue errorMessage: \(errorMessage)");
+				// LOG ERROR: print("*** queue errorMessage: \(errorMessage)");
 //				let displayPayload: [String: Any] = ["text": errorMessage];
 //				let displayCommand = Command(type: CommandType.T3Display, payload: displayPayload);
 				let displayCommand = CommandBuilder.displayCommand(errorMessage);
