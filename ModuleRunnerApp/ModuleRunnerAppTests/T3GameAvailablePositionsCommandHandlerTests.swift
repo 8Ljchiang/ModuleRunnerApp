@@ -52,7 +52,7 @@ class T3GameAvailablePositionsCommandHandlerTests: XCTestCase {
 		let availablePositionsCH = T3GameAvailablePositionsCommandHandler(readDataService: mockReadDataService);
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3GameAvailablePositions, payload: payload);
-		let expectedCommandCount = 1;
+		let expectedCommandCount = 2;
 		let expectedErrorCount = 0;
 		
 		let response = availablePositionsCH.execute(command, module: mockGameModule);
@@ -63,6 +63,7 @@ class T3GameAvailablePositionsCommandHandlerTests: XCTestCase {
 		
 		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
 		XCTAssertEqual(expectedPositionsString, response.commands[0].payload["text"] as? String);
+		XCTAssertEqual(CommandType.T3PromptForPosition, response.commands[1].type);
 	}
 	
 	func testExecuteWhenSomeMovesExist() {
@@ -88,7 +89,7 @@ class T3GameAvailablePositionsCommandHandlerTests: XCTestCase {
 		let availablePositionsCH = T3GameAvailablePositionsCommandHandler(readDataService: mockReadDataService);
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3GameAvailablePositions, payload: payload);
-		let expectedCommandCount = 1;
+		let expectedCommandCount = 2;
 		let expectedErrorCount = 0;
 		
 		let response = availablePositionsCH.execute(command, module: mockGameModule);
@@ -99,6 +100,7 @@ class T3GameAvailablePositionsCommandHandlerTests: XCTestCase {
 		
 		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
 		XCTAssertEqual(expectedPositionsString, response.commands[0].payload["text"] as? String);
+		XCTAssertEqual(CommandType.T3PromptForPosition, response.commands[1].type);
 	}
 	
 	func testExecuteWhenNoAvailablePositions() {
@@ -128,7 +130,7 @@ class T3GameAvailablePositionsCommandHandlerTests: XCTestCase {
 		let availablePositionsCH = T3GameAvailablePositionsCommandHandler(readDataService: mockReadDataService);
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3GameAvailablePositions, payload: payload);
-		let expectedCommandCount = 1;
+		let expectedCommandCount = 2;
 		let expectedErrorCount = 0;
 		
 		let response = availablePositionsCH.execute(command, module: mockGameModule);
@@ -139,6 +141,7 @@ class T3GameAvailablePositionsCommandHandlerTests: XCTestCase {
 		
 		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
 		XCTAssertEqual(expectedPositionsString, response.commands[0].payload["text"] as? String);
+		XCTAssertEqual(CommandType.T3PromptForPosition, response.commands[1].type);
 	}
 	
 	func testExecuteWhenNoMovesDataExists() {

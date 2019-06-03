@@ -34,8 +34,10 @@ class T3GameAvailablePositionsCommandHandler: CommandHandlerProtocol {
 		let availablePositionsString = availablePositions.map { String($0) }.joined(separator: ", ");
 		let payloadText = "Available Positions: \(availablePositionsString).";
 		let displayCommand = CommandBuilder.displayCommand(payloadText);
+		let promptForPositionCommand = CommandBuilder.promptForPositionCommand();
 		
 		response.addCommand(displayCommand);
+		response.addCommand(promptForPositionCommand);
 		
 		return response;
 	}
