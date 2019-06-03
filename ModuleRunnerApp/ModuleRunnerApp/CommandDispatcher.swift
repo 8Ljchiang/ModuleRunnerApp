@@ -17,10 +17,12 @@ protocol CommandDispatcherProtocol {
 class CommandDispatcher: CommandDispatcherProtocol {
 	var module: GameModuleProtocol?;
 	var queue: [CommandProtocol] = Array();
+	var logger: CommandLoggerProtocol;
 	var resolver: CommandHandlerResolverProtocol;
 	
-	init(resolver: CommandHandlerResolverProtocol) {
+	init(resolver: CommandHandlerResolverProtocol, commandLogger: CommandLoggerProtocol) {
 		self.resolver = resolver;
+		self.logger = commandLogger;
 	}
 	
 	func queueCommand(_ command: CommandProtocol) {
@@ -76,7 +78,7 @@ class CommandDispatcher: CommandDispatcherProtocol {
 	private func handleResponseCommands(_ commands: [CommandProtocol]) {
 		if commands.count > 0 {
 			for command in commands {
-				// LOG: print("*** queue command: \(command.type)");
+				self.logger.logCommand(command);
 				self.queueCommand(command);
 			}
 		}

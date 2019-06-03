@@ -17,6 +17,8 @@ let readDataService = ReadDataService(dataService: dataService);
 let consolePresenterService = ConsolePresenterService();
 let consoleInputService = ConsoleInputService();
 
+let commandLogger = CommandLogger(presenterService: consolePresenterService, isDisplayOn: false);
+
 let t3CommandHandlerResolver = CommandHandlerResolver();
 t3CommandHandlerResolver.addHandler(
 	type: CommandType.T3Display,
@@ -50,13 +52,12 @@ t3CommandHandlerResolver.addHandler(
 	commandHandler: T3ReplayInstructionsCommandHandler());
 t3CommandHandlerResolver.addHandler(
 	type: CommandType.T3PromptForReplay,
-	commandHandler: T3PromptForReadyCommandHandler());
+	commandHandler: T3PromptForReplayCommandHandler());
 t3CommandHandlerResolver.addHandler(
 	type: CommandType.T3PromptForPosition,
 	commandHandler: T3PromptForPositionCommandHandler(readDataService: readDataService));
 
-
-let commandDispatcher = CommandDispatcher(resolver: t3CommandHandlerResolver);
+let commandDispatcher = CommandDispatcher(resolver: t3CommandHandlerResolver, commandLogger: commandLogger);
 
 let t3GameModule = GameModule(commandDispatcher: commandDispatcher);
 

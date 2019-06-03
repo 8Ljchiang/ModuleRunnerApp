@@ -41,7 +41,7 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 		
 		let mockReadDataService = MockReadDataService(dataStore: mockDataStore)
 		let promptForPositionCH = T3PromptForPositionCommandHandler(readDataService: mockReadDataService);
-		let expectedCommandCount = 3;
+		let expectedCommandCount = 2;
 		let expectedErrorCount = 0;
 		
 		let response = promptForPositionCH.execute(command, module: mockGameModule);
@@ -55,7 +55,7 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 		XCTAssertEqual(0, updateCommandPayloadActivePlayerIndex);
 		XCTAssertEqual(2, updateCommandPayloadMoves?.count);
 		XCTAssertEqual(CommandType.T3GameInfo, response.commands[1].type);
-		XCTAssertEqual(CommandType.T3GameAvailablePositions, response.commands[2].type);
+//		XCTAssertEqual(CommandType.T3GameAvailablePositions, response.commands[2].type);
 	}
 	
 	func testExecuteWhenInputIsWinningMove() {

@@ -80,6 +80,7 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 			let movePositions = T3PositionHelper.getPositionsForMarker(moves: newMoves, marker: MarkerType.Marker1.rawValue);
 			
 			let winningPattern = T3PatternHelper.findWinningPattern(positions: movePositions, boardSize: boardSize);
+			
 			if winningPattern != nil && winningPattern!.count == boardSize {
 				let response = CommandHandlerResponse();
 				var updateData: [String: Any] = [:];
@@ -118,11 +119,11 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 			];
 			let updateCommand = CommandBuilder.updateDataCommand(updateData);
 			let gameInfoCommand = CommandBuilder.gameInfoCommand();
-			let gameAvailablePositionsCommand = CommandBuilder.gameAvailablePositionsCommand();
+//			let gameAvailablePositionsCommand = CommandBuilder.gameAvailablePositionsCommand();
 	
 			response.addCommand(updateCommand);
 			response.addCommand(gameInfoCommand);
-			response.addCommand(gameAvailablePositionsCommand);
+//			response.addCommand(gameAvailablePositionsCommand);
 	
 			return response;
 		}
