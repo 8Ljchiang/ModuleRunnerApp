@@ -31,12 +31,13 @@ class T3PromptForReplayCommandHandlerTests: XCTestCase {
 		let promptForReplayCH = T3PromptForReplayCommandHandler();
 		
 		let response = promptForReplayCH.execute(command, module: mockGameModule);
-		let expectedCommandCount = 1;
+		let expectedCommandCount = 2;
 		let expectedErrorCount = 0;
 		
 		XCTAssertNotNil(promptForReplayCH);
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
-		XCTAssertEqual(CommandType.T3Welcome, response.commands[0].type);
+		XCTAssertEqual(CommandType.T3UpdateData, response.commands[0].type);
+		XCTAssertEqual(CommandType.T3GameInfo, response.commands[1].type);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 	}
 	
