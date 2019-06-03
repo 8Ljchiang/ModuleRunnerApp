@@ -158,4 +158,35 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 		XCTAssertEqual("No winner data found.", response.errors[0]);
 	}
+	
+	func testExecuteWhenNoWinningPatternDataExists() {
+		var dataStore: DataStore = DataStore();
+		dataStore.data = [
+			"playerCount": 2,
+			"boardSize": 3,
+			"aiSkill": 100,
+			"moves": [],
+			"players": ["P1", "P2"],
+			"activePlayerIndex": 0,
+			"winner": "P1",
+		];
+		
+		let mockGameModule = MockGameModule(defaultInputResponse: "Default input response");
+		let mockReadDataService = MockReadDataService(dataStore: dataStore);
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3GameEndInfo, payload: payload);
+		let gameEndInfoCH = T3GameEndInfoCommandHandler(readDataService: mockReadDataService);
+		let expectedCommandCount = 2;
+		let expectedErrorCount = 1;
+		
+		let response = gameEndInfoCH.execute(command, module: mockGameModule);
+		
+		XCTAssertNotNil(response);
+		XCTAssertEqual(expectedCommandCount, response.commands.count);
+		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
+		XCTAssertEqual(CommandType.T3Display, response.commands[1].type);
+		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
+		XCTAssertEqual(expectedErrorCount, response.errors.count);
+		XCTAssertEqual("No winning pattern data found.", response.errors[0]);
+	}
 }
