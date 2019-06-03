@@ -19,7 +19,8 @@ class T3GameInfoCommandHandlerTests: XCTestCase {
     }
 
     func testInit() {
-		let mockReadDataService = MockReadDataService();
+		let dataStore = DataStore();
+		let mockReadDataService = MockReadDataService(dataStore: dataStore);
 		let gameInfoCH = T3GameInfoCommandHandler(readDataService: mockReadDataService);
 		
 		XCTAssertNotNil(gameInfoCH);
