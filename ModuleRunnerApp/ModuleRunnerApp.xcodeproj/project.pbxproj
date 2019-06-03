@@ -115,6 +115,7 @@
 		CA41D92222A0AE00006A2F30 /* MockReadDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92122A0AE00006A2F30 /* MockReadDataService.swift */; };
 		CA41D92422A0B635006A2F30 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92322A0B635006A2F30 /* DataStore.swift */; };
 		CA41D92522A0B635006A2F30 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92322A0B635006A2F30 /* DataStore.swift */; };
+		CA41D92722A57A11006A2F30 /* T3GameAvailablePositionsCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92622A57A11006A2F30 /* T3GameAvailablePositionsCommandHandlerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -203,6 +204,7 @@
 		CA41D91E22A0AC27006A2F30 /* ReadDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadDataServiceProtocol.swift; sourceTree = "<group>"; };
 		CA41D92122A0AE00006A2F30 /* MockReadDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReadDataService.swift; sourceTree = "<group>"; };
 		CA41D92322A0B635006A2F30 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		CA41D92622A57A11006A2F30 /* T3GameAvailablePositionsCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3GameAvailablePositionsCommandHandlerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 				CA41D90F22A031E1006A2F30 /* CommandLoggerTests.swift */,
 				CA41D91422A036BD006A2F30 /* T3ReplayInstructionsCommandHandlerTests.swift */,
 				CA41D91922A07C5D006A2F30 /* T3GameEndInfoCommandHandlerTests.swift */,
+				CA41D92622A57A11006A2F30 /* T3GameAvailablePositionsCommandHandlerTests.swift */,
 			);
 			path = ModuleRunnerAppTests;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				CA352D9F229D8C9D009F4420 /* T3GameRulesCommandHandler.swift in Sources */,
 				CA41D8F5229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift in Sources */,
 				CA41D91A22A07C5D006A2F30 /* T3GameEndInfoCommandHandlerTests.swift in Sources */,
+				CA41D92722A57A11006A2F30 /* T3GameAvailablePositionsCommandHandlerTests.swift in Sources */,
 				CA41D91822A0386A006A2F30 /* T3ReplayInstructionsCommandHandler.swift in Sources */,
 				CA41D8EE229DD31D006A2F30 /* DefaultCommandHandler.swift in Sources */,
 				CA352D33229AEEAB009F4420 /* GreeterTests.swift in Sources */,
