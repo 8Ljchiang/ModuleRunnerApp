@@ -60,18 +60,10 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 			let marker = MarkerType.Marker1.rawValue;
 			let newMove = Move(playerId: currentPlayerId, position: inputPosition!, marker: marker);
 			let newMoves = T3MoveHelper.appendMove(newMove, moves: movesCache, boardSize: boardSize);
-			let winningPattern = T3PatternHelper.getWinningPatterns(boardSize: boardSize);
-			var updateData: [String: Any] = [:];
-			
-			if winningPattern.count == boardSize {
-				updateData["moves"] = newMoves;
-				updateData["winner"] = currentPlayerId;
-				updateData["winningPattern"] = winningPattern;
-				let updateCommand = CommandBuilder.updateDataCommand(updateData);
-				let gameEndInfoCommand = CommandBuilder.gameEndInfoCommand();
-				response.addCommand(updateCommand);
-				response.addCommand(gameEndInfoCommand);
-			} else {
+			let movePositions = T3PositionHelper.getPositionsForMarker(moves: newMoves, marker: MarkerType.Marker1.rawValue);
+			guard let winningPattern = T3PatternHelper.findWinningPattern(positions: movePositions, boardSize: boardSize) else {
+				print("*** No winning pattern found:");
+				var updateData: [String: Any] = [:];
 				let nextPlayerIndex = T3PlayerHelper.cycleActivePlayerIndex(currentIndex: currentActivePlayerIndex, playerCount: players.count);
 				let movesWithAutoGenMove = T3MoveHelper.appendGeneratedMove(playerId: players[nextPlayerIndex], marker: MarkerType.Marker2.rawValue, moves: newMoves, boardSize: boardSize);
 				updateData["activePlayerIndex"] = T3PlayerHelper.cycleActivePlayerIndex(currentIndex: nextPlayerIndex, playerCount: players.count);
@@ -79,11 +71,23 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 				let updateCommand = CommandBuilder.updateDataCommand(updateData);
 				let gameInfoCommand = CommandBuilder.gameInfoCommand();
 				let gameAvailablePositionsCommand = CommandBuilder.gameAvailablePositionsCommand();
+			
 				response.addCommand(updateCommand);
 				response.addCommand(gameInfoCommand);
 				response.addCommand(gameAvailablePositionsCommand);
-			}
 			
+				return response;
+			}
+		
+			var updateData: [String: Any] = [:];
+			print("*** WinningPattern found");
+			updateData["moves"] = newMoves;
+			updateData["winner"] = currentPlayerId;
+			updateData["winningPattern"] = winningPattern;
+			let updateCommand = CommandBuilder.updateDataCommand(updateData);
+			let gameEndInfoCommand = CommandBuilder.gameEndInfoCommand();
+			response.addCommand(updateCommand);
+			response.addCommand(gameEndInfoCommand);
 			return response;
 		}
 		
