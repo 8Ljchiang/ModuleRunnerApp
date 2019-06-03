@@ -8,16 +8,6 @@
 
 import Foundation
 
-struct DataStorePartial {
-	var activePlayerIndex: Int?;
-	var players: [String]?;
-	var moves: [Move]?;
-}
-
-struct DataStore {
-	var data: [String: Any] = [:];
-}
-
 protocol DataServiceProtocol {
 	func getStore() -> DataStore;
 	func setStore(store: DataStore);
