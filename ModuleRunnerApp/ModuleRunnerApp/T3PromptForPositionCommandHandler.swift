@@ -25,6 +25,7 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 		}
 		
 		guard let boardSize = store.data["boardSize"] as? Int else {
+			response.addError("No board size data found.");
 			return response;
 		}
 		
