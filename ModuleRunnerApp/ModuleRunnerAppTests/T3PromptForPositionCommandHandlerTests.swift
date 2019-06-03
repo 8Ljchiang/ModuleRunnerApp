@@ -209,6 +209,30 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 		XCTAssertEqual("No board size data found.", response.errors[0]);
 	}
 	
+	func testExecuteWhenNoActivePlayerIndexData() {
+		let inputPosition = "3";
+		let mockGameModule = MockGameModule(defaultInputResponse: inputPosition);
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3GameInfo, payload: payload);
+		var mockDataStore = DataStore();
+		mockDataStore.data = [
+			"moves": [],
+			"boardSize": 3,
+			"players": ["P1", "P2"],
+		];
+		
+		let mockReadDataService = MockReadDataService(dataStore: mockDataStore)
+		let promptForPositionCH = T3PromptForPositionCommandHandler(readDataService: mockReadDataService);
+		let expectedCommandCount = 0;
+		let expectedErrorCount = 1;
+		
+		let response = promptForPositionCH.execute(command, module: mockGameModule);
+		
+		XCTAssertNotNil(response);
+		XCTAssertEqual(expectedCommandCount, response.commands.count);
+		XCTAssertEqual(expectedErrorCount, response.errors.count);
+		XCTAssertEqual("No active player index data found.", response.errors[0]);
+	
 	func testExecuteWhenNoPlayerData() {
 		let inputPosition = "3";
 		let mockGameModule = MockGameModule(defaultInputResponse: inputPosition);

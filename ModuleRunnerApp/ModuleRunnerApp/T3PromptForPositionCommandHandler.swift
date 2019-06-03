@@ -34,6 +34,7 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 		}
 		
 		guard let players = store.data["players"] as? [String] else {
+			response.addError("No player data found.");
 			return response;
 		};
 		
