@@ -116,6 +116,8 @@
 		CA41D92422A0B635006A2F30 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92322A0B635006A2F30 /* DataStore.swift */; };
 		CA41D92522A0B635006A2F30 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92322A0B635006A2F30 /* DataStore.swift */; };
 		CA41D92722A57A11006A2F30 /* T3GameAvailablePositionsCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92622A57A11006A2F30 /* T3GameAvailablePositionsCommandHandlerTests.swift */; };
+		CA41D92922A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92822A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift */; };
+		CA41D92A22A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA41D92822A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -205,6 +207,7 @@
 		CA41D92122A0AE00006A2F30 /* MockReadDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReadDataService.swift; sourceTree = "<group>"; };
 		CA41D92322A0B635006A2F30 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		CA41D92622A57A11006A2F30 /* T3GameAvailablePositionsCommandHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3GameAvailablePositionsCommandHandlerTests.swift; sourceTree = "<group>"; };
+		CA41D92822A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T3GameAvailablePositionsCommandHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +286,7 @@
 				CA41D91B22A0AB50006A2F30 /* T3GaneEndInfoCommandHandler.swift */,
 				CA41D91E22A0AC27006A2F30 /* ReadDataServiceProtocol.swift */,
 				CA41D92322A0B635006A2F30 /* DataStore.swift */,
+				CA41D92822A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -448,6 +452,7 @@
 				CA352D71229B6BA2009F4420 /* MockCommandHandlerResolver.swift in Sources */,
 				CA352D63229B4E57009F4420 /* MockCommandDispatcher.swift in Sources */,
 				CA41D8ED229DD31D006A2F30 /* DefaultCommandHandler.swift in Sources */,
+				CA41D92922A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift in Sources */,
 				CA352D7C229B71CC009F4420 /* T3DisplayCommandHandler.swift in Sources */,
 				CA41D90D22A02B8C006A2F30 /* T3PlayerHelper.swift in Sources */,
 				CA41D91C22A0AB50006A2F30 /* T3GaneEndInfoCommandHandler.swift in Sources */,
@@ -517,6 +522,7 @@
 				CA352D7F229C14F3009F4420 /* T3DisplayCommandHandlerTests.swift in Sources */,
 				CA352D4D229B0EEA009F4420 /* MockPresenterService.swift in Sources */,
 				CA41D92522A0B635006A2F30 /* DataStore.swift in Sources */,
+				CA41D92A22A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift in Sources */,
 				CA352D55229B24E7009F4420 /* GameModule.swift in Sources */,
 				CA41D91022A031E1006A2F30 /* CommandLoggerTests.swift in Sources */,
 				CA352D44229B0A45009F4420 /* ModuleRunnerTests.swift in Sources */,
