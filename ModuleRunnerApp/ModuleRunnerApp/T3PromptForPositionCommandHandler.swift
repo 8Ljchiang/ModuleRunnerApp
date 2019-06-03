@@ -61,33 +61,53 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 			let newMove = Move(playerId: currentPlayerId, position: inputPosition!, marker: marker);
 			let newMoves = T3MoveHelper.appendMove(newMove, moves: movesCache, boardSize: boardSize);
 			let movePositions = T3PositionHelper.getPositionsForMarker(moves: newMoves, marker: MarkerType.Marker1.rawValue);
-			guard let winningPattern = T3PatternHelper.findWinningPattern(positions: movePositions, boardSize: boardSize) else {
-				print("*** No winning pattern found:");
+			
+			// Section to check if user has won.
+			let winningPattern = T3PatternHelper.findWinningPattern(positions: movePositions, boardSize: boardSize);
+			if winningPattern != nil && winningPattern!.count == boardSize {
 				var updateData: [String: Any] = [:];
-				let nextPlayerIndex = T3PlayerHelper.cycleActivePlayerIndex(currentIndex: currentActivePlayerIndex, playerCount: players.count);
-				let movesWithAutoGenMove = T3MoveHelper.appendGeneratedMove(playerId: players[nextPlayerIndex], marker: MarkerType.Marker2.rawValue, moves: newMoves, boardSize: boardSize);
-				updateData["activePlayerIndex"] = T3PlayerHelper.cycleActivePlayerIndex(currentIndex: nextPlayerIndex, playerCount: players.count);
-				updateData["moves"] = movesWithAutoGenMove;
+				print("*** WinningPattern found");
+				updateData["moves"] = newMoves;
+				updateData["winner"] = currentPlayerId;
+				updateData["winningPattern"] = winningPattern;
 				let updateCommand = CommandBuilder.updateDataCommand(updateData);
-				let gameInfoCommand = CommandBuilder.gameInfoCommand();
-				let gameAvailablePositionsCommand = CommandBuilder.gameAvailablePositionsCommand();
-			
+				let gameEndInfoCommand = CommandBuilder.gameEndInfoCommand();
 				response.addCommand(updateCommand);
-				response.addCommand(gameInfoCommand);
-				response.addCommand(gameAvailablePositionsCommand);
-			
+				response.addCommand(gameEndInfoCommand);
 				return response;
 			}
-		
-			var updateData: [String: Any] = [:];
-			print("*** WinningPattern found");
-			updateData["moves"] = newMoves;
-			updateData["winner"] = currentPlayerId;
-			updateData["winningPattern"] = winningPattern;
+			
+			let nextPlayerIndex = T3PlayerHelper.cycleActivePlayerIndex(currentIndex: currentActivePlayerIndex, playerCount: players.count);
+			let movesWithAutoGenMove = T3MoveHelper.appendGeneratedMove(playerId: players[nextPlayerIndex], marker: MarkerType.Marker2.rawValue, moves: newMoves, boardSize: boardSize);
+			
+			// Section to check if bot has won.
+			let botPositions = T3PositionHelper.getPositionsForMarker(moves: movesWithAutoGenMove, marker: MarkerType.Marker2.rawValue);
+			let winningPattern2 = T3PatternHelper.findWinningPattern(positions: botPositions, boardSize: boardSize);
+			if winningPattern2 != nil && winningPattern2!.count == boardSize {
+				var updateData: [String: Any] = [:];
+				print("*** WinningPattern found");
+				updateData["moves"] = movesWithAutoGenMove;
+				updateData["winner"] = currentPlayerId;
+				updateData["winningPattern"] = winningPattern2;
+				let updateCommand = CommandBuilder.updateDataCommand(updateData);
+				let gameEndInfoCommand = CommandBuilder.gameEndInfoCommand();
+				response.addCommand(updateCommand);
+				response.addCommand(gameEndInfoCommand);
+				return response;
+			}
+			
+			let updateData: [String: Any] = [
+				"moves": movesWithAutoGenMove,
+				"activePlayerIndex": T3PlayerHelper.cycleActivePlayerIndex(currentIndex: nextPlayerIndex, playerCount: players.count)
+			];
 			let updateCommand = CommandBuilder.updateDataCommand(updateData);
-			let gameEndInfoCommand = CommandBuilder.gameEndInfoCommand();
+			let gameInfoCommand = CommandBuilder.gameInfoCommand();
+			let gameAvailablePositionsCommand = CommandBuilder.gameAvailablePositionsCommand();
+	
 			response.addCommand(updateCommand);
-			response.addCommand(gameEndInfoCommand);
+			response.addCommand(gameInfoCommand);
+			response.addCommand(gameAvailablePositionsCommand);
+	
 			return response;
 		}
 		
