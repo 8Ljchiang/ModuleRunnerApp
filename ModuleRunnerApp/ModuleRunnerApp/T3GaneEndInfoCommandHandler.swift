@@ -39,12 +39,10 @@ class T3GameEndInfoCommandHandler: CommandHandlerProtocol {
 			response.addError("No winner data found.");
 			return response;
 		}
-		
 		guard let winningPattern = store.data["winningPattern"] as? [Int] else {
 			response.addError("No winning pattern data found.");
 			return response;
 		}
-		
 		let winningPatternStringArray = winningPattern.map { String($0) };
 		let winningPatternString = winningPatternStringArray.joined(separator: ", ");
 		let endInfoString = "The game is over.\n\(winner) is the winner.\nWinning Pattern: \(winningPatternString).\n";
