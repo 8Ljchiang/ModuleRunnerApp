@@ -57,4 +57,32 @@ class T3MoveHelper {
 		
 		return 0;
 	}
+	
+	static func optimalMove(currentMoves: [Move], currentPlayerMarker: String, iteration: Int, boardSize: Int) -> Int	 {
+		let availablePositions = T3PositionHelper.getAvailablePositions(moves: currentMoves, boardSize: boardSize);
+		var simulatedPositionValues: [Int: Int] = [:];
+		let opponentMarker = MarkerType.Marker1.rawValue == currentPlayerMarker ? MarkerType.Marker2.rawValue : MarkerType.Marker1.rawValue;
+		for position in availablePositions {
+			let newMove = Move(playerId: "Any", position: position, marker: currentPlayerMarker);
+			let newMoves = T3MoveHelper.appendMove(newMove, moves: currentMoves, boardSize: boardSize);
+			let positionsForCurrentPlayer = T3PositionHelper.getPositionsForMarker(moves: newMoves, marker: currentPlayerMarker);
+			let winningPatternForCurrentPlayer = T3PatternHelper.findWinningPattern(positions: positionsForCurrentPlayer, boardSize: boardSize);
+			let newAvailablePositions = T3PositionHelper.getAvailablePositions(moves: newMoves, boardSize: boardSize);
+			if  newAvailablePositions.count == 0 || winningPatternForCurrentPlayer != nil {
+				let score = scoreMoves(currentMoves: newMoves, currentPlayerMarker: currentPlayerMarker, iteration: iteration, boardSize: boardSize);
+				simulatedPositionValues[position] = score;
+			} else {
+				let newMovesSet = newMoves;
+				let score = optimalMove(currentMoves: newMovesSet, currentPlayerMarker: opponentMarker, iteration: iteration + 1, boardSize: boardSize);
+				simulatedPositionValues[position] = score;
+			}
+		}
+		
+		let bestPosition = getHighestValuePosition(simulatedPositionValues)!;
+		return bestPosition.value;
+	}
+	
+	static func getHighestValuePosition(_ simulatedPositionValues: [Int: Int]) -> (key: Int, value: Int)? {
+		return simulatedPositionValues.max { a, b in a.value < b.value };
+	}
 }
