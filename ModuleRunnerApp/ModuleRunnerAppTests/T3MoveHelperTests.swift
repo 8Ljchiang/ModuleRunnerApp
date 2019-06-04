@@ -159,7 +159,6 @@ class T3MoveHelperTests: XCTestCase {
 	}
 	
 	func testScoreMovesWhenDraw() {
-		let boardSize = 3;
 		let playerId1 = "P1";
 		let playerId2 = "P2";
 		let currentMoves: [Move] = [
@@ -180,5 +179,19 @@ class T3MoveHelperTests: XCTestCase {
 		
 		XCTAssertEqual(expectedScore, actualScoreForMarker1);
 		XCTAssertEqual(expectedScore, actualScoreForMarker2);
+	}
+	
+	func testGetHighestValuePosition() {
+		let positionValues: [Int: Int] = [
+			1: 10,
+			2: 20,
+			3: 30,
+			4: -10,
+		];
+		
+		let result = T3MoveHelper.getHighestValuePosition(positionValues);
+		
+		XCTAssertEqual(3, result!.key);
+		XCTAssertEqual(30, result!.value);
 	}
 }
