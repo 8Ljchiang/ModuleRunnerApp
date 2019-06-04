@@ -55,7 +55,6 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 		XCTAssertEqual(0, updateCommandPayloadActivePlayerIndex);
 		XCTAssertEqual(2, updateCommandPayloadMoves?.count);
 		XCTAssertEqual(CommandType.T3GameInfo, response.commands[1].type);
-//		XCTAssertEqual(CommandType.T3GameAvailablePositions, response.commands[2].type);
 	}
 	
 	func testExecuteWhenInputIsDrawMove() {
@@ -66,7 +65,6 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 		var mockDataStore = DataStore();
 		mockDataStore.data = [
 			"moves": [
-//				Move(playerId: "P1", position: 1, marker: MarkerType.Marker1.rawValue),
 				Move(playerId: "P1", position: 2, marker: MarkerType.Marker1.rawValue),
 				Move(playerId: "P2", position: 3, marker: MarkerType.Marker2.rawValue),
 				Move(playerId: "P2", position: 4, marker: MarkerType.Marker2.rawValue),
@@ -89,7 +87,6 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 		let response = promptForPositionCH.execute(command, module: mockGameModule);
 		let updateCommandMoves = response.commands[0].payload["moves"] as? [Move];
 		let updateCommandWinner = response.commands[0].payload["winner"] as? String;
-		print("*** \(updateCommandWinner)");
 		
 		XCTAssertNotNil(response);
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
@@ -97,7 +94,7 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 		XCTAssertEqual(CommandType.T3UpdateData, response.commands[0].type);
 		XCTAssertEqual(9, updateCommandMoves?.count);
 		XCTAssertEqual("No one", updateCommandWinner);
-//		XCTAssertEqual(CommandType.T3GameEndInfo, response.commands[1].type);
+		XCTAssertEqual(CommandType.T3GameEndInfo, response.commands[1].type);
 	}
 	
 	func testExecuteWhenInputIsWinningMove() {
