@@ -21,6 +21,5 @@ class ConsolePresenterService: PresenterServiceProtocol {
 	}
 	
 	func clearDisplay() {
-		print("\u{001B}[2J");
 	}
 }

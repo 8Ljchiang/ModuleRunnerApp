@@ -27,7 +27,7 @@ class CommandLoggerTests: XCTestCase {
 	
 	func testLogCommand() {
 		let mockPresenterService = MockPresenterService();
-		let commandLogger = CommandLogger(presenterService: mockPresenterService, isDisplayOn: false);
+		let commandLogger = CommandLogger(presenterService: mockPresenterService, isDisplayOn: true);
 		let payload: [String: Any] = [:];
 		let command = Command(type: CommandType.T3Welcome, payload: payload);
 		
@@ -35,5 +35,16 @@ class CommandLoggerTests: XCTestCase {
 		
 		XCTAssert(mockPresenterService.isDisplayCalled);
 		XCTAssertEqual("[CommandLogger]: T3Welcome", mockPresenterService.displayCalledWith);
+	}
+	
+	func testLogCommandWhenIsDisplayOnIsFalse() {
+		let mockPresenterService = MockPresenterService();
+		let commandLogger = CommandLogger(presenterService: mockPresenterService, isDisplayOn: false);
+		let payload: [String: Any] = [:];
+		let command = Command(type: CommandType.T3Welcome, payload: payload);
+		
+		commandLogger.logCommand(command);
+		
+		XCTAssertFalse(mockPresenterService.isDisplayCalled);
 	}
 }

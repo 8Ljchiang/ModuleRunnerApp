@@ -33,10 +33,19 @@ class GameModule: GameModuleProtocol {
 	
 	func start(moduleRunner: ModuleRunnerProtocol) {
 		self.runner = moduleRunner;
+		let initialData: [String: Any] = [
+			"boardSize": 3,
+			"playerCount": 1,
+			"aiSkill": 100,
+			"moves": [],
+			"activePlayerIndex": 0,
+			"players": ["P1-Player", "P2-Bot"],
+		];
+		let updateCommand = CommandBuilder.updateDataCommand(initialData)
+		let welcomeCommand = CommandBuilder.welcomeCommand();
 		
-		let payload = ["payload": "value"];
-		let initialCommand = Command(type: CommandType.T3Welcome, payload: payload);
-		self.dispatcher.queueCommand(initialCommand);
+		self.dispatcher.queueCommand(updateCommand);
+		self.dispatcher.queueCommand(welcomeCommand);
 		self.dispatcher.processQueue();
 	}
 	

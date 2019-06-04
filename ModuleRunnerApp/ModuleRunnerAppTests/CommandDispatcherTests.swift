@@ -20,14 +20,16 @@ class CommandDispatcherTests: XCTestCase {
 
     func testInitCommandDispatcher() {
 		let mockCommandHandlerResolver = MockCommandHandlerResolver();
-		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
+		let mockCommandLogger = MockCommandLogger();
+		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver, commandLogger: mockCommandLogger);
 		
 		XCTAssertNotNil(commandDispatcher);
     }
 	
 	func testConnectModule() {
 		let mockCommandHandlerResolver = MockCommandHandlerResolver();
-		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
+		let mockCommandLogger = MockCommandLogger();
+		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver, commandLogger: mockCommandLogger);
 		let mockGameModule = MockGameModule();
 		
 		commandDispatcher.connectModule(gameModule: mockGameModule);
@@ -37,7 +39,8 @@ class CommandDispatcherTests: XCTestCase {
 	
 	func testQueueCommand() {
 		let mockCommandHandlerResolver = MockCommandHandlerResolver();
-		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
+		let mockCommandLogger = MockCommandLogger();
+		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver, commandLogger: mockCommandLogger);
 		let payload = ["message": "Welcome"];
 		let testCommand = Command(type: CommandType.T3Welcome, payload: payload);
 		
@@ -51,7 +54,8 @@ class CommandDispatcherTests: XCTestCase {
 	
 	func testQueueCommandWithMultiple() {
 		let mockCommandHandlerResolver = MockCommandHandlerResolver();
-		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
+		let mockCommandLogger = MockCommandLogger();
+		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver, commandLogger: mockCommandLogger);
 		let payload1 = ["message": "Welcome"];
 		let payload2 = ["message": "Rules"];
 		let testCommand1 = Command(type: CommandType.T3Welcome, payload: payload1);
@@ -70,8 +74,11 @@ class CommandDispatcherTests: XCTestCase {
 	}
 	
 	func testProcessQueue() {
+		let mockGameModule = MockGameModule();
 		let mockCommandHandlerResolver = MockCommandHandlerResolver();
-		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
+		let mockCommandLogger = MockCommandLogger();
+		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver, commandLogger: mockCommandLogger);
+		commandDispatcher.connectModule(gameModule: mockGameModule);
 		let payload1 = ["text": "Welcome"];
 		let payload2 = ["text": "Rules"];
 		let testCommand1 = Command(type: CommandType.T3Welcome, payload: payload1);
@@ -83,13 +90,15 @@ class CommandDispatcherTests: XCTestCase {
 		commandDispatcher.processQueue();
 		
 		XCTAssertEqual(0, commandDispatcher.queue.count);
+		XCTAssert(mockCommandLogger.isLogCommandCalled);
 	}
 	
 	func testProcessQueueCallsToCommandHandlerResolver() {
 		let mockCommandHandlerResolver = MockCommandHandlerResolver();
-		
-		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver);
-		
+		let mockGameModule = MockGameModule();
+		let mockCommandLogger = MockCommandLogger();
+		let commandDispatcher = CommandDispatcher(resolver: mockCommandHandlerResolver, commandLogger: mockCommandLogger);
+		commandDispatcher.connectModule(gameModule: mockGameModule);
 		let payload1 = ["text": "Welcome"];
 		let payload2 = ["text": "Rules"];
 		let testCommand1 = Command(type: CommandType.T3Welcome, payload: payload1);

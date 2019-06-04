@@ -17,11 +17,21 @@ class T3PromptForReplayCommandHandler: CommandHandlerProtocol {
 		let userInput = module.promptForInput();
 		
 		if userInput == "replay" {
-			let welcomeCommand = CommandBuilder.welcomeCommand();
-			response.addCommand(welcomeCommand);
-			return response;
+			let initialData: [String: Any] = [
+				"boardSize": 3,
+				"playerCount": 1,
+				"aiSkill": 100,
+				"moves": [],
+				"activePlayerIndex": 0,
+				"players": ["P1-Player", "P2-Bot"],
+			];
+			let updateCommand = CommandBuilder.updateDataCommand(initialData);
+			response.addCommand(updateCommand);
+			
+			let gameInfoCommand = CommandBuilder.gameInfoCommand();
+			response.addCommand(gameInfoCommand);
 		}
 		
-		return CommandHandlerResponse();
+		return response
 	}
 }
