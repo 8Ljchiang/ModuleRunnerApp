@@ -93,8 +93,6 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
 		
 		XCTAssertNotNil(response);
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
-//		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
-//		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 		XCTAssertEqual("No moves data found.", response.errors[0]);
 	}
@@ -123,8 +121,6 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
 		
 		XCTAssertNotNil(response);
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
-//		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
-//		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 		XCTAssertEqual("No board size data found.", response.errors[0]);
 	}
@@ -153,9 +149,6 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
 		
 		XCTAssertNotNil(response);
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
-//		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
-//		XCTAssertEqual(CommandType.T3Display, response.commands[1].type);
-//		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 		XCTAssertEqual("No winner data found.", response.errors[0]);
 	}
@@ -184,9 +177,6 @@ class T3GameEndInfoCommandHandlerTests: XCTestCase {
 		
 		XCTAssertNotNil(response);
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
-//		XCTAssertEqual(CommandType.T3Display, response.commands[0].type);
-//		XCTAssertEqual(CommandType.T3Display, response.commands[1].type);
-//		XCTAssertEqual(T3Text.title, response.commands[0].payload["text"] as? String);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 		XCTAssertEqual("No winning pattern data found.", response.errors[0]);
 	}
