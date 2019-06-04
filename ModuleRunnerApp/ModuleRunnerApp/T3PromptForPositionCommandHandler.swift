@@ -122,7 +122,7 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 				let response = CommandHandlerResponse();
 				var updateData: [String: Any] = [:];
 				updateData["moves"] = movesWithAutoGenMove;
-				updateData["winner"] = currentPlayerId;
+				updateData["winner"] = players[nextPlayerIndex];
 				updateData["winningPattern"] = winningPattern2;
 				let updateCommand = CommandBuilder.updateDataCommand(updateData);
 				let gameEndInfoCommand = CommandBuilder.gameEndInfoCommand();
