@@ -39,4 +39,8 @@ class T3MoveHelper {
 		}
 		return moves;
 	}
+	
+	static func scoreMoves(currentMoves: [Move], currentPlayerMarker: String, iteration: Int) -> Int {
+		return 0;
+	}
 }

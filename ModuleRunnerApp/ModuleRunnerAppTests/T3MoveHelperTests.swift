@@ -157,4 +157,28 @@ class T3MoveHelperTests: XCTestCase {
 		XCTAssertEqual(expectedMoves.count, resultMoves.count);
 		XCTAssertEqual(expectedMoves, resultMoves);
 	}
+	
+	func testScoreMovesWhenDraw() {
+		let boardSize = 3;
+		let playerId1 = "P1";
+		let playerId2 = "P2";
+		let currentMoves: [Move] = [
+			Move(playerId: playerId1, position: 1, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId1, position: 2, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 3, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId2, position: 4, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId2, position: 5, marker: MarkerType.Marker2.rawValue),
+			Move(playerId: playerId1, position: 6, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId1, position: 7, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId1, position: 8, marker: MarkerType.Marker1.rawValue),
+			Move(playerId: playerId2, position: 9, marker: MarkerType.Marker2.rawValue)
+		];
+		
+		let expectedScore = 0;
+		let actualScoreForMarker1 = T3MoveHelper.scoreMoves(currentMoves: currentMoves, currentPlayerMarker: MarkerType.Marker1.rawValue, iteration: 9);
+		let actualScoreForMarker2 = T3MoveHelper.scoreMoves(currentMoves: currentMoves, currentPlayerMarker: MarkerType.Marker1.rawValue, iteration: 9);
+		
+		XCTAssertEqual(expectedScore, actualScoreForMarker1);
+		XCTAssertEqual(expectedScore, actualScoreForMarker2);
+	}
 }
