@@ -40,14 +40,7 @@ class CommandDispatcher: CommandDispatcherProtocol {
 	}
 	
 	func connectModule(gameModule: GameModuleProtocol) {
-//		print("*** Dispatcher: connectModule");
-		
 		self.module = gameModule;
-		
-//		print("*** Dispatcher: Is module nil: ");
-//		print(gameModule == nil);
-//		print(self.module == nil);
-
 	}
 	
 	private func processCommand(_ command: CommandProtocol) {
