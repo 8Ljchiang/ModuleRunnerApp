@@ -262,45 +262,13 @@
 		CA352D1B229AED5B009F4420 /* ModuleRunnerApp */ = {
 			isa = PBXGroup;
 			children = (
+				CA35741C22A70C8100D19112 /* Utils */,
+				CA35741B22A70C2200D19112 /* Lib */,
+				CA35741A22A70C1400D19112 /* TicTacToeHandlers */,
+				CA35741922A70C0C00D19112 /* Services */,
+				CA35741822A70BFF00D19112 /* Core */,
 				CA352D1C229AED5B009F4420 /* main.swift */,
 				CA352D2F229AEE4C009F4420 /* Greeter.swift */,
-				CA352D36229AF5BA009F4420 /* DataService.swift */,
-				CA352D39229B0434009F4420 /* Move.swift */,
-				CA352D3C229B06AC009F4420 /* MarkerTypeEnum.swift */,
-				CA352D45229B0AD4009F4420 /* ModuleRunner.swift */,
-				CA352D48229B0DF4009F4420 /* PresenterService.swift */,
-				CA352D4E229B1451009F4420 /* InputService.swift */,
-				CA352D53229B24E7009F4420 /* GameModule.swift */,
-				CA352D5C229B4DAB009F4420 /* CommandDispatcher.swift */,
-				CA352D5F229B4DDD009F4420 /* Command.swift */,
-				CA352D65229B535B009F4420 /* CommandType.swift */,
-				CA352D6A229B6B37009F4420 /* CommandHandlerResolver.swift */,
-				CA352D6D229B6B80009F4420 /* CommandHandler.swift */,
-				CA352D7B229B71CC009F4420 /* T3DisplayCommandHandler.swift */,
-				CA352D83229C15BB009F4420 /* CommandHandlerResponse.swift */,
-				CA352D88229C2E7D009F4420 /* T3UpdateDataCommandHandler.swift */,
-				CA352D8E229C898F009F4420 /* WriteDataService.swift */,
-				CA352D95229D8676009F4420 /* T3GameWelcomeCommandHandler.swift */,
-				CA352D98229D89BB009F4420 /* T3Text.swift */,
-				CA352D9D229D8C9D009F4420 /* T3GameRulesCommandHandler.swift */,
-				CA352DA2229D951D009F4420 /* T3PromptForReadyCommandHandler.swift */,
-				CA352DA7229D9FDA009F4420 /* T3DisplayClearCommandHandler.swift */,
-				CA41D8E9229DC9A3006A2F30 /* CommandBuilder.swift */,
-				CA41D8EC229DD31D006A2F30 /* DefaultCommandHandler.swift */,
-				CA41D8F3229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift */,
-				CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */,
-				CA41D8FD229ED275006A2F30 /* T3PositionHelper.swift */,
-				CA41D902229F24F5006A2F30 /* T3MoveHelper.swift */,
-				CA41D90722A01822006A2F30 /* T3PatternHelper.swift */,
-				CA41D90C22A02B8C006A2F30 /* T3PlayerHelper.swift */,
-				CA41D91122A03254006A2F30 /* CommandLogger.swift */,
-				CA41D91622A0386A006A2F30 /* T3ReplayInstructionsCommandHandler.swift */,
-				CA41D91B22A0AB50006A2F30 /* T3GameEndInfoCommandHandler.swift */,
-				CA41D91E22A0AC27006A2F30 /* ReadDataService.swift */,
-				CA41D92322A0B635006A2F30 /* DataStore.swift */,
-				CA41D92822A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift */,
-				CA41D92D22A59FA2006A2F30 /* T3PromptForPositionCommandHandler.swift */,
-				CA41D93222A5CFFF006A2F30 /* T3GameInfoCommandHandler.swift */,
 			);
 			path = ModuleRunnerApp;
 			sourceTree = "<group>";
@@ -357,6 +325,78 @@
 				CA35741622A5EA8300D19112 /* MockCommandLogger.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		CA35741822A70BFF00D19112 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CA352D39229B0434009F4420 /* Move.swift */,
+				CA352D5F229B4DDD009F4420 /* Command.swift */,
+				CA41D91122A03254006A2F30 /* CommandLogger.swift */,
+				CA352D5C229B4DAB009F4420 /* CommandDispatcher.swift */,
+				CA352D6D229B6B80009F4420 /* CommandHandler.swift */,
+				CA352D6A229B6B37009F4420 /* CommandHandlerResolver.swift */,
+				CA352D83229C15BB009F4420 /* CommandHandlerResponse.swift */,
+				CA41D8E9229DC9A3006A2F30 /* CommandBuilder.swift */,
+				CA41D92322A0B635006A2F30 /* DataStore.swift */,
+				CA352D53229B24E7009F4420 /* GameModule.swift */,
+				CA352D45229B0AD4009F4420 /* ModuleRunner.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CA35741922A70C0C00D19112 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CA41D91E22A0AC27006A2F30 /* ReadDataService.swift */,
+				CA352D8E229C898F009F4420 /* WriteDataService.swift */,
+				CA352D36229AF5BA009F4420 /* DataService.swift */,
+				CA352D4E229B1451009F4420 /* InputService.swift */,
+				CA352D48229B0DF4009F4420 /* PresenterService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CA35741A22A70C1400D19112 /* TicTacToeHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				CA352D7B229B71CC009F4420 /* T3DisplayCommandHandler.swift */,
+				CA352D9D229D8C9D009F4420 /* T3GameRulesCommandHandler.swift */,
+				CA352D88229C2E7D009F4420 /* T3UpdateDataCommandHandler.swift */,
+				CA352DA2229D951D009F4420 /* T3PromptForReadyCommandHandler.swift */,
+				CA41D91622A0386A006A2F30 /* T3ReplayInstructionsCommandHandler.swift */,
+				CA41D8F3229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift */,
+				CA352DA7229D9FDA009F4420 /* T3DisplayClearCommandHandler.swift */,
+				CA352D95229D8676009F4420 /* T3GameWelcomeCommandHandler.swift */,
+				CA41D92822A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift */,
+				CA41D92D22A59FA2006A2F30 /* T3PromptForPositionCommandHandler.swift */,
+				CA41D93222A5CFFF006A2F30 /* T3GameInfoCommandHandler.swift */,
+				CA41D91B22A0AB50006A2F30 /* T3GameEndInfoCommandHandler.swift */,
+				CA41D8EC229DD31D006A2F30 /* DefaultCommandHandler.swift */,
+			);
+			path = TicTacToeHandlers;
+			sourceTree = "<group>";
+		};
+		CA35741B22A70C2200D19112 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				CA352D3C229B06AC009F4420 /* MarkerTypeEnum.swift */,
+				CA352D65229B535B009F4420 /* CommandType.swift */,
+				CA352D98229D89BB009F4420 /* T3Text.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		CA35741C22A70C8100D19112 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CA41D8F8229DDDA3006A2F30 /* T3BoardRenderer.swift */,
+				CA41D902229F24F5006A2F30 /* T3MoveHelper.swift */,
+				CA41D90722A01822006A2F30 /* T3PatternHelper.swift */,
+				CA41D90C22A02B8C006A2F30 /* T3PlayerHelper.swift */,
+				CA41D8FD229ED275006A2F30 /* T3PositionHelper.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -517,7 +557,6 @@
 				CA352D9A229D89BB009F4420 /* T3Text.swift in Sources */,
 				CA41D92222A0AE00006A2F30 /* MockReadDataService.swift in Sources */,
 				CA352D90229C898F009F4420 /* WriteDataService.swift in Sources */,
-				CA352DAC229DB0CB009F4420 /* CommandBuilder.swift in Sources */,
 				CA352D59229B4532009F4420 /* GameModuleTests.swift in Sources */,
 				CA352D69229B5C0C009F4420 /* CommandDispatcherTests.swift in Sources */,
 				CA35741722A5EA8300D19112 /* MockCommandLogger.swift in Sources */,
