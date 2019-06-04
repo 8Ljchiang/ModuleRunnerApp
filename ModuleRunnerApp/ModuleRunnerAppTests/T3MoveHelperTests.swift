@@ -191,7 +191,21 @@ class T3MoveHelperTests: XCTestCase {
 		
 		let result = T3MoveHelper.getHighestValuePosition(positionValues);
 		
-		XCTAssertEqual(3, result!.key);
-		XCTAssertEqual(30, result!.value);
+		XCTAssertEqual(3, result.key);
+		XCTAssertEqual(30, result.value);
+	}
+	
+	func testGetLowestValuePosition() {
+		let positionValues: [Int: Int] = [
+			1: 10,
+			2: 20,
+			3: 30,
+			4: -10,
+		];
+		
+		let result = T3MoveHelper.getLowestValuePosition(positionValues);
+		
+		XCTAssertEqual(4, result.key);
+		XCTAssertEqual(-10, result.value);
 	}
 }
