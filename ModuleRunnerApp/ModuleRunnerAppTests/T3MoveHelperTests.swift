@@ -175,8 +175,8 @@ class T3MoveHelperTests: XCTestCase {
 		];
 		
 		let expectedScore = 0;
-		let actualScoreForMarker1 = T3MoveHelper.scoreMoves(currentMoves: currentMoves, currentPlayerMarker: MarkerType.Marker1.rawValue, iteration: 9);
-		let actualScoreForMarker2 = T3MoveHelper.scoreMoves(currentMoves: currentMoves, currentPlayerMarker: MarkerType.Marker1.rawValue, iteration: 9);
+		let actualScoreForMarker1 = T3MoveHelper.scoreMoves(currentMoves: currentMoves, currentPlayerMarker: MarkerType.Marker1.rawValue, iteration: 9, boardSize: 3);
+		let actualScoreForMarker2 = T3MoveHelper.scoreMoves(currentMoves: currentMoves, currentPlayerMarker: MarkerType.Marker1.rawValue, iteration: 9, boardSize: 3);
 		
 		XCTAssertEqual(expectedScore, actualScoreForMarker1);
 		XCTAssertEqual(expectedScore, actualScoreForMarker2);

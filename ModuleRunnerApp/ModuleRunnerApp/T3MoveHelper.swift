@@ -40,7 +40,21 @@ class T3MoveHelper {
 		return moves;
 	}
 	
-	static func scoreMoves(currentMoves: [Move], currentPlayerMarker: String, iteration: Int) -> Int {
+	static func scoreMoves(currentMoves: [Move], currentPlayerMarker: String, iteration: Int, boardSize: Int) -> Int {
+		
+		let currentPlayerPositions = T3PositionHelper.getPositionsForMarker(moves: currentMoves, marker: currentPlayerMarker);
+		let winningPatternForCurrentPlayer = T3PatternHelper.findWinningPattern(positions: currentPlayerPositions, boardSize: boardSize);
+		if winningPatternForCurrentPlayer != nil && winningPatternForCurrentPlayer!.count == boardSize {
+			return 100;
+		}
+		
+		let opponentPositions = T3PositionHelper.getPositionsForMarker(moves: currentMoves, marker: currentPlayerMarker);
+		let winningPatternForOpponent = T3PatternHelper.findWinningPattern(positions: opponentPositions, boardSize: boardSize);
+		
+		if winningPatternForCurrentPlayer != nil && winningPatternForOpponent!.count == boardSize {
+			return -100;
+		}
+		
 		return 0;
 	}
 }
