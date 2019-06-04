@@ -32,8 +32,6 @@ class CommandDispatcher: CommandDispatcherProtocol {
 	func processQueue() {
 		while self.queue.count > 0 {
 			let command = self.queue.removeFirst();
-//			print("*** Dispatcher: processingCommand ");
-//			print(command.type);
 			self.processCommand(command);
 			self.logger.logCommand(command);
 		}

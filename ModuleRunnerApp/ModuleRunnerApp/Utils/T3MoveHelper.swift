@@ -55,7 +55,6 @@ class T3MoveHelper {
 		
 		if availablePositions.count > 0 {
 			let simulatedMove = getOptimalSimulatedMove(currentMoves: moves, currentPlayerMarker: marker, iteration: 0, boardSize: boardSize);
-//			print("*** Optimized move \(simulatedMove.key) \(simulatedMove.value)");
 			return Move(playerId: playerId, position: simulatedMove.key, marker: marker);
 		}
 		
@@ -83,7 +82,6 @@ class T3MoveHelper {
 		var simulatedPositionValues: [Int: Int] = [:];
 		let opponentMarker = MarkerType.Marker1.rawValue == currentPlayerMarker ? MarkerType.Marker2.rawValue : MarkerType.Marker1.rawValue;
 		for position in availablePositions {
-//			print("*** iteration level: \(iteration): simulating move for \(opponentMarker) at \(position)");
 			let newMove = Move(playerId: "Any", position: position, marker: currentPlayerMarker);
 			let newMoves = T3MoveHelper.appendMove(newMove, moves: currentMoves, boardSize: boardSize);
 			let positionsForCurrentPlayer = T3PositionHelper.getPositionsForMarker(moves: newMoves, marker: currentPlayerMarker);
@@ -92,7 +90,6 @@ class T3MoveHelper {
 			if  newAvailablePositions.count == 0 || winningPatternForCurrentPlayer != nil {
 				let score = scoreMoves(currentMoves: newMoves, currentPlayerMarker: currentPlayerMarker, iteration: iteration, boardSize: boardSize);
 				simulatedPositionValues[position] = score;
-//				print("*** iteration level: \(iteration) - Game end found: \(score)");
 			} else {
 				let newMovesSet = newMoves;
 				let newKeySet = getOptimalSimulatedMove(currentMoves: newMovesSet, currentPlayerMarker: opponentMarker, iteration: iteration + 1, boardSize: boardSize);
