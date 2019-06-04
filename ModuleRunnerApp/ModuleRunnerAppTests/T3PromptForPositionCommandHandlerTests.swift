@@ -87,13 +87,17 @@ class T3PromptForPositionCommandHandlerTests: XCTestCase {
 		let expectedErrorCount = 0;
 		
 		let response = promptForPositionCH.execute(command, module: mockGameModule);
+		let updateCommandMoves = response.commands[0].payload["moves"] as? [Move];
+		let updateCommandWinner = response.commands[0].payload["winner"] as? String;
+		print("*** \(updateCommandWinner)");
 		
 		XCTAssertNotNil(response);
 		XCTAssertEqual(expectedCommandCount, response.commands.count);
 		XCTAssertEqual(expectedErrorCount, response.errors.count);
 		XCTAssertEqual(CommandType.T3UpdateData, response.commands[0].type);
-		XCTAssertEqual("No one", response.commands[0].payload["winner"] as? String);
-		XCTAssertEqual(CommandType.T3GameEndInfo, response.commands[1].type);
+		XCTAssertEqual(9, updateCommandMoves?.count);
+		XCTAssertEqual("No one", updateCommandWinner);
+//		XCTAssertEqual(CommandType.T3GameEndInfo, response.commands[1].type);
 	}
 	
 	func testExecuteWhenInputIsWinningMove() {

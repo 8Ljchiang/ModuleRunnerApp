@@ -81,7 +81,17 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 			
 			let winningPattern = T3PatternHelper.findWinningPattern(positions: movePositions, boardSize: boardSize);
 			
-			if winningPattern != nil && winningPattern!.count == boardSize {
+			if newMoves.count == maxPositions {
+				let response = CommandHandlerResponse();
+				var updateData: [String: Any] = [:];
+				updateData["moves"] = newMoves;
+				updateData["winner"] = "No one";
+				let updateCommand = CommandBuilder.updateDataCommand(updateData);
+				let gameEndInfoCommand = CommandBuilder.gameEndInfoCommand();
+				response.addCommand(updateCommand);
+				response.addCommand(gameEndInfoCommand);
+				return response;
+			} else if winningPattern != nil && winningPattern!.count == boardSize {
 				let response = CommandHandlerResponse();
 				var updateData: [String: Any] = [:];
 				updateData["moves"] = newMoves;
@@ -99,7 +109,18 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 			
 			let botPositions = T3PositionHelper.getPositionsForMarker(moves: movesWithAutoGenMove, marker: MarkerType.Marker2.rawValue);
 			let winningPattern2 = T3PatternHelper.findWinningPattern(positions: botPositions, boardSize: boardSize);
-			if winningPattern2 != nil && winningPattern2!.count == boardSize {
+			
+			if newMoves.count == maxPositions {
+				let response = CommandHandlerResponse();
+				var updateData: [String: Any] = [:];
+				updateData["moves"] = newMoves;
+				updateData["winner"] = "No one";
+				let updateCommand = CommandBuilder.updateDataCommand(updateData);
+				let gameEndInfoCommand = CommandBuilder.gameEndInfoCommand();
+				response.addCommand(updateCommand);
+				response.addCommand(gameEndInfoCommand);
+				return response;
+			} else if winningPattern2 != nil && winningPattern2!.count == boardSize {
 				let response = CommandHandlerResponse();
 				var updateData: [String: Any] = [:];
 				updateData["moves"] = movesWithAutoGenMove;

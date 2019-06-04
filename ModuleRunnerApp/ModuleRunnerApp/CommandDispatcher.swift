@@ -35,6 +35,7 @@ class CommandDispatcher: CommandDispatcherProtocol {
 //			print("*** Dispatcher: processingCommand ");
 //			print(command.type);
 			self.processCommand(command);
+			self.logger.logCommand(command);
 		}
 	}
 	
@@ -78,7 +79,6 @@ class CommandDispatcher: CommandDispatcherProtocol {
 	private func handleResponseCommands(_ commands: [CommandProtocol]) {
 		if commands.count > 0 {
 			for command in commands {
-				self.logger.logCommand(command);
 				self.queueCommand(command);
 			}
 		}
