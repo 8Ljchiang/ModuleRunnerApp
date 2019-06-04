@@ -12,7 +12,6 @@ class T3GameWelcomeCommandHandler: CommandHandlerProtocol {
 	init() {}
 	
 	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
-//		print("*** WelcomeHandler");
 		let response = CommandHandlerResponse();
 		
 		let clearDisplayPayload: [String: Any] = [:];
@@ -26,8 +25,6 @@ class T3GameWelcomeCommandHandler: CommandHandlerProtocol {
 		let rulesCommand = Command(type: CommandType.T3Rules, payload: rulesPayload);
 		response.addCommand(rulesCommand);
 		
-//		print("*** WelcomeHandler: response commands count");
-//		print(response.commands.count);
 		return response;
 	}
 }
