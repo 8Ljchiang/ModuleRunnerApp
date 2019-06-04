@@ -5,7 +5,9 @@ A command line application that runs the game Tic Tac Toe. Follow the instructio
 
 ## Install Instructions
 The project requires the use of `xcodebuild`
-1. Install the newest version of XCode and command line tools for MacOS.
+1. Install command line tools for MacOS: `xcode-select --install`.
+2. Install the newest version of XCode.
+3. Check for MacOS system updates.
 
 ## Build Instructions
 ```xcodebuild -scheme ModuleRunnerApp  SYMROOT="~/{BuildLocation}”```
