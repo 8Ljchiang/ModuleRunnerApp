@@ -33,8 +33,6 @@ class GameModule: GameModuleProtocol {
 	
 	func start(moduleRunner: ModuleRunnerProtocol) {
 		self.runner = moduleRunner;
-//		print("*** GameModule: assigning module to dispatcher");
-//		self.dispatcher.connectModule(gameModule: self);
 		let initialData: [String: Any] = [
 			"boardSize": 3,
 			"playerCount": 1,
