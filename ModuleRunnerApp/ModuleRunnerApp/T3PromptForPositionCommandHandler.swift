@@ -44,9 +44,7 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 		
 		let maxPositions = boardSize * boardSize;
 		
-//		print("*** BEFORE PROMPT FOR INPUT");
 		if movesCache.count < maxPositions {
-//			print("*** PROMPT FOR INPUT");
 			let inputString = module.promptForInput();
 			let isInputValidPosition = T3PositionHelper.isValidInputForPosition(inputString, moves: movesCache, boardSize: boardSize);
 			
@@ -54,9 +52,7 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 				let response = CommandHandlerResponse();
 				response.addError("Invalid position: \(inputString)");
 				let gameInfoCommand = CommandBuilder.gameInfoCommand();
-//				let positionsCommand = CommandBuilder.gameAvailablePositionsCommand();
 				response.addCommand(gameInfoCommand);
-//				response.addCommand(positionsCommand);
 				return response;
 			}
 			
@@ -86,6 +82,7 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 				var updateData: [String: Any] = [:];
 				updateData["moves"] = newMoves;
 				updateData["winner"] = "No one";
+				updateData["winningPattern"] = [];
 				let updateCommand = CommandBuilder.updateDataCommand(updateData);
 				let gameEndInfoCommand = CommandBuilder.gameEndInfoCommand();
 				response.addCommand(updateCommand);
@@ -115,6 +112,7 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 				var updateData: [String: Any] = [:];
 				updateData["moves"] = newMoves;
 				updateData["winner"] = "No one";
+				updateData["winningPattern"] = [];
 				let updateCommand = CommandBuilder.updateDataCommand(updateData);
 				let gameEndInfoCommand = CommandBuilder.gameEndInfoCommand();
 				response.addCommand(updateCommand);
@@ -140,11 +138,9 @@ class T3PromptForPositionCommandHandler: CommandHandlerProtocol {
 			];
 			let updateCommand = CommandBuilder.updateDataCommand(updateData);
 			let gameInfoCommand = CommandBuilder.gameInfoCommand();
-//			let gameAvailablePositionsCommand = CommandBuilder.gameAvailablePositionsCommand();
 	
 			response.addCommand(updateCommand);
 			response.addCommand(gameInfoCommand);
-//			response.addCommand(gameAvailablePositionsCommand);
 	
 			return response;
 		}

@@ -28,8 +28,6 @@ class T3PromptForReplayCommandHandler: CommandHandlerProtocol {
 			let updateCommand = CommandBuilder.updateDataCommand(initialData);
 			response.addCommand(updateCommand);
 			
-//			let welcomeCommand = CommandBuilder.welcomeCommand();
-//			response.addCommand(welcomeCommand);
 			let gameInfoCommand = CommandBuilder.gameInfoCommand();
 			response.addCommand(gameInfoCommand);
 		}

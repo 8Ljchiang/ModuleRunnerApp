@@ -14,13 +14,9 @@ class T3GameRulesCommandHandler: CommandHandlerProtocol {
 	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
 		let response = CommandHandlerResponse();
 		
-//		let displayRulesPayload: [String: Any] = ["text": T3Text.rules];
-//		let displayCommand = Command(type: CommandType.T3Display, payload: displayRulesPayload);
 		let displayCommand = CommandBuilder.displayCommand(T3Text.rules);
 		response.addCommand(displayCommand);
 		
-//		let displayPromptInstructionsPayload: [String: Any] = ["text": T3Text.promptForReadyInstructions];
-//		let displayCommand2 = Command(type: CommandType.T3Display, payload: displayPromptInstructionsPayload);
 		let displayCommand2 = CommandBuilder.displayCommand(T3Text.promptForReadyInstructions);
 		response.addCommand(displayCommand2);
 		
