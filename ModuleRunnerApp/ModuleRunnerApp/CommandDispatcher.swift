@@ -35,6 +35,7 @@ class CommandDispatcher: CommandDispatcherProtocol {
 //			print("*** Dispatcher: processingCommand ");
 //			print(command.type);
 			self.processCommand(command);
+			self.logger.logCommand(command);
 		}
 	}
 	
@@ -51,34 +52,18 @@ class CommandDispatcher: CommandDispatcherProtocol {
 	
 	private func processCommand(_ command: CommandProtocol) {
 		let handler = self.resolver.getHandler(command.type);
-		
-//		if handler != nil {
-//			print("*** Dispatcher: handler");
-//			print(handler);
-//			print("*** Dispatcher: command");
-//			print(command.type);
-			let response = handler.execute(command, module: self.module!);
-			
-			self.handleResponse(response);
-//		}
+		let response = handler.execute(command, module: self.module!);
+		self.handleResponse(response);
 	}
 	
 	private func handleResponse(_ response: CommandHandlerResponseProtocol) {
-//		print("*** Dispatcher: handlingResponse")
-//		print("*** Dispatcher: response commands")
-//		print(response.commands.count);
-//		print("*** Dispatcher: response errors")
-//		print(response.errors.count);
 		self.handleResponseCommands(response.commands);
 		self.handleResponseErrors(response.errors);
-		
-		
 	}
 	
 	private func handleResponseCommands(_ commands: [CommandProtocol]) {
 		if commands.count > 0 {
 			for command in commands {
-				self.logger.logCommand(command);
 				self.queueCommand(command);
 			}
 		}
@@ -87,9 +72,6 @@ class CommandDispatcher: CommandDispatcherProtocol {
 	private func handleResponseErrors(_ errors: [String]) {
 		if errors.count > 0 {
 			for errorMessage in errors {
-				// LOG ERROR: print("*** queue errorMessage: \(errorMessage)");
-//				let displayPayload: [String: Any] = ["text": errorMessage];
-//				let displayCommand = Command(type: CommandType.T3Display, payload: displayPayload);
 				let displayCommand = CommandBuilder.displayCommand(errorMessage);
 				self.queueCommand(displayCommand);
 			}
