@@ -18,23 +18,30 @@ class T3GameInfoCommandHandler: CommandHandlerProtocol {
 	func execute(_ command: CommandProtocol, module: GameModuleProtocol) -> CommandHandlerResponseProtocol {
 		let response = CommandHandlerResponse();
 		
+		let clearDisplayCommand = CommandBuilder.displayClearCommand();
+		response.addCommand(clearDisplayCommand);
+		
 		let store = readDataService.getStore();
 		guard let moves = store.data["moves"] as? [Move] else {
+			let response = CommandHandlerResponse();
 			response.addError("No moves data found.");
 			return response;
 		}
 		
 		guard let boardSize = store.data["boardSize"] as? Int else {
+			let response = CommandHandlerResponse();
 			response.addError("No board size data found.");
 			return response;
 		}
 		
 		guard let activePlayerIndex = store.data["activePlayerIndex"] as? Int else {
+			let response = CommandHandlerResponse();
 			response.addError("No active player index data found.");
 			return response;
 		}
 		
 		guard let players = store.data["players"] as? [String] else {
+			let response = CommandHandlerResponse();
 			response.addError("No player data found.");
 			return response;
 		}
@@ -48,6 +55,7 @@ class T3GameInfoCommandHandler: CommandHandlerProtocol {
 		
 		let currentPlayer = players[activePlayerIndex];
 		let turnInfoString = "\n\(currentPlayer)'s turn. Select a position.";
+		
 		let displayInfoCommand = CommandBuilder.displayCommand(turnInfoString);
 		response.addCommand(displayInfoCommand);
 		

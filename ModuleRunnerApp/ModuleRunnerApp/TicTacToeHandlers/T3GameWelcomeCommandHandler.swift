@@ -18,8 +18,7 @@ class T3GameWelcomeCommandHandler: CommandHandlerProtocol {
 		let clearDisplayCommand = Command(type: CommandType.T3DisplayClear, payload: clearDisplayPayload);
 		response.addCommand(clearDisplayCommand);
 		
-		let displayPayload: [String: Any] = ["text": T3Text.welcome];
-		let displayCommand = Command(type: CommandType.T3Display, payload: displayPayload);
+		let displayCommand = CommandBuilder.displayCommand(T3Text.welcome);
 		response.addCommand(displayCommand);
 		
 		let rulesPayload: [String: Any] = [:];
