@@ -354,16 +354,16 @@
 			isa = PBXGroup;
 			children = (
 				CA352D7B229B71CC009F4420 /* T3DisplayCommandHandler.swift */,
-				CA352D9D229D8C9D009F4420 /* T3GameRulesCommandHandler.swift */,
+				CA352DA7229D9FDA009F4420 /* T3DisplayClearCommandHandler.swift */,
 				CA352D88229C2E7D009F4420 /* T3UpdateDataCommandHandler.swift */,
+				CA352D95229D8676009F4420 /* T3GameWelcomeCommandHandler.swift */,
+				CA352D9D229D8C9D009F4420 /* T3GameRulesCommandHandler.swift */,
 				CA352DA2229D951D009F4420 /* T3PromptForReadyCommandHandler.swift */,
+				CA41D93222A5CFFF006A2F30 /* T3GameInfoCommandHandler.swift */,
+				CA41D92D22A59FA2006A2F30 /* T3PromptForPositionCommandHandler.swift */,
 				CA41D91622A0386A006A2F30 /* T3ReplayInstructionsCommandHandler.swift */,
 				CA41D8F3229DD73C006A2F30 /* T3PromptForReplayCommandHandler.swift */,
-				CA352DA7229D9FDA009F4420 /* T3DisplayClearCommandHandler.swift */,
-				CA352D95229D8676009F4420 /* T3GameWelcomeCommandHandler.swift */,
 				CA41D92822A57E51006A2F30 /* T3GameAvailablePositionsCommandHandler.swift */,
-				CA41D92D22A59FA2006A2F30 /* T3PromptForPositionCommandHandler.swift */,
-				CA41D93222A5CFFF006A2F30 /* T3GameInfoCommandHandler.swift */,
 				CA41D91B22A0AB50006A2F30 /* T3GameEndInfoCommandHandler.swift */,
 				CA41D8EC229DD31D006A2F30 /* DefaultCommandHandler.swift */,
 			);
