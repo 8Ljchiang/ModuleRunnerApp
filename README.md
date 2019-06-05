@@ -16,4 +16,4 @@ The project requires the use of `xcodebuild`
 ```xcodebuild test -scheme ModuleRunnerApp```
 
 ## Run Instructions
-```~/{BuildLocation}/ModuleRunnerApp```
+```~/{BuildLocation}/Debug/ModuleRunnerApp```
